@@ -1,0 +1,361 @@
+<!--
+  ¿De dónde salió eso? — Artigas y las fuentes
+  Juego de aula sobre las Instrucciones del Año XIII (1813) y el
+  Reglamento Provisorio (1815), con una ronda de verificación de
+  texto generado por inteligencia artificial.
+
+  Autor: Ruben Leal — 2026
+  Idea, diseño y contenido histórico: Ruben Leal.
+  Desarrollado con asistencia de inteligencia artificial (Gemini y Claude),
+  empleada en la redacción y en la programación.
+
+  Licencia: Creative Commons Atribución-CompartirIgual 4.0 Internacional
+  (CC BY-SA 4.0) — https://creativecommons.org/licenses/by-sa/4.0/deed.es
+
+  Se permite usar, copiar, adaptar y redistribuir este material, incluso
+  con fines comerciales, siempre que se reconozca la autoría y las obras
+  derivadas se compartan bajo la misma licencia.
+-->
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>¿De dónde salió eso? — Artigas y las fuentes</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,600;1,400&family=Archivo:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --tinta:#16212e;
+    --tinta-2:#243447;
+    --papel:#efebdf;
+    --papel-2:#e3ddcd;
+    --azul:#3d6a94;
+    --rojo:#a8342a;
+    --verde:#3f6b4a;
+    --gris:#6d7a86;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{
+    background:var(--tinta);
+    color:var(--papel);
+    font-family:"Archivo",system-ui,sans-serif;
+    min-height:100vh;
+    padding:2rem 1.2rem 3rem;
+    line-height:1.5;
+  }
+  .marco{max-width:780px;margin:0 auto}
+
+  header{border-bottom:1px solid rgba(239,235,223,.22);padding-bottom:1.1rem;margin-bottom:1.6rem}
+  h1{
+    font-family:"Spectral",Georgia,serif;
+    font-size:clamp(1.9rem,5vw,2.9rem);
+    font-weight:600;line-height:1.05;letter-spacing:-.015em;
+  }
+  header p{color:#a8b4bf;font-size:.95rem;margin-top:.5rem;max-width:52ch}
+
+  .barra{display:flex;gap:.3rem;margin:1.2rem 0 1.4rem;flex-wrap:wrap}
+  .paso{height:4px;flex:1 1 14px;background:rgba(239,235,223,.18);border-radius:2px}
+  .paso.ok{background:var(--verde)}
+  .paso.mal{background:var(--rojo)}
+  .paso.aqui{background:var(--papel)}
+
+  .ronda{font-family:"Spectral",serif;font-style:italic;color:#a8b4bf;font-size:1rem;margin-bottom:.5rem}
+
+  .carta{
+    background:var(--papel);color:var(--tinta);
+    border-radius:2px 2px 14px 2px;
+    padding:1.7rem 1.6rem;
+    box-shadow:0 14px 30px rgba(0,0,0,.35);
+    position:relative;
+  }
+  .carta::before{
+    content:"";position:absolute;left:0;top:0;bottom:0;width:5px;
+    background:var(--azul);border-radius:2px 0 0 2px;
+  }
+  .carta.reg::before{background:var(--verde)}
+  .cita{font-family:"Spectral",Georgia,serif;font-size:1.22rem;line-height:1.5}
+  .cita.q::before{content:"«"}
+  .cita.q::after{content:"»"}
+
+  .opciones{display:grid;gap:.6rem;margin-top:1.3rem}
+  @media(min-width:620px){.opciones{grid-template-columns:repeat(3,1fr)}}
+  button.op{
+    font-family:"Archivo",sans-serif;font-size:.92rem;font-weight:500;
+    background:transparent;color:var(--papel);
+    border:1px solid rgba(239,235,223,.4);border-radius:3px;
+    padding:.85rem .7rem;cursor:pointer;text-align:left;line-height:1.3;
+  }
+  button.op:hover{border-color:var(--papel);background:rgba(239,235,223,.07)}
+  button.op:focus-visible{outline:2px solid var(--azul);outline-offset:2px}
+  button.op small{display:block;color:#9aa6b1;font-weight:400;font-size:.78rem;margin-top:.15rem}
+
+  .fallo{
+    margin-top:1.2rem;padding:1rem 1.1rem;
+    border-left:3px solid var(--azul);background:rgba(239,235,223,.06);
+    font-size:.95rem;
+  }
+  .fallo .veredicto{font-weight:700;display:block;margin-bottom:.3rem}
+  .fallo.bien .veredicto{color:#8fc79f}
+  .fallo.mal{border-left-color:var(--rojo)}
+  .fallo.mal .veredicto{color:#e0938b}
+
+  .acciones{margin-top:1.3rem;display:flex;gap:.7rem;flex-wrap:wrap}
+  button.avanzar{
+    font-family:"Archivo",sans-serif;font-size:.95rem;font-weight:700;
+    background:var(--papel);color:var(--tinta);border:none;border-radius:3px;
+    padding:.8rem 1.6rem;cursor:pointer;
+  }
+  button.avanzar:hover{background:#fff}
+  button.avanzar:focus-visible{outline:2px solid var(--azul);outline-offset:2px}
+  button.sec{background:transparent;color:var(--papel);border:1px solid rgba(239,235,223,.4)}
+  button.sec:hover{background:rgba(239,235,223,.08)}
+
+  /* ronda 2 */
+  .parrafo{background:var(--papel);color:var(--tinta);padding:1.6rem;border-radius:2px;
+           box-shadow:0 14px 30px rgba(0,0,0,.35)}
+  .parrafo .fuente{font-size:.78rem;color:#7b6f5c;margin-bottom:.9rem;font-style:italic}
+  .frase{
+    font-family:"Spectral",Georgia,serif;font-size:1.08rem;line-height:1.65;
+    display:inline;cursor:pointer;border-bottom:2px solid transparent;padding:.05em 0;
+  }
+  .frase:hover{border-bottom-color:var(--azul)}
+  .frase.sel{background:#f6e2a8;border-bottom-color:var(--rojo)}
+  .frase.acierto{background:#cfe6d4;border-bottom-color:var(--verde)}
+  .frase.perdida{background:#f2cdc9;border-bottom-color:var(--rojo)}
+  .frase:focus-visible{outline:2px solid var(--azul);outline-offset:1px}
+  .pista{color:#a8b4bf;font-size:.9rem;margin-top:1rem}
+  .desglose{margin-top:1.2rem;display:grid;gap:.7rem}
+  .item{border-left:3px solid var(--rojo);padding:.7rem 1rem;background:rgba(239,235,223,.06);font-size:.93rem}
+  .item b{display:block;font-family:"Spectral",serif;font-style:italic;font-weight:400;
+          color:#d8cfc0;margin-bottom:.25rem}
+
+  .cierre{background:var(--papel);color:var(--tinta);padding:2rem 1.8rem;border-radius:2px}
+  .cierre h2{font-family:"Spectral",serif;font-size:1.7rem;font-weight:600;line-height:1.15}
+  .cierre p{margin-top:.8rem;font-size:1rem;max-width:58ch}
+  .cierre .regla{
+    margin-top:1.4rem;padding:1rem 1.2rem;background:var(--papel-2);
+    font-family:"Spectral",Georgia,serif;font-size:1.12rem;line-height:1.5;
+    border-left:4px solid var(--rojo);
+  }
+  .marcador{font-family:"Spectral",serif;font-size:2.6rem;line-height:1;margin-bottom:.4rem}
+
+  footer{margin-top:2.5rem;color:#7c8894;font-size:.8rem;border-top:1px solid rgba(239,235,223,.15);
+         padding-top:.9rem}
+  footer p + p{margin-top:.55rem}
+  footer .creditos{color:#8d99a5}
+  footer a{color:#8fb0cc;text-decoration:underline;text-underline-offset:2px}
+  footer a:hover{color:var(--papel)}
+  @media (prefers-reduced-motion: no-preference){
+    .carta,.parrafo,.cierre{animation:entra .28s ease-out}
+    @keyframes entra{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+  }
+</style>
+</head>
+<body>
+<div class="marco">
+
+  <header>
+    <h1>¿De dónde salió eso?</h1>
+    <p>Un juego de dos rondas sobre lo que Artigas pidió realmente y lo que se le atribuyó después. Todo se resuelve mirando la fuente.</p>
+  </header>
+
+  <div class="barra" id="barra"></div>
+  <div id="escena"></div>
+
+  <footer>
+    <p>Fuentes citadas: Instrucciones del Año XIII (abril de 1813) y Reglamento Provisorio para el Fomento de la Campaña y Seguridad de sus Hacendados (septiembre de 1815). Las citas están modernizadas en su ortografía.</p>
+    <p class="creditos">Idea, diseño y contenido: Ruben Leal, 2026. Desarrollado con asistencia de inteligencia artificial (Gemini y Claude), empleada en la redacción y la programación. Material libre bajo licencia <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.es" rel="license">CC BY-SA 4.0</a>: se puede usar, adaptar y compartir citando la autoría y manteniendo la misma licencia.</p>
+  </footer>
+</div>
+
+<script>
+var cartas = [
+  { t:"Pedir la declaración de la independencia absoluta de estas colonias, que ellas están absueltas de toda obligación de fidelidad a la corona de España.",
+    r:"instr", e:"Es el primer artículo de las Instrucciones. Lo que se reclama es la independencia respecto de España, no la de un país llamado Uruguay, que en 1813 no existía ni estaba en discusión." },
+  { t:"No admitir otro sistema que el de confederación para el pacto recíproco con las provincias.",
+    r:"instr", e:"Acá está el centro del conflicto con Buenos Aires: no se discutía si romper con España, sino cómo se organizaría el poder entre las provincias una vez rota esa dependencia." },
+  { t:"Promover la libertad civil y religiosa en toda su extensión imaginable.",
+    r:"instr", e:"Aparece en las Instrucciones. La libertad religiosa en 1813, en un territorio católico por definición legal, era una posición bastante más audaz de lo que hoy suena." },
+  { t:"Que el sitio del gobierno de las Provincias Unidas resida fuera de Buenos Aires.",
+    r:"instr", e:"Es uno de los artículos que más irritó al Congreso porteño. Mover la sede del gobierno era discutir quién manda, no dónde se firman los papeles." },
+  { t:"Los más infelices serán los más privilegiados.",
+    r:"regl", e:"Pertenece al Reglamento de 1815, no a las Instrucciones. Es el criterio con que se ordena el reparto de tierras, y es la frase que dos siglos después se sigue citando fuera de su contexto." },
+  { t:"Los negros libres, los zambos de esta clase, los indios y los criollos pobres podrán ser agraciados con suertes de estancia.",
+    r:"regl", e:"Reglamento de 1815. Define quiénes reciben tierra, y ese listado es lo que convierte al reparto en una medida social y no solo en una política de poblamiento." },
+  { t:"Los agraciados no podrán enajenar ni vender estas suertes de estancia.",
+    r:"regl", e:"Reglamento de 1815. La prohibición de vender busca que la tierra repartida no vuelva rápido a manos de los grandes propietarios." },
+  { t:"Artigas proclamó la independencia del Uruguay como nación soberana.",
+    r:"post", e:"No está en ninguna de las dos fuentes. En 1813 no hay un proyecto de país separado: hay una provincia que reclama entrar en una confederación en igualdad de condiciones." },
+  { t:"Artigas quería separar a la Provincia Oriental de las Provincias Unidas.",
+    r:"post", e:"Es justamente lo contrario de lo que dicen las Instrucciones. Artigas pedía integrarse por pacto, no retirarse. La confusión viene de leer 1813 desde 1830." },
+  { t:"Artigas es el fundador de la nacionalidad uruguaya.",
+    r:"post", e:"Es una construcción muy posterior. La figura se vuelve fundacional cuando el Estado uruguayo ya existe y necesita un origen; no es lo que Artigas estaba haciendo en 1813." }
+];
+
+var ordenEtq = ["instr", "regl", "post"];
+var etiquetas = {
+  instr: { nom:"Instrucciones del Año XIII", sub:"abril de 1813" },
+  regl:  { nom:"Reglamento Provisorio",      sub:"septiembre de 1815" },
+  post:  { nom:"Se le atribuyó después",     sub:"no está en las fuentes" }
+};
+
+var frases = [
+  { t:"José Artigas encabezó la revolución en la Banda Oriental desde 1811. ", mal:false },
+  { t:"En abril de 1813 el Congreso de Tres Cruces aprobó las Instrucciones del Año XIII, donde Artigas declaró la independencia de la República Oriental del Uruguay. ", mal:true,
+    e:"Las Instrucciones piden la independencia respecto de la corona española. La República Oriental del Uruguay no existe en 1813 ni se menciona: se habla de la Provincia Oriental dentro de las Provincias Unidas." },
+  { t:"El documento proponía un gobierno central fuerte, con sede en Buenos Aires, capaz de unificar a las provincias. ", mal:true,
+    e:"Exactamente al revés. Las Instrucciones rechazan todo sistema que no sea la confederación y exigen que la sede del gobierno esté fuera de Buenos Aires." },
+  { t:"Dos años más tarde, el Reglamento Provisorio de 1815 ordenó la campaña repartiendo tierras entre los grandes hacendados de la Banda Oriental. ", mal:true,
+    e:"El Reglamento establece que los más infelices serán los más privilegiados, y enumera como beneficiarios a negros libres, zambos, indios y criollos pobres. Los grandes hacendados no eran los destinatarios." },
+  { t:"El proyecto artiguista entró en crisis con la invasión portuguesa iniciada en 1816.", mal:false }
+];
+
+var i = 0, marcas = [], fase = "r1", sel = [], revelado = false;
+var barra = document.getElementById("barra");
+var escena = document.getElementById("escena");
+
+function enSel(k){ for(var n=0; n<sel.length; n++){ if(sel[n]===k) return true; } return false; }
+function quitarSel(k){ var o=[]; for(var n=0; n<sel.length; n++){ if(sel[n]!==k) o.push(sel[n]); } sel=o; }
+
+function pintarBarra(){
+  var total = cartas.length + 1, h = "", k, c;
+  for(k=0; k<total; k++){
+    c = "paso";
+    if(marcas[k]===true) c += " ok";
+    else if(marcas[k]===false) c += " mal";
+    else if((fase==="r1" && k===i) || (fase==="r2" && k===cartas.length)) c += " aqui";
+    h += '<div class="' + c + '"></div>';
+  }
+  barra.innerHTML = h;
+}
+
+function ronda1(){
+  var c = cartas[i], ops = "", n, k, v, bs;
+  for(n=0; n<ordenEtq.length; n++){
+    k = ordenEtq[n]; v = etiquetas[k];
+    ops += '<button class="op" data-r="' + k + '">' + v.nom + '<small>' + v.sub + '</small></button>';
+  }
+  escena.innerHTML =
+    '<p class="ronda">Ronda 1 &middot; ficha ' + (i+1) + ' de ' + cartas.length + '</p>' +
+    '<div class="carta"><p class="cita q">' + c.t + '</p></div>' +
+    '<div class="opciones">' + ops + '</div><div id="resp"></div>';
+  bs = escena.querySelectorAll("button.op");
+  for(n=0; n<bs.length; n++){
+    bs[n].onclick = (function(b){ return function(){ responder(b.getAttribute("data-r")); }; })(bs[n]);
+  }
+  pintarBarra();
+}
+
+function responder(elegida){
+  var c = cartas[i], bien = (elegida === c.r), bs = escena.querySelectorAll("button.op"), n, sig, veredicto;
+  marcas[i] = bien;
+  for(n=0; n<bs.length; n++){ bs[n].disabled = true; }
+  veredicto = bien ? "Correcto." : ("No es de ahí. Sale de: " + etiquetas[c.r].nom + ".");
+  document.getElementById("resp").innerHTML =
+    '<div class="fallo ' + (bien ? "bien" : "mal") + '">' +
+      '<span class="veredicto">' + veredicto + '</span>' + c.e +
+    '</div>' +
+    '<div class="acciones"><button class="avanzar" id="sig">' +
+      (i < cartas.length-1 ? "Siguiente ficha" : "Pasar a la ronda 2") +
+    '</button></div>';
+  sig = document.getElementById("sig");
+  sig.onclick = function(){
+    i++;
+    if(i < cartas.length){ ronda1(); } else { fase = "r2"; ronda2(); }
+  };
+  sig.focus();
+  pintarBarra();
+}
+
+function ronda2(){
+  var p = "", n, ss;
+  for(n=0; n<frases.length; n++){
+    p += '<span class="frase" tabindex="0" data-k="' + n + '">' + frases[n].t + '</span>';
+  }
+  escena.innerHTML =
+    '<p class="ronda">Ronda 2 &middot; el párrafo que escribió la inteligencia artificial</p>' +
+    '<div class="parrafo">' +
+      '<p class="fuente">Respuesta generada por un asistente de IA a la pregunta: &laquo;¿Qué fueron las Instrucciones del Año XIII?&raquo;</p>' +
+      '<p>' + p + '</p>' +
+    '</div>' +
+    '<p class="pista">Hay tres afirmaciones que las fuentes desmienten. Tocá cada una para marcarla y después comprobá contra el documento.</p>' +
+    '<div class="acciones">' +
+      '<button class="avanzar" id="verificar">Comprobar contra la fuente</button>' +
+      '<button class="avanzar sec" id="limpiar">Borrar marcas</button>' +
+    '</div><div id="detalle"></div>';
+  ss = escena.querySelectorAll(".frase");
+  for(n=0; n<ss.length; n++){
+    (function(s){
+      function alternar(){
+        if(revelado) return;
+        var k = parseInt(s.getAttribute("data-k"), 10);
+        if(enSel(k)){ quitarSel(k); s.className = "frase"; }
+        else { sel.push(k); s.className = "frase sel"; }
+      }
+      s.onclick = alternar;
+      s.onkeydown = function(e){
+        var t = e.key || e.keyCode;
+        if(t === "Enter" || t === " " || t === 13 || t === 32){ if(e.preventDefault) e.preventDefault(); alternar(); }
+      };
+    })(ss[n]);
+  }
+  document.getElementById("limpiar").onclick = function(){ if(!revelado){ sel = []; ronda2(); } };
+  document.getElementById("verificar").onclick = verificar;
+  pintarBarra();
+}
+
+function verificar(){
+  var ss = escena.querySelectorAll(".frase"), bien = 0, falsos = 0, n, k, f, det = "", extra, fin;
+  revelado = true;
+  for(n=0; n<ss.length; n++){
+    k = parseInt(ss[n].getAttribute("data-k"), 10); f = frases[k];
+    if(f.mal && enSel(k)){ ss[n].className = "frase acierto"; bien++; }
+    else if(f.mal){ ss[n].className = "frase perdida"; }
+    else if(enSel(k)){ ss[n].className = "frase perdida"; falsos++; }
+    else { ss[n].className = "frase"; }
+  }
+  marcas[cartas.length] = (bien === 3 && falsos === 0);
+  for(n=0; n<frases.length; n++){
+    if(frases[n].mal){
+      det += '<div class="item"><b>' + frases[n].t.replace(/^\s+|\s+$/g, "") + '</b>' + frases[n].e + '</div>';
+    }
+  }
+  extra = falsos ? (" y marcaste " + falsos + " que estaba" + (falsos > 1 ? "n" : "") + " bien") : "";
+  document.getElementById("detalle").innerHTML =
+    '<div class="fallo ' + ((bien===3 && falsos===0) ? "bien" : "mal") + '">' +
+      '<span class="veredicto">Encontraste ' + bien + ' de 3' + extra + '.</span>' +
+      'El párrafo está bien escrito y suena seguro. Eso no lo vuelve cierto.' +
+    '</div>' +
+    '<div class="desglose">' + det + '</div>' +
+    '<div class="acciones"><button class="avanzar" id="fin">Cerrar</button></div>';
+  fin = document.getElementById("fin");
+  fin.onclick = cierre;
+  fin.focus();
+  pintarBarra();
+}
+
+function cierre(){
+  var total = cartas.length + 1, suma = 0, n;
+  for(n=0; n<marcas.length; n++){ if(marcas[n]) suma++; }
+  escena.innerHTML =
+    '<div class="cierre">' +
+      '<p class="marcador">' + suma + '/' + total + '</p>' +
+      '<h2>Lo que dice la fuente y lo que decimos nosotros son dos cosas distintas</h2>' +
+      '<p>Las tres afirmaciones falsas del párrafo no eran disparates: eran las versiones más repetidas del tema. Un modelo de lenguaje devuelve lo que circula, y lo que circula sobre Artigas viene cargado de un siglo de usos políticos de su figura.</p>' +
+      '<p>Usar inteligencia artificial para estudiar no está mal. Lo que no se puede saltear es el paso siguiente.</p>' +
+      '<div class="regla">Si no podés señalar en qué documento está, todavía no lo sabés.</div>' +
+    '</div>' +
+    '<div class="acciones"><button class="avanzar sec" id="otra">Jugar de nuevo</button></div>';
+  document.getElementById("otra").onclick = function(){
+    i = 0; marcas = []; fase = "r1"; sel = []; revelado = false; ronda1();
+  };
+  pintarBarra();
+}
+
+ronda1();
+
+</script>
+</body>
+</html>
