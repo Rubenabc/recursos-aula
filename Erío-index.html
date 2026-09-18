@@ -1,0 +1,301 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Demo de aula — cómo una página te lee el tipeo</title>
+<style>
+  :root{
+    --azul:#08528d;
+    --azul-panel:#0a2a4a;
+    --azul-oscuro:#083a66;
+    --azul-link:#0d6bb0;
+    --fondo-input:#eef4fb;
+    --gris-borde:#c9d4de;
+    --texto:#1c2733;
+    --amarillo:#ffcf3f;
+    --alerta:#c0392b;
+    --verde-term:#39d353;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    background:var(--azul);
+    color:var(--texto);
+    min-height:100vh;
+    display:flex;flex-direction:column;
+  }
+
+  .aviso{
+    background:var(--amarillo);color:#3a2c00;text-align:center;
+    padding:.65rem 1rem;font-size:1.02rem;font-weight:600;
+  }
+
+  /* ===== marca ===== */
+  .marca{
+    display:flex;align-items:center;gap:.7rem;
+    padding:1.3rem 0 .4rem;color:#fff;
+    max-width:1150px;width:100%;margin:0 auto;
+  }
+  .marca .e{
+    font-size:2.6rem;font-weight:800;color:var(--amarillo);
+    line-height:1;font-style:italic;
+  }
+  .marca .n{font-size:2rem;font-weight:800;letter-spacing:1px}
+  .marca .sub{font-size:.8rem;opacity:.85;align-self:flex-end;padding-bottom:.4rem}
+
+  /* ===== tarjeta principal ===== */
+  .wrap{padding:.6rem 2.2rem 1.4rem;flex:1;display:flex;justify-content:center}
+  .panel{
+    display:grid;grid-template-columns:1fr 1fr;
+    background:#fff;border-radius:10px;overflow:hidden;
+    box-shadow:0 20px 50px rgba(0,0,0,.25);
+    max-width:1150px;width:100%;
+  }
+  @media (max-width:850px){ .panel{grid-template-columns:1fr} }
+
+  /* --- login --- */
+  .login{padding:2rem 2.4rem 2.2rem}
+  .login h1{color:var(--azul-oscuro);font-size:1.7rem;margin-bottom:1.4rem}
+  .campo{margin-bottom:1.05rem}
+  .campo label{display:block;font-size:1rem;color:#2a3742;margin-bottom:.35rem}
+  .campo select,.campo input{
+    width:100%;padding:.8rem 1rem;font-size:1.05rem;
+    border:1.5px solid var(--gris-borde);border-radius:7px;
+    outline:none;background:#fff;transition:border-color .15s;
+  }
+  .campo input{background:var(--fondo-input)}
+  .campo select:focus,.campo input:focus{border-color:var(--azul)}
+  .pass-wrap{position:relative}
+  .pass-wrap input{padding-right:3rem}
+  .ojo{
+    position:absolute;right:.6rem;top:50%;transform:translateY(-50%);
+    background:none;border:none;cursor:pointer;padding:.4rem;
+    color:var(--azul-link);font-size:1.3rem;line-height:1;
+  }
+  .links{display:flex;justify-content:space-between;flex-wrap:wrap;gap:.6rem;margin:.6rem 0 1.3rem}
+  .links a{color:var(--azul-link);text-decoration:none;font-size:.95rem}
+  .links a:hover{text-decoration:underline}
+  .acciones{display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap}
+  .btn{
+    padding:.85rem 2.6rem;font-size:1.1rem;font-weight:600;color:#fff;
+    background:var(--azul);border:none;border-radius:24px;cursor:pointer;
+    transition:background .15s;
+  }
+  .btn:hover{background:var(--azul-oscuro)}
+  .recordar{display:flex;align-items:center;gap:.5rem;color:#3a4750;font-size:.98rem}
+  .switch{width:42px;height:22px;background:#c3ccd4;border-radius:12px;position:relative;cursor:pointer}
+  .switch::after{content:"";position:absolute;width:18px;height:18px;background:#fff;border-radius:50%;top:2px;left:2px}
+
+  /* --- panel seguridad (lado derecho, como el real) --- */
+  .seg-col{display:flex;flex-direction:column}
+  .seg-top{background:var(--azul-panel);color:#fff;padding:2rem;display:grid;grid-template-columns:auto 1fr;gap:1.6rem;flex:1}
+  .seg-top .cuida{font-size:2.2rem;font-weight:800;line-height:1.05;letter-spacing:1px;font-family:"Courier New",monospace;color:#fff}
+  .seg-top .cuida span{color:var(--amarillo)}
+  .seg-top .cuida .mouse{font-size:1.7rem;display:inline-block;transform:rotate(-20deg)}
+  .promo p{font-size:.92rem;line-height:1.5;color:#e4edf5;margin-bottom:.7rem}
+  .promo .redes{list-style:none;margin:.3rem 0 1rem;display:flex;flex-direction:column;gap:.45rem}
+  .promo .redes li{display:flex;align-items:center;gap:.5rem;font-size:.92rem;color:#e4edf5}
+  .promo .redes .ic{width:20px;height:20px;border-radius:50%;background:var(--amarillo);color:var(--azul-panel);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:.72rem}
+  .promo .redes .ok{color:#3aa0e0;font-size:.8rem}
+  .promo .pill{display:inline-block;background:var(--amarillo);color:var(--azul-oscuro);font-weight:700;padding:.5rem 1.1rem;border-radius:20px;text-decoration:none;font-size:.92rem}
+  .seg-bottom{background:#fff;padding:1.5rem 2rem 1.8rem;text-align:center}
+  .seg-bottom h2{color:var(--azul);font-size:1.3rem;display:inline-block;border-bottom:3px solid var(--amarillo);padding-bottom:.45rem}
+  .seg-bottom p{color:#2a3742;font-size:.95rem;line-height:1.55;margin-top:1rem}
+  .carrusel{margin-top:1rem}
+  .carrusel span{display:inline-block;width:9px;height:9px;border-radius:50%;background:var(--azul)}
+
+  /* ===== consola atacante ===== */
+  .consola{
+    background:#0a0f14;color:#d7e0e8;padding:1.3rem 2.2rem 1.6rem;
+    border-top:3px solid var(--alerta);
+  }
+  .consola .head{
+    display:flex;align-items:center;gap:.55rem;color:var(--alerta);
+    font-weight:700;font-size:1.15rem;margin-bottom:1rem;
+  }
+  .dot{width:11px;height:11px;border-radius:50%;background:var(--alerta);animation:blink 1s steps(2,start) infinite}
+  @keyframes blink{50%{opacity:.2}}
+  .grid-cap{display:grid;grid-template-columns:1fr 1fr 1.2fr;gap:1.1rem}
+  @media (max-width:850px){ .grid-cap{grid-template-columns:1fr} }
+  .caja{background:#111b24;border:1px solid #22323f;border-radius:9px;padding:1rem 1.2rem;
+    font-family:"SFMono-Regular",Consolas,Menlo,monospace}
+  .caja .k{color:#7f93a3;font-size:.82rem;display:block;margin-bottom:.4rem}
+  .caja .v{font-size:1.45rem;color:var(--verde-term);min-height:1.4em;word-break:break-all}
+  .caja .v .cursor{display:inline-block;width:.55ch;background:var(--verde-term);color:transparent;animation:blink 1s steps(2,start) infinite}
+  .vacio{color:#3f5060;font-style:italic;font-size:1rem}
+  .log{max-height:16vh;overflow-y:auto;font-size:.9rem;line-height:1.7;color:#8fb9d6}
+  .log .t{color:#556772}
+  .log .cn{color:var(--amarillo)}
+  .reset{margin-top:1rem;background:transparent;border:1.5px solid #33454f;color:#9fb2c0;
+    padding:.5rem 1.1rem;border-radius:7px;cursor:pointer;font-size:.9rem}
+  .reset:hover{border-color:#5b7382;color:#cfe0ec}
+
+  .footer-banco{
+    background:var(--azul);color:#c4d3e0;
+    display:flex;align-items:center;justify-content:space-between;
+    padding:.9rem 0;flex-wrap:wrap;gap:1rem;
+    max-width:1150px;width:100%;margin:.6rem auto 0;
+    border-top:1px solid rgba(255,255,255,.12);
+  }
+  .footer-logo{display:flex;align-items:center;gap:.6rem;color:#fff;font-weight:800;font-size:.8rem;line-height:1.05}
+  .footer-logo .fl-icon{font-size:1.6rem;color:var(--amarillo)}
+  .footer-links{display:flex;align-items:center;gap:1.2rem;flex-wrap:wrap;font-size:.92rem}
+  .footer-links a{color:#c4d3e0;text-decoration:none}
+  .footer-links a:hover{color:#fff;text-decoration:underline}
+  .footer-links .sep{opacity:.4}
+  .footer-links .copy{color:#fff;font-weight:600}
+
+  .pie{background:#06263f;color:#a9bccb;text-align:center;padding:.8rem;font-size:.95rem}
+  .pie b{color:#fff}
+</style>
+</head>
+<body>
+
+  <div class="aviso">
+    ⚠️ DEMO DE AULA — <b>eRÍO no existe, es un banco inventado.</b> Nada se envía ni se guarda: todo pasa en esta pantalla, para mostrar cómo una página puede leer lo que tipeás.
+  </div>
+
+  <div class="marca">
+    <span class="e">e</span><span class="n">RÍO</span>
+    <span class="sub">Banco del Río de la Plata</span>
+  </div>
+
+  <div class="wrap">
+    <div class="panel">
+
+      <!-- LADO IZQUIERDO: login realista -->
+      <div class="login">
+        <h1>Ingreso de Usuario</h1>
+
+        <div class="campo">
+          <label>País</label>
+          <select><option>Uruguay</option><option>Argentina</option><option>Brasil</option></select>
+        </div>
+        <div class="campo">
+          <label>Tipo de Documento</label>
+          <select><option>C.I.</option><option>Pasaporte</option><option>Otro</option></select>
+        </div>
+        <div class="campo">
+          <label>N° de Documento</label>
+          <input id="doc" type="text" inputmode="numeric" autocomplete="off"
+                 placeholder="Número de documento" data-nombre="Documento">
+        </div>
+        <div class="campo">
+          <label>Contraseña</label>
+          <div class="pass-wrap">
+            <input id="pass" type="password" autocomplete="off" placeholder="Tu contraseña" data-nombre="Contraseña">
+            <button class="ojo" type="button" onclick="verClave()" title="Mostrar / ocultar">👁</button>
+          </div>
+        </div>
+
+        <div class="links">
+          <a href="#" onclick="return false">¿Olvidó su contraseña?</a>
+          <a href="#" onclick="return false">Tengo un código de recuperación</a>
+        </div>
+
+        <div class="acciones">
+          <button class="btn" type="button" onclick="ingresar()">Ingresar</button>
+          <span class="recordar"><span class="switch"></span> Recordar Usuario</span>
+        </div>
+      </div>
+
+      <!-- LADO DERECHO: promo arriba (navy) + comunicado abajo (blanco), como el real -->
+      <div class="seg-col">
+        <div class="seg-top">
+          <div class="cuida">Cuidá<br>tus<br><span>clics</span><br><span class="mouse">➤</span></div>
+          <div class="promo">
+            <p>Nuestros <b>sorteos y beneficios</b> se publican únicamente en las <b>redes sociales oficiales</b>:</p>
+            <ul class="redes">
+              <li><span class="ic">◎</span> rio_oficial <span class="ok">✔</span></li>
+              <li><span class="ic">f</span> Banco del Río <span class="ok">✔</span></li>
+              <li><span class="ic">✆</span> 2 1990 000 <span class="ok">✔</span></li>
+            </ul>
+            <p>Todos nuestros descuentos y sorteos están en el sitio Beneficios:</p>
+            <a class="pill" href="#" onclick="return false">beneficios.erio.com.uy</a>
+          </div>
+        </div>
+        <div class="seg-bottom">
+          <h2>Comunicado de seguridad</h2>
+          <p>Si recibís un mensaje diciendo que ganaste un sorteo, verificá que sea de nuestras cuentas oficiales. Nunca te pediremos tus claves ni números de tarjeta.</p>
+          <div class="carrusel"><span></span></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- CONSOLA DEL ATACANTE -->
+  <div class="consola">
+    <div class="head"><span class="dot"></span> Lo que ve quien armó esta página — registro del tipeo en vivo</div>
+    <div class="grid-cap">
+      <div class="caja">
+        <span class="k">DOCUMENTO capturado</span>
+        <div class="v" id="cap-doc"><span class="vacio">esperando…</span></div>
+      </div>
+      <div class="caja">
+        <span class="k">CONTRASEÑA capturada — EN CLARO, sin puntitos</span>
+        <div class="v" id="cap-pass"><span class="vacio">esperando…</span></div>
+      </div>
+      <div class="caja">
+        <span class="k">tecla por tecla</span>
+        <div class="log" id="log"></div>
+      </div>
+    </div>
+    <button class="reset" onclick="reiniciar()">Limpiar para el próximo</button>
+  </div>
+
+  <div class="footer-banco">
+    <div class="footer-logo"><span class="fl-icon">▣</span> BANCO<br>DEL RÍO</div>
+    <div class="footer-links">
+      <a href="#" onclick="return false">Portal eRÍO</a>
+      <a href="#" onclick="return false">Seguridad</a>
+      <a href="#" onclick="return false">Gestión de Reclamos</a>
+      <span class="sep">|</span>
+      <span class="copy">© 2026 Banco del Río</span>
+      <span>Todos los derechos reservados</span>
+    </div>
+  </div>
+
+  <div class="pie">
+    El banco muestra la contraseña como <b>••••••</b>, pero acá abajo aparece <b>tal cual la escribiste</b>. La página se veía como un banco — y aun así leyó cada tecla.
+  </div>
+
+<script>
+  var doc=document.getElementById('doc'), pass=document.getElementById('pass');
+  var capDoc=document.getElementById('cap-doc'), capPass=document.getElementById('cap-pass');
+  var logBox=document.getElementById('log');
+
+  function hora(){var d=new Date();function p(n){return(n<10?'0':'')+n;}
+    return p(d.getHours())+':'+p(d.getMinutes())+':'+p(d.getSeconds());}
+
+  function pintar(dest,txt){
+    if(txt.length===0){dest.innerHTML='<span class="vacio">esperando…</span>';}
+    else{var esc=txt.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+      dest.innerHTML=esc+'<span class="cursor">|</span>';}
+  }
+  function registrar(campo,tecla){
+    var l=document.createElement('div'),m=tecla;
+    if(tecla===' ')m='␣';
+    l.innerHTML='<span class="t">'+hora()+'</span> · <span class="cn">'+campo+'</span> · <b>'+m+'</b>';
+    logBox.appendChild(l);logBox.scrollTop=logBox.scrollHeight;
+  }
+  function conectar(inp,dest){
+    inp.addEventListener('input',function(){pintar(dest,inp.value);});
+    inp.addEventListener('keydown',function(e){var t=e.key;
+      if(t.length===1)registrar(inp.dataset.nombre,t);
+      else if(t==='Backspace')registrar(inp.dataset.nombre,'⌫');});
+  }
+  conectar(doc,capDoc);conectar(pass,capPass);
+
+  function verClave(){pass.type=(pass.type==='password')?'text':'password';}
+  function ingresar(){
+    var l=document.createElement('div');
+    l.innerHTML='<span class="t">'+hora()+'</span> · <b style="color:#c0392b">ENVIADO — datos completos capturados</b>';
+    logBox.appendChild(l);logBox.scrollTop=logBox.scrollHeight;
+  }
+  function reiniciar(){doc.value='';pass.value='';pass.type='password';
+    pintar(capDoc,'');pintar(capPass,'');logBox.innerHTML='';doc.focus();}
+</script>
+</body>
+</html>
