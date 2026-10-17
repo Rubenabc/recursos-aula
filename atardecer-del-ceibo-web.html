@@ -1,0 +1,386 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Atardecer del Ceibo · Glamping wellness en las sierras de Rocha</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Atkinson+Hyperlegible:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+  --bg:#FBF5E8;--surface:#FFFFFF;--ink:#2A2118;--muted:#6B5C4B;--line:#E6D8BF;
+  --ceibo:#D6402A;--sun:#F2B24E;--coral:#E8754A;--dusk:#6B5A8E;--forest:#2F4A32;--moss:#58773D;--wood:#7A4B2A;
+  --on-dark:#FFF6E6;
+  --serif:"Cormorant Garamond","Georgia",serif;
+  --body:"Atkinson Hyperlegible","Segoe UI",system-ui,sans-serif;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#15120E;--surface:#1F1A14;--ink:#F3EAD8;--muted:#BFAE96;--line:#35291D;
+    --ceibo:#F0644D;--sun:#F6C26B;--coral:#F08A60;--dusk:#A790CC;--forest:#8DBF8F;--moss:#9CC47A;--wood:#D3A57A;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#15120E;--surface:#1F1A14;--ink:#F3EAD8;--muted:#BFAE96;--line:#35291D;
+  --ceibo:#F0644D;--sun:#F6C26B;--coral:#F08A60;--dusk:#A790CC;--forest:#8DBF8F;--moss:#9CC47A;--wood:#D3A57A;
+}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 60px)}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:18px;line-height:1.6}
+:focus-visible{outline:3px solid var(--ceibo);outline-offset:3px}
+.wrap{max-width:1000px;margin:0 auto;padding:0 20px}
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:#241B2E;color:var(--on-dark)}
+nav .wrap{display:flex;gap:4px;align-items:center;overflow-x:auto;padding-top:8px;padding-bottom:8px}
+nav b{font-family:var(--serif);font-size:1.25rem;margin-right:10px;white-space:nowrap}
+nav a{color:var(--on-dark);text-decoration:none;font-size:.92rem;padding:6px 11px;border-radius:999px;white-space:nowrap;opacity:.92}
+nav a:hover{background:rgba(255,255,255,.14)}
+.lang{margin-left:auto;display:flex;gap:4px}
+.lang button{font:inherit;font-size:.85rem;font-weight:700;color:var(--on-dark);background:transparent;border:1.5px solid rgba(255,246,230,.5);border-radius:999px;padding:3px 10px;cursor:pointer}
+.lang button[aria-pressed="true"]{background:var(--sun);color:#2A1B08;border-color:var(--sun)}
+.hero{position:relative;overflow:hidden;color:var(--on-dark);padding:70px 0 190px;text-align:center;
+  background:linear-gradient(180deg,#2A2140 0%,#5B4A86 30%,#C96A6A 62%,#F2B24E 100%)}
+.hero .wrap{position:relative;z-index:2}
+.hero h1{font-family:var(--serif);font-weight:700;font-size:clamp(2.8rem,10vw,5.6rem);line-height:.95;margin:6px 0 12px;letter-spacing:-.01em}
+.hero .tag{font-family:var(--serif);font-size:clamp(1.3rem,4vw,1.9rem);font-style:italic;margin:0 0 6px}
+.hero p.s{max-width:46ch;margin:0 auto 22px;font-size:1.1rem;opacity:.96}
+.eyebrow{letter-spacing:.14em;text-transform:uppercase;font-size:.8rem;font-weight:700;opacity:.9}
+.btn{display:inline-block;font:inherit;font-weight:700;text-decoration:none;border:0;cursor:pointer;padding:13px 26px;border-radius:999px;background:var(--ceibo);color:#fff;margin:4px}
+.btn.line{background:transparent;color:var(--on-dark);border:2px solid rgba(255,246,230,.75)}
+.sunsvg{position:absolute;left:0;right:0;bottom:0;width:100%;height:190px;z-index:1}
+.flower{position:absolute;right:7%;top:42px;width:90px;opacity:.95;z-index:1}
+section{padding:64px 0}
+section.alt{background:var(--surface);border-block:1px solid var(--line)}
+h2{font-family:var(--serif);font-weight:700;font-size:clamp(2rem,6vw,3rem);line-height:1.02;margin:0 0 10px}
+.sub{color:var(--muted);max-width:62ch;margin:0 0 28px}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));gap:14px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:20px}
+section.alt .card{background:var(--bg)}
+.card h3{font-family:var(--serif);font-size:1.4rem;margin:2px 0 6px}
+.card p{margin:0;color:var(--muted);font-size:.98rem}
+.ico{font-size:1.8rem;display:block;margin-bottom:4px}
+.pct{font-family:var(--serif);font-weight:700;font-size:2.6rem;color:var(--ceibo);line-height:1;display:block}
+.bars{display:grid;gap:14px;max-width:720px}
+.bar .t{display:flex;justify-content:space-between;gap:12px;margin-bottom:4px;font-size:.98rem}
+.bar .t b{font-family:var(--serif);font-size:1.25rem;color:var(--ceibo)}
+.track{height:14px;background:var(--line);border-radius:7px;overflow:hidden}
+.fill{height:100%;background:linear-gradient(90deg,var(--sun),var(--coral));border-radius:7px;transition:width 1s ease}
+.note{font-size:.88rem;color:var(--muted);margin-top:14px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:26px;align-items:start}
+.yurt{width:100%;max-width:340px;justify-self:center}
+.tarifas{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px}
+.tarifa{background:var(--surface);border:2px solid var(--line);border-radius:20px;padding:22px;text-align:center}
+section.alt .tarifa{background:var(--bg)}
+.tarifa.hi{border-color:var(--ceibo)}
+.tarifa h3{font-family:var(--serif);font-size:1.4rem;margin:0 0 4px}
+.tarifa .p{font-family:var(--serif);font-weight:700;font-size:2.8rem;color:var(--ceibo);line-height:1}
+.tarifa small{display:block;color:var(--muted);margin-top:6px}
+.list{columns:2;column-gap:30px;padding-left:20px;margin:0}
+.list li{margin:5px 0;break-inside:avoid}
+.dist{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin-bottom:22px}
+.dist div{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:14px;text-align:center}
+section.alt .dist div{background:var(--bg)}
+.dist b{font-family:var(--serif);font-size:2rem;color:var(--ceibo);display:block;line-height:1}
+.legal{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px}
+.legal div{background:var(--surface);border:1px solid var(--line);border-left:5px solid var(--moss);border-radius:12px;padding:14px;font-size:.97rem}
+.legal b{display:block;font-family:var(--serif);font-size:1.15rem}
+.form{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;align-items:end;background:var(--bg);border:1px solid var(--line);border-radius:18px;padding:18px}
+label.f{display:grid;gap:4px;font-size:.92rem;font-weight:700}
+label.f input,label.f select{font:inherit;font-weight:400;border:2px solid var(--line);background:var(--surface);color:var(--ink);border-radius:10px;padding:9px 11px;width:100%}
+#fm{margin-top:12px;font-weight:700;color:var(--moss)}
+.team{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
+.person{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:20px;text-align:center}
+.person b{font-family:var(--serif);font-size:1.35rem;display:block}
+.ig{display:inline-flex;align-items:center;gap:10px;background:var(--ceibo);color:#fff;text-decoration:none;font-weight:700;font-size:1.15rem;padding:14px 26px;border-radius:999px}
+.ig svg{width:24px;height:24px}
+.disc{background:var(--surface);border:2px solid var(--sun);border-radius:14px;padding:14px 18px;margin-top:22px;font-size:.95rem}
+footer{background:#241B2E;color:var(--on-dark);padding:36px 0 54px;font-size:.92rem}
+footer p{margin:0 0 10px;opacity:.92;max-width:75ch}
+@media (max-width:760px){.two{grid-template-columns:1fr}.list{columns:1}.flower{width:62px;right:5%}}
+@media (prefers-reduced-motion:reduce){.fill{transition:none}}
+@media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
+</style>
+</head>
+<body>
+<nav><div class="wrap">
+  <b>Atardecer del Ceibo</b>
+  <a href="#pausa" data-k="n1">La pausa</a><a href="#yurtas" data-k="n2">Yurtas</a><a href="#experiencias" data-k="n3">Experiencias</a><a href="#ubicacion" data-k="n4">Ubicación</a><a href="#tarifas" data-k="n5">Tarifas</a><a href="#sostenible" data-k="n6">Sostenibilidad</a><a href="#equipo" data-k="n7">Equipo</a><a href="#contacto" data-k="n8">Contacto</a>
+  <div class="lang" role="group" aria-label="Idioma"><button type="button" data-l="es" aria-pressed="true">ES</button><button type="button" data-l="en" aria-pressed="false">EN</button><button type="button" data-l="pt" aria-pressed="false">PT</button></div>
+</div></nav>
+
+<header class="hero">
+  <svg class="flower" viewBox="0 0 100 100" aria-hidden="true">
+    <g fill="#E4452D"><path d="M50 52C34 42 20 26 24 10c14 2 24 18 26 42z"/><path d="M50 52C60 34 76 24 92 30c-4 14-20 24-42 22z"/><path d="M50 52C66 58 80 74 74 90c-14-4-22-20-24-38z"/><path d="M50 52C40 70 22 80 8 72c6-14 20-22 42-20z"/></g>
+    <g fill="#F2B24E"><circle cx="50" cy="52" r="6"/></g>
+  </svg>
+  <div class="wrap">
+    <div class="eyebrow" data-k="eb">Glamping wellness · Sierras de Rocha, Uruguay</div>
+    <h1>Atardecer del Ceibo</h1>
+    <p class="tag" data-k="tag">La naturaleza te acompaña. Tú creces.</p>
+    <p class="s" data-k="hs">Diez yurtas y un espacio común para hacer una pausa, descansar y reconectar con el entorno, lejos del ritmo de la ciudad.</p>
+    <a class="btn" href="#experiencias" data-k="c1">Conocer la experiencia</a><a class="btn line" href="#tarifas" data-k="c2">Ver tarifas</a>
+  </div>
+  <svg class="sunsvg" viewBox="0 0 1200 190" preserveAspectRatio="none" aria-hidden="true">
+    <circle cx="880" cy="120" r="64" fill="#FFE29A" opacity=".9"/>
+    <path d="M0 140 C140 90 260 110 400 120 S660 70 820 110 1050 100 1200 80 V190 H0Z" fill="#7F6A8E" opacity=".55"/>
+    <path d="M0 165 C180 120 300 150 470 140 S760 105 960 145 1110 140 1200 125 V190 H0Z" fill="#4C5E43"/>
+    <path d="M0 185 C200 160 360 178 560 170 S900 150 1200 172 V190 H0Z" fill="#2F4A32"/>
+  </svg>
+</header>
+
+<main>
+<section id="pausa"><div class="wrap">
+  <h2 data-k="p_h">Un espacio de pausa</h2>
+  <p class="sub" data-k="p_s">La vida urbana y la exigencia constante nos alejan de la naturaleza. Atardecer del Ceibo nace para ofrecer tiempo de descanso, contemplación y contención en un entorno natural.</p>
+  <div class="cards">
+    <div class="card"><span class="pct">25 %</span><p data-k="p1">de aumento de los cuadros de ansiedad y depresión en el mundo tras la pandemia (OMS, 2022).</p></div>
+    <div class="card"><span class="pct">1 de 3</span><p data-k="p2">adultos en Uruguay siente falta de compañía al menos algunas veces (encuesta CIFRA para el MSP, 2025).</p></div>
+    <div class="card"><span class="pct">1 de 4</span><p data-k="p3">presenta un nivel elevado de soledad, sobre todo entre los jóvenes (CIFRA para el MSP, 2025).</p></div>
+  </div>
+  <div class="disc" data-k="disc">Atardecer del Ceibo es una propuesta de descanso y bienestar. No sustituye la atención clínica ni promete tratamientos o resultados de salud.</div>
+</div></section>
+
+<section id="yurtas" class="alt"><div class="wrap">
+  <h2 data-k="y_h">Diez yurtas en la sierra</h2>
+  <p class="sub" data-k="y_s">Cada yurta se integra con el paisaje mediante arquitectura biofílica y psicología del color. Además hay una yurta más grande para los servicios y los espacios comunes.</p>
+  <div class="two">
+    <div>
+      <div class="bars">
+        <div class="bar"><div class="t"><span data-k="y1">Arquitectura biofílica</span><b>62 %</b></div><div class="track"><div class="fill" data-w="62" style="width:62%"></div></div></div>
+        <div class="bar"><div class="t"><span data-k="y2">Iluminación regulable</span><b>49,4 %</b></div><div class="track"><div class="fill" data-w="49.4" style="width:49.4%"></div></div></div>
+        <div class="bar"><div class="t"><span data-k="y3">Aromaterapia</span><b>49,4 %</b></div><div class="track"><div class="fill" data-w="49.4" style="width:49.4%"></div></div></div>
+        <div class="bar"><div class="t"><span data-k="y4">Camas ergonómicas</span><b>35,4 %</b></div><div class="track"><div class="fill" data-w="35.4" style="width:35.4%"></div></div></div>
+        <div class="bar"><div class="t"><span data-k="y5">Menú de almohadas</span><b>26,6 %</b></div><div class="track"><div class="fill" data-w="26.6" style="width:26.6%"></div></div></div>
+      </div>
+      <p class="note" data-k="y_n">Comodidades que las personas encuestadas (79) consideran que debe tener cada yurta.</p>
+    </div>
+    <svg class="yurt" viewBox="0 0 300 240" role="img" aria-label="Ilustración de una yurta">
+      <path d="M20 200 H280" stroke="#7A4B2A" stroke-width="6" stroke-linecap="round"/>
+      <path d="M40 200 V120 C40 90 80 60 150 36 C220 60 260 90 260 120 V200Z" fill="#E7D5B0" stroke="#7A4B2A" stroke-width="4"/>
+      <path d="M150 36 L40 120 M150 36 L260 120 M150 36 L150 120" stroke="#B88A55" stroke-width="3" fill="none"/>
+      <circle cx="150" cy="26" r="9" fill="#F2B24E"/>
+      <path d="M120 200 V150 a30 30 0 0 1 60 0 V200Z" fill="#7A4B2A"/>
+      <g stroke="#F2B24E" stroke-width="3"><path d="M60 150 h22"/><path d="M218 150 h22"/></g>
+      <g fill="#E4452D"><circle cx="48" cy="214" r="5"/><circle cx="256" cy="216" r="5"/></g>
+    </svg>
+  </div>
+  <h3 style="font-family:var(--serif);font-size:1.6rem;margin:34px 0 10px" data-k="e_h">En los espacios comunes</h3>
+  <div class="cards">
+    <div class="card"><span class="ico" aria-hidden="true">🌿</span><h3 data-k="e1">Espacios verdes</h3><p>79,7 %</p></div>
+    <div class="card"><span class="ico" aria-hidden="true">💆</span><h3 data-k="e2">Masajes</h3><p>53,2 %</p></div>
+    <div class="card"><span class="ico" aria-hidden="true">🎶</span><h3 data-k="e3">Música suave</h3><p>50,6 %</p></div>
+    <div class="card"><span class="ico" aria-hidden="true">♨️</span><h3 data-k="e4">Hot tub</h3><p>49,4 %</p></div>
+  </div>
+</div></section>
+
+<section id="experiencias"><div class="wrap">
+  <h2 data-k="x_h">Experiencias para reconectar</h2>
+  <p class="sub" data-k="x_s">Actividades pensadas para descansar y disfrutar del entorno. Ninguna es obligatoria: cada persona elige su ritmo.</p>
+  <div class="cards">
+    <div class="card"><span class="ico" aria-hidden="true">🌌</span><h3 data-k="a1">Astroturismo</h3><p data-k="a1d">Observación del cielo nocturno de la sierra. Elegida por el 53,2 % de las personas encuestadas.</p></div>
+    <div class="card"><span class="ico" aria-hidden="true">🧘</span><h3 data-k="a2">Yoga y pilates</h3><p data-k="a2d">Movimiento consciente al aire libre. Yoga, pilates y taichí: 40,5 %.</p></div>
+    <div class="card"><span class="ico" aria-hidden="true">🥾</span><h3 data-k="a3">Senderismo</h3><p data-k="a3d">Caminatas por la sierra, sin apuro y sin pantallas. Elegido por el 39,2 %.</p></div>
+    <div class="card"><span class="ico" aria-hidden="true">🕯️</span><h3 data-k="a4">Meditación</h3><p data-k="a4d">Un momento de silencio y atención al presente. La elegiría el 38 % para disfrutar a solas.</p></div>
+  </div>
+  <p class="note" data-k="x_n">Las más votadas en la encuesta fueron además las catas de productos artesanales (54,4 %) y el turismo creativo (48,1 %).</p>
+</div></section>
+
+<section id="ubicacion" class="alt"><div class="wrap">
+  <h2 data-k="u_h">En las sierras de Rocha</h2>
+  <p class="sub" data-k="u_s">A pocos kilómetros de la ruta 109, lejos de la costa, para descentralizar el turismo y descubrir el interior del departamento.</p>
+  <div class="dist">
+    <div><b>19 km</b><span data-k="u1">de la ciudad de Rocha</span></div>
+    <div><b>43 km</b><span data-k="u2">de Aiguá</span></div>
+    <div><b>45 km</b><span data-k="u3">de Pueblo Garzón</span></div>
+  </div>
+  <h3 style="font-family:var(--serif);font-size:1.5rem;margin:0 0 8px" data-k="u_a">Para visitar en los alrededores</h3>
+  <ul class="list"><li>Aiguá</li><li>Cerro Catedral</li><li>Grutas de Salamanca</li><li>Alto de los Olivos</li><li>Laguna de Rocha</li><li data-k="u_ap">Apicultores de la zona</li></ul>
+</div></section>
+
+<section id="tarifas"><div class="wrap">
+  <h2 data-k="t_h">Tarifas</h2>
+  <p class="sub" data-k="t_s">Tarifas previstas en dólares estadounidenses, por noche. Hay una opción solo con alojamiento y otra con la experiencia completa.</p>
+  <div class="tarifas">
+    <div class="tarifa"><h3 data-k="t1">Solo alojamiento</h3><div class="p">US$ 100</div><small data-k="t1d">Temporada baja</small></div>
+    <div class="tarifa hi"><h3 data-k="t2">Experiencia completa</h3><div class="p">US$ 200</div><small data-k="t2d">Temporada baja · alojamiento y experiencia</small></div>
+    <div class="tarifa hi"><h3 data-k="t3">Experiencia completa</h3><div class="p">US$ 300</div><small data-k="t3d">Temporada alta · alojamiento y experiencia</small></div>
+  </div>
+  <p class="note" data-k="t_n">En la encuesta, el 53,2 % prefirió alojamiento con las actividades por separado y el 41,8 % actividades incluidas día a día.</p>
+  <h3 style="font-family:var(--serif);font-size:1.5rem;margin:30px 0 10px" data-k="r_h">Probá cómo sería reservar</h3>
+  <div class="form">
+    <label class="f"><span data-k="r1">Entrada</span><input type="date" id="r-in"></label>
+    <label class="f"><span data-k="r2">Noches</span><input type="number" id="r-n" min="1" max="30" value="2" inputmode="numeric"></label>
+    <label class="f"><span data-k="r3">Modalidad</span><select id="r-m"><option value="100">Solo alojamiento (temporada baja)</option><option value="200">Experiencia completa (temporada baja)</option><option value="300">Experiencia completa (temporada alta)</option></select></label>
+    <button class="btn" type="button" id="r-b" data-k="r4" style="margin:0">Ver el total</button>
+  </div>
+  <div id="fm" aria-live="polite"></div>
+  <p class="note" data-k="r_n">Maqueta ilustrativa: todavía no se reciben reservas. El total es por noche, según la tarifa elegida.</p>
+</div></section>
+
+<section id="sostenible" class="alt"><div class="wrap">
+  <h2 data-k="s_h">Sostenibilidad y comunidad</h2>
+  <p class="sub" data-k="s_s">Nuestros compromisos de partida. Los iremos midiendo con indicadores y no los presentamos como resultados ya alcanzados.</p>
+  <div class="cards">
+    <div class="card"><span class="ico" aria-hidden="true">♻️</span><h3 data-k="s1">Reducir</h3><p data-k="s1d">El consumo de estímulos digitales y de envases desechables, y el uso de energía en temporada baja.</p></div>
+    <div class="card"><span class="ico" aria-hidden="true">🔁</span><h3 data-k="s2">Reutilizar</h3><p data-k="s2d">Los blancos del glamping, para limpieza, y los recursos del entorno de forma respetuosa, sin alterarlos.</p></div>
+    <div class="card"><span class="ico" aria-hidden="true">🍯</span><h3 data-k="s3">Productos locales</h3><p data-k="s3d">Desayuno con productos de la comunidad, con opción de venta.</p></div>
+    <div class="card"><span class="ico" aria-hidden="true">🎨</span><h3 data-k="s4">Artesanas y artistas</h3><p data-k="s4d">La decoración de las yurtas con obra de artesanos y artistas del país.</p></div>
+  </div>
+  <h3 style="font-family:var(--serif);font-size:1.5rem;margin:34px 0 10px" data-k="l_h">Lo que necesitamos para abrir</h3>
+  <div class="legal">
+    <div><b>Sociedad</b><span data-k="l1">Sociedad por acciones simplificada (Ley N.º 19.820), con inscripción ante DGR, DGI y BPS.</span></div>
+    <div><b>Intendencia de Rocha</b><span data-k="l2">Construcción, viabilidad del predio, habilitación departamental y bromatología.</span></div>
+    <div><b>Ministerio de Turismo</b><span data-k="l3">Inscripción del prestador y categoría del alojamiento (Ley N.º 19.253 y Decreto N.º 267/015).</span></div>
+    <div><b>Bomberos y Ambiente</b><span data-k="l4">Evaluación de protección contra incendios y autorización ambiental.</span></div>
+  </div>
+</div></section>
+
+<section id="equipo"><div class="wrap">
+  <h2 data-k="q_h">Quiénes somos</h2>
+  <p class="sub" data-k="q_s">Estudiantes de 3.° DG, Alojamiento y Servicios Turísticos. Este es nuestro proyecto de egreso.</p>
+  <div class="team">
+    <div class="person"><b>Valentina de Oliveira</b></div>
+    <div class="person"><b>Santiago Olivera</b></div>
+    <div class="person"><b>Francisco Romano</b></div>
+  </div>
+</div></section>
+<section id="contacto" class="alt"><div class="wrap" style="text-align:center">
+  <h2 data-k="k_h">Seguinos y escribinos</h2>
+  <p class="sub" style="margin-inline:auto" data-k="k_s">Mirá las novedades del proyecto y consultanos por mensaje directo.</p>
+  <a class="ig" href="https://www.instagram.com/atardecerdelceibo/" target="_blank" rel="noopener">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1" fill="currentColor"/></svg>
+    @atardecerdelceibo</a>
+  <p class="note" data-k="k_n">Instagram: @atardecerdelceibo</p>
+</div></section>
+</main>
+
+<footer><div class="wrap">
+  <p data-k="f1">Atardecer del Ceibo es una propuesta turística en etapa de proyecto (2026). Las imágenes, tarifas y reservas son una maqueta ilustrativa.</p>
+  <p data-k="f2"><b>Declaración de uso de IA.</b> Esta web se armó con Claude (Anthropic) a partir del documento del proyecto. Los datos, el contenido y la autoría del proyecto son de Valentina de Oliveira, Santiago Olivera y Francisco Romano.</p>
+</div></footer>
+
+<script>
+(function(){
+  var TR={
+    en:{n1:"The pause",n2:"Yurts",n3:"Experiences",n4:"Location",n5:"Rates",n6:"Sustainability",n7:"Team",n8:"Contact",k_h:"Follow us and write to us",k_s:"See the project news and message us directly.",k_n:"Instagram: @atardecerdelceibo",
+      eb:"Wellness glamping · Hills of Rocha, Uruguay",tag:"Nature supports. You grow.",
+      hs:"Ten yurts and a shared space to pause, rest and reconnect with the surroundings, far from the pace of the city.",
+      c1:"Discover the experience",c2:"See rates",
+      p_h:"A space to pause",p_s:"City life and constant demands pull us away from nature. Atardecer del Ceibo was created to offer time for rest, contemplation and support in a natural setting.",
+      p1:"increase in anxiety and depression worldwide after the pandemic (WHO, 2022).",
+      p2:"adults in Uruguay feel a lack of companionship at least sometimes (CIFRA survey for the Ministry of Public Health, 2025).",
+      p3:"report a high level of loneliness, especially among young people (CIFRA for the Ministry of Public Health, 2025).",
+      disc:"Atardecer del Ceibo is a rest and well-being proposal. It does not replace clinical care or promise health treatments or results.",
+      y_h:"Ten yurts in the hills",y_s:"Each yurt blends into the landscape through biophilic architecture and color psychology. There is also a larger yurt for services and shared spaces.",
+      y1:"Biophilic architecture",y2:"Adjustable lighting",y3:"Aromatherapy",y4:"Ergonomic beds",y5:"Pillow menu",
+      y_n:"Amenities that the people surveyed (79) think every yurt should have.",e_h:"In the shared spaces",
+      e1:"Green areas",e2:"Massages",e3:"Soft music",e4:"Hot tub",
+      x_h:"Experiences to reconnect",x_s:"Activities designed for rest and enjoying the surroundings. None is compulsory: everyone chooses their own pace.",
+      a1:"Astrotourism",a1d:"Night sky watching in the hills. Chosen by 53.2% of the people surveyed.",
+      a2:"Yoga and pilates",a2d:"Mindful movement outdoors. Yoga, pilates and tai chi: 40.5%.",
+      a3:"Hiking",a3d:"Unhurried walks through the hills, screen-free. Chosen by 39.2%.",
+      a4:"Meditation",a4d:"A moment of silence and attention to the present. 38% would choose it to enjoy on their own.",
+      x_n:"The most voted in the survey also included artisanal product tastings (54.4%) and creative tourism (48.1%).",
+      u_h:"In the hills of Rocha",u_s:"A few kilometers from Route 109, away from the coast, to decentralize tourism and discover the interior of the department.",
+      u1:"from the city of Rocha",u2:"from Aiguá",u3:"from Pueblo Garzón",u_a:"Nearby places to visit",u_ap:"Local beekeepers",
+      t_h:"Rates",t_s:"Planned rates in US dollars, per night. There is a lodging-only option and one with the full experience.",
+      t1:"Lodging only",t1d:"Low season",t2:"Full experience",t2d:"Low season · lodging and experience",t3:"Full experience",t3d:"High season · lodging and experience",
+      t_n:"In the survey, 53.2% preferred lodging with activities charged separately and 41.8% preferred activities included day by day.",
+      r_h:"Try what booking would be like",r1:"Check-in",r2:"Nights",r3:"Option",r4:"See the total",
+      r_n:"Illustrative mockup: bookings are not open yet. The total is based on the rate chosen.",
+      s_h:"Sustainability and community",s_s:"Our starting commitments. We will measure them with indicators and do not present them as results already achieved.",
+      s1:"Reduce",s1d:"Digital stimuli, disposable packaging and energy use in low season.",
+      s2:"Reuse",s2d:"Glamping linens, for cleaning, and the resources of the surroundings, respectfully and without altering them.",
+      s3:"Local products",s3d:"Breakfast with products from the community, with an option to buy.",
+      s4:"Artisans and artists",s4d:"Yurt decoration with work by artisans and artists from the country.",
+      l_h:"What we need to open",
+      l1:"Simplified joint-stock company (Law No. 19,820), registered with DGR, DGI and BPS.",
+      l2:"Construction, site viability, departmental license and food safety.",
+      l3:"Provider registration and lodging category (Law No. 19,253 and Decree No. 267/015).",
+      l4:"Fire protection assessment and environmental authorization.",
+      q_h:"Who we are",q_s:"3rd-year students of Lodging and Tourism Services. This is our graduation project.",
+      f1:"Atardecer del Ceibo is a tourism proposal at the project stage (2026). Images, rates and bookings are an illustrative mockup.",
+      f2:"<b>AI use statement.</b> This website was built with Claude (Anthropic) from the project document. The data, content and authorship of the project belong to Valentina de Oliveira, Santiago Olivera and Francisco Romano."},
+    pt:{n1:"A pausa",n2:"Yurts",n3:"Experiências",n4:"Localização",n5:"Tarifas",n6:"Sustentabilidade",n7:"Equipe",n8:"Contato",k_h:"Siga-nos e escreva para nós",k_s:"Veja as novidades do projeto e fale com a gente por mensagem direta.",k_n:"Instagram: @atardecerdelceibo",
+      eb:"Glamping wellness · Serras de Rocha, Uruguai",tag:"A natureza te acompanha. Você cresce.",
+      hs:"Dez yurts e um espaço comum para fazer uma pausa, descansar e se reconectar com o entorno, longe do ritmo da cidade.",
+      c1:"Conhecer a experiência",c2:"Ver tarifas",
+      p_h:"Um espaço de pausa",p_s:"A vida urbana e a exigência constante nos afastam da natureza. O Atardecer del Ceibo nasce para oferecer tempo de descanso, contemplação e acolhimento em um ambiente natural.",
+      p1:"de aumento dos quadros de ansiedade e depressão no mundo após a pandemia (OMS, 2022).",
+      p2:"dos adultos no Uruguai sentem falta de companhia pelo menos algumas vezes (pesquisa CIFRA para o Ministério da Saúde Pública, 2025).",
+      p3:"apresentam um nível elevado de solidão, sobretudo entre os jovens (CIFRA para o Ministério da Saúde Pública, 2025).",
+      disc:"O Atardecer del Ceibo é uma proposta de descanso e bem-estar. Não substitui o atendimento clínico nem promete tratamentos ou resultados de saúde.",
+      y_h:"Dez yurts na serra",y_s:"Cada yurt se integra à paisagem por meio de arquitetura biofílica e psicologia das cores. Há também uma yurt maior para os serviços e os espaços comuns.",
+      y1:"Arquitetura biofílica",y2:"Iluminação regulável",y3:"Aromaterapia",y4:"Camas ergonômicas",y5:"Menu de travesseiros",
+      y_n:"Comodidades que as pessoas pesquisadas (79) consideram que cada yurt deve ter.",e_h:"Nos espaços comuns",
+      e1:"Áreas verdes",e2:"Massagens",e3:"Música suave",e4:"Hot tub",
+      x_h:"Experiências para se reconectar",x_s:"Atividades pensadas para descansar e aproveitar o entorno. Nenhuma é obrigatória: cada pessoa escolhe o seu ritmo.",
+      a1:"Astroturismo",a1d:"Observação do céu noturno da serra. Escolhida por 53,2% das pessoas pesquisadas.",
+      a2:"Yoga e pilates",a2d:"Movimento consciente ao ar livre. Yoga, pilates e tai chi: 40,5%.",
+      a3:"Trilhas",a3d:"Caminhadas pela serra, sem pressa e sem telas. Escolhidas por 39,2%.",
+      a4:"Meditação",a4d:"Um momento de silêncio e atenção ao presente. 38% a escolheriam para aproveitar a sós.",
+      x_n:"As mais votadas na pesquisa também incluíram degustações de produtos artesanais (54,4%) e turismo criativo (48,1%).",
+      u_h:"Nas serras de Rocha",u_s:"A poucos quilômetros da rota 109, longe da costa, para descentralizar o turismo e descobrir o interior do departamento.",
+      u1:"da cidade de Rocha",u2:"de Aiguá",u3:"de Pueblo Garzón",u_a:"Para visitar nos arredores",u_ap:"Apicultores da região",
+      t_h:"Tarifas",t_s:"Tarifas previstas em dólares americanos, por noite. Há uma opção só com hospedagem e outra com a experiência completa.",
+      t1:"Só hospedagem",t1d:"Baixa temporada",t2:"Experiência completa",t2d:"Baixa temporada · hospedagem e experiência",t3:"Experiência completa",t3d:"Alta temporada · hospedagem e experiência",
+      t_n:"Na pesquisa, 53,2% preferiram hospedagem com as atividades à parte e 41,8% atividades incluídas dia a dia.",
+      r_h:"Teste como seria reservar",r1:"Entrada",r2:"Noites",r3:"Modalidade",r4:"Ver o total",
+      r_n:"Maquete ilustrativa: ainda não recebemos reservas. O total é por noite, conforme a tarifa escolhida.",
+      s_h:"Sustentabilidade e comunidade",s_s:"Nossos compromissos de partida. Vamos medi-los com indicadores e não os apresentamos como resultados já alcançados.",
+      s1:"Reduzir",s1d:"Estímulos digitais, embalagens descartáveis e uso de energia na baixa temporada.",
+      s2:"Reutilizar",s2d:"A roupa de cama do glamping, para limpeza, e os recursos do entorno, de forma respeitosa e sem alterá-los.",
+      s3:"Produtos locais",s3d:"Café da manhã com produtos da comunidade, com opção de compra.",
+      s4:"Artesãos e artistas",s4d:"Decoração das yurts com obras de artesãos e artistas do país.",
+      l_h:"O que precisamos para abrir",
+      l1:"Sociedade por ações simplificada (Lei n.º 19.820), com inscrição na DGR, DGI e BPS.",
+      l2:"Construção, viabilidade do terreno, habilitação departamental e vigilância sanitária de alimentos.",
+      l3:"Inscrição do prestador e categoria da hospedagem (Lei n.º 19.253 e Decreto n.º 267/015).",
+      l4:"Avaliação de proteção contra incêndios e autorização ambiental.",
+      q_h:"Quem somos",q_s:"Estudantes do 3.º DG, Hospedagem e Serviços Turísticos. Este é o nosso projeto de conclusão.",
+      f1:"O Atardecer del Ceibo é uma proposta turística em etapa de projeto (2026). As imagens, tarifas e reservas são uma maquete ilustrativa.",
+      f2:"<b>Declaração de uso de IA.</b> Este site foi montado com o Claude (Anthropic) a partir do documento do projeto. Os dados, o conteúdo e a autoria do projeto são de Valentina de Oliveira, Santiago Olivera e Francisco Romano."}
+  };
+  var ES={};
+  var els=document.querySelectorAll('[data-k]');
+  Array.prototype.forEach.call(els,function(e){ES[e.getAttribute('data-k')]=e.innerHTML});
+  var MOD={es:["Solo alojamiento (temporada baja)","Experiencia completa (temporada baja)","Experiencia completa (temporada alta)"],
+           en:["Lodging only (low season)","Full experience (low season)","Full experience (high season)"],
+           pt:["Só hospedagem (baixa temporada)","Experiência completa (baixa temporada)","Experiência completa (alta temporada)"]};
+  var cur='es';
+  function setLang(l){
+    cur=l;document.documentElement.lang=l;
+    Array.prototype.forEach.call(els,function(e){
+      var k=e.getAttribute('data-k');
+      var v=(l==='es')?ES[k]:(TR[l]&&TR[l][k]);
+      if(v!=null)e.innerHTML=v;
+    });
+    var opts=document.getElementById('r-m').options;
+    for(var i=0;i<opts.length;i++)opts[i].textContent=MOD[l][i];
+    Array.prototype.forEach.call(document.querySelectorAll('.lang button'),function(b){b.setAttribute('aria-pressed',b.getAttribute('data-l')===l)});
+    document.getElementById('fm').textContent='';
+  }
+  Array.prototype.forEach.call(document.querySelectorAll('.lang button'),function(b){b.addEventListener('click',function(){setLang(b.getAttribute('data-l'))})});
+
+  var MSG={es:function(n,p,t){return n+(n===1?' noche':' noches')+' × US$ '+p+' = US$ '+t+' en total (valor de referencia)'},
+           en:function(n,p,t){return n+(n===1?' night':' nights')+' × US$ '+p+' = US$ '+t+' in total (reference value)'},
+           pt:function(n,p,t){return n+(n===1?' noite':' noites')+' × US$ '+p+' = US$ '+t+' no total (valor de referência)'}};
+  document.getElementById('r-b').addEventListener('click',function(){
+    var n=Math.max(1,parseInt(document.getElementById('r-n').value,10)||1);
+    var p=parseInt(document.getElementById('r-m').value,10);
+    document.getElementById('fm').textContent=MSG[cur](n,p,n*p);
+  });
+
+  var fills=document.querySelectorAll('.fill');
+  var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if('IntersectionObserver' in window&&!reduce){
+    fills.forEach(function(f){f.style.width='0'});
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.style.width=e.target.getAttribute('data-w')+'%';io.unobserve(e.target)}})},{threshold:.3});
+    fills.forEach(function(f){io.observe(f)});
+  }
+})();
+</script>
+</body>
+</html>
