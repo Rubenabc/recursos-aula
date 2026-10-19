@@ -1,0 +1,392 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Taller Sur — Reparación de bicicletas en el Cerro</title>
+<meta name="description" content="Taller de reparación de bicicletas en el Cerro, Montevideo. Pinchaduras, frenos, cambios y service completo. La mayoría de los arreglos quedan en el día.">
+
+<!-- ============================================================
+     SITIO DE EJEMPLO — Comunidades Virtuales, 2.º año BT
+     Taller Sur es un taller inventado. Los datos son falsos.
+
+     Todo el sitio es UN SOLO ARCHIVO: index.html
+     Adentro están las tres partes que forman una página web:
+       1. HTML  -> el contenido y su estructura  (las etiquetas)
+       2. CSS   -> cómo se ve                    (dentro de <style>)
+       3. SVG   -> los dibujos                   (el logo y la rueda)
+
+     Para publicarlo en GitHub Pages:
+       - Subir este archivo a un repositorio, con el nombre index.html
+       - Settings > Pages > Source: Deploy from a branch > main > / (root)
+       - En un par de minutos queda en usuario.github.io/repositorio
+     ============================================================ -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..110,400..800&display=swap" rel="stylesheet">
+
+<style>
+/* ---------- 1. Variables: los colores y medidas del sitio ---------- */
+:root{
+  --esmalte:#1E5B4A;        /* verde esmalte, como los cuadros viejos */
+  --esmalte-claro:#2F7A63;
+  --tinta:#13241E;          /* el color del texto */
+  --papel:#F2F3F0;          /* el fondo */
+  --acero:#7E8781;          /* gris para datos secundarios */
+  --senal:#F2B01E;          /* amarillo de reflectante: solo para avisar */
+  --linea:#D5D9D4;
+
+  --ancho:64rem;
+  --radio:3px;
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+body{
+  font-family:"Archivo",Arial,Helvetica,sans-serif;
+  font-size:17px;
+  line-height:1.6;
+  color:var(--tinta);
+  background:var(--papel);
+  -webkit-font-smoothing:antialiased;
+}
+
+.contenedor{max-width:var(--ancho);margin-inline:auto;padding-inline:1.5rem}
+
+h1,h2,h3{font-variation-settings:"wdth" 88;line-height:1.1;letter-spacing:-.01em}
+h2{font-size:clamp(1.6rem,4vw,2.3rem);font-weight:800;margin-bottom:.4rem}
+h3{font-size:1.05rem;font-weight:700}
+p{max-width:62ch}
+
+a{color:var(--esmalte);text-decoration-thickness:1px;text-underline-offset:3px}
+a:focus-visible,summary:focus-visible,button:focus-visible{
+  outline:3px solid var(--senal);outline-offset:3px;border-radius:2px;
+}
+
+/* ---------- 2. Barra de arriba ---------- */
+.barra{
+  position:sticky;top:0;z-index:10;
+  background:var(--esmalte);color:#fff;
+  border-bottom:3px solid var(--tinta);
+}
+.barra .contenedor{display:flex;align-items:center;gap:1.5rem;min-height:60px;flex-wrap:wrap}
+.marca{display:flex;align-items:center;gap:.6rem;font-weight:800;font-size:1.15rem;
+  font-variation-settings:"wdth" 82;letter-spacing:.02em;color:#fff;text-decoration:none}
+.marca svg{display:block}
+.navegacion{margin-left:auto;display:flex;gap:1.3rem;flex-wrap:wrap}
+.navegacion a{color:#D9E6E0;text-decoration:none;font-size:.95rem;padding:.2rem 0;
+  border-bottom:2px solid transparent}
+.navegacion a:hover{color:#fff;border-bottom-color:var(--senal)}
+
+/* ---------- 3. Portada ---------- */
+.portada{
+  padding:4.5rem 0 3.5rem;
+  background:
+    repeating-linear-gradient(115deg,rgba(30,91,74,.05) 0 1px,transparent 1px 13px),
+    var(--papel);
+  border-bottom:1px solid var(--linea);
+}
+.portada h1{
+  font-size:clamp(2.3rem,7vw,4.1rem);
+  font-weight:800;font-variation-settings:"wdth" 80;
+  max-width:16ch;
+}
+.bajada{font-size:1.15rem;margin-top:1rem;color:#36453E}
+.estado{
+  display:inline-flex;align-items:center;gap:.55rem;margin-top:2rem;
+  background:var(--tinta);color:#fff;padding:.5rem .95rem;border-radius:var(--radio);
+  font-size:.92rem;
+}
+.estado b{color:var(--senal);font-weight:700}
+
+/* ---------- 4. Secciones ---------- */
+section{padding:3.5rem 0;border-bottom:1px solid var(--linea)}
+.intro{color:#3C4A44;margin-bottom:2rem}
+
+/* ---------- 5. La pizarra de precios: el centro del sitio ---------- */
+.pizarra{
+  background:var(--esmalte);color:#fff;
+  border-radius:var(--radio);
+  padding:2rem 1.6rem 1.4rem;
+  box-shadow:inset 0 0 0 1px rgba(255,255,255,.14);
+}
+.pizarra h2{color:#fff}
+.lista{list-style:none;margin-top:1.4rem}
+.lista li{padding:.95rem 0;border-top:1px solid rgba(255,255,255,.18)}
+.lista li:first-child{border-top:none}
+.renglon{display:flex;align-items:baseline;gap:.6rem}
+.servicio{font-weight:700;font-size:1.08rem;white-space:nowrap}
+.puntos{flex:1;border-bottom:1px dotted rgba(255,255,255,.45);transform:translateY(-.25rem)}
+.precio{font-weight:800;font-size:1.18rem;font-variant-numeric:tabular-nums;white-space:nowrap}
+.detalle{color:#C8DCD4;font-size:.95rem;margin-top:.25rem;max-width:58ch}
+.demora{
+  display:inline-block;margin-top:.45rem;
+  background:rgba(242,176,30,.17);color:var(--senal);
+  font-size:.8rem;font-weight:700;padding:.15rem .5rem;border-radius:2px;
+}
+.aclaracion{margin-top:1.3rem;color:#C8DCD4;font-size:.93rem}
+
+/* ---------- 6. Los tres pasos (sí son una secuencia) ---------- */
+.pasos{list-style:none;counter-reset:paso;display:grid;gap:1.5rem;margin-top:1.5rem}
+@media (min-width:720px){.pasos{grid-template-columns:repeat(3,1fr);gap:2rem}}
+.pasos li{counter-increment:paso;padding-top:.9rem;border-top:3px solid var(--esmalte)}
+.pasos li::before{
+  content:counter(paso);display:block;
+  font-size:.85rem;font-weight:800;color:var(--esmalte);margin-bottom:.35rem;
+}
+
+/* ---------- 7. Preguntas (se abren sin JavaScript) ---------- */
+.preguntas{margin-top:1.5rem;border-top:1px solid var(--linea)}
+details{border-bottom:1px solid var(--linea)}
+summary{
+  cursor:pointer;padding:.95rem 2rem .95rem 0;font-weight:700;position:relative;list-style:none;
+}
+summary::-webkit-details-marker{display:none}
+summary::after{
+  content:"";position:absolute;right:.4rem;top:1.35rem;
+  width:9px;height:9px;border-right:2px solid var(--esmalte);border-bottom:2px solid var(--esmalte);
+  transform:rotate(45deg);transition:transform .15s;
+}
+details[open] summary::after{transform:rotate(-135deg)}
+@media (prefers-reduced-motion:reduce){summary::after{transition:none}}
+details p{padding:0 0 1rem;color:#3C4A44}
+
+/* ---------- 8. Dónde estamos ---------- */
+.datos{display:grid;gap:2rem;margin-top:1.5rem}
+@media (min-width:760px){.datos{grid-template-columns:1fr 1fr;align-items:start}}
+.horario{width:100%;border-collapse:collapse;margin-top:.8rem}
+.horario th,.horario td{text-align:left;padding:.5rem .6rem;border-bottom:1px solid var(--linea);font-size:.97rem}
+.horario th{font-weight:700;width:11rem}
+.caja-mapa{position:relative;border-radius:var(--radio);overflow:hidden;
+  background:#E7EAE6;box-shadow:inset 0 0 0 1px var(--linea)}
+.respaldo{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;
+  gap:.7rem;padding:1.6rem;text-align:center}
+.respaldo p{margin-inline:auto;color:#3C4A44;font-size:.95rem}
+.respaldo .boton{align-self:center}
+.mapa{position:relative;border:0;width:100%;height:320px;display:block}
+.acciones{display:flex;gap:.7rem;flex-wrap:wrap;margin-top:1.3rem}
+.boton{
+  display:inline-block;background:var(--esmalte);color:#fff;text-decoration:none;
+  padding:.7rem 1.3rem;border-radius:var(--radio);font-weight:700;font-size:.97rem;
+}
+.boton:hover{background:var(--esmalte-claro)}
+.boton.secundario{background:transparent;color:var(--esmalte);box-shadow:inset 0 0 0 2px var(--esmalte)}
+.boton.secundario:hover{background:rgba(30,91,74,.07)}
+
+/* ---------- 9. Pie ---------- */
+footer{padding:2.5rem 0 3rem;font-size:.9rem;color:var(--acero)}
+footer p{max-width:70ch}
+footer strong{color:var(--tinta)}
+</style>
+</head>
+
+<body>
+
+<!-- ======================= BARRA Y MENÚ ======================= -->
+<header class="barra">
+  <div class="contenedor">
+    <a class="marca" href="#arriba">
+      <!-- El logo es un dibujo SVG: se escribe con código, no es una foto -->
+      <svg width="28" height="28" viewBox="0 0 32 32" aria-hidden="true">
+        <circle cx="16" cy="16" r="14" fill="none" stroke="#F2B01E" stroke-width="2.5"/>
+        <circle cx="16" cy="16" r="3.2" fill="#F2B01E"/>
+        <g stroke="#F2B01E" stroke-width="1.1" opacity=".85">
+          <line x1="16" y1="3" x2="16" y2="29"/>
+          <line x1="3" y1="16" x2="29" y2="16"/>
+          <line x1="6.8" y1="6.8" x2="25.2" y2="25.2"/>
+          <line x1="25.2" y1="6.8" x2="6.8" y2="25.2"/>
+        </g>
+      </svg>
+      Taller Sur
+    </a>
+    <nav class="navegacion" aria-label="Secciones del sitio">
+      <a href="#precios">Servicios y precios</a>
+      <a href="#como">Cómo funciona</a>
+      <a href="#preguntas">Preguntas</a>
+      <a href="#donde">Dónde estamos</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ======================= PORTADA ======================= -->
+<div class="portada" id="arriba">
+  <div class="contenedor">
+    <h1>Tu bici arreglada en el día</h1>
+    <p class="bajada">Taller de reparación en el Cerro. Para pinchaduras, frenos y cambios no hace falta avisar: pasás y esperás.</p>
+    <p class="estado"><b>Abierto</b> hoy hasta las 19</p>
+  </div>
+</div>
+
+<!-- ======================= PRECIOS ======================= -->
+<section id="precios">
+  <div class="contenedor">
+    <div class="pizarra">
+      <h2>Servicios y precios</h2>
+
+      <ul class="lista">
+        <li>
+          <div class="renglon">
+            <span class="servicio">Pinchadura</span>
+            <span class="puntos"></span>
+            <span class="precio">$350</span>
+          </div>
+          <p class="detalle">Parche o cámara nueva.</p>
+          <span class="demora">Queda en el momento</span>
+        </li>
+
+        <li>
+          <div class="renglon">
+            <span class="servicio">Ajuste de frenos</span>
+            <span class="puntos"></span>
+            <span class="precio">$500</span>
+          </div>
+          <p class="detalle">Regulación y cambio de pastillas si hace falta.</p>
+          <span class="demora">En el día</span>
+        </li>
+
+        <li>
+          <div class="renglon">
+            <span class="servicio">Ajuste de cambios</span>
+            <span class="puntos"></span>
+            <span class="precio">$600</span>
+          </div>
+          <p class="detalle">Para cuando la cadena se salta sola o cuesta cambiar de marcha.</p>
+          <span class="demora">En el día</span>
+        </li>
+
+        <li>
+          <div class="renglon">
+            <span class="servicio">Service completo</span>
+            <span class="puntos"></span>
+            <span class="precio">$1.800</span>
+          </div>
+          <p class="detalle">Limpieza, engrase, ajuste de frenos y cambios, centrado de ruedas y revisión general.</p>
+          <span class="demora">48 horas</span>
+        </li>
+
+        <li>
+          <div class="renglon">
+            <span class="servicio">Armado de bicicleta nueva</span>
+            <span class="puntos"></span>
+            <span class="precio">$900</span>
+          </div>
+          <span class="demora">24 horas</span>
+        </li>
+      </ul>
+
+      <p class="aclaracion">Los precios no incluyen repuestos. Te decimos cuánto sale antes de empezar.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= CÓMO FUNCIONA ======================= -->
+<section id="como">
+  <div class="contenedor">
+    <h2>Cómo funciona</h2>
+    <p class="intro">Trabajamos con bicicletas de uso diario, no solo de paseo. Si usás la tuya para ir al trabajo y no podés quedarte sin ella una semana, este es el lugar.</p>
+
+    <ol class="pasos">
+      <li>
+        <h3>Traés la bici</h3>
+        <p>Sin turno para los arreglos rápidos. Para un service completo conviene avisar antes.</p>
+      </li>
+      <li>
+        <h3>Te pasamos el precio</h3>
+        <p>Miramos qué tiene y te decimos cuánto sale, incluidos los repuestos, antes de tocar nada.</p>
+      </li>
+      <li>
+        <h3>La retirás andando</h3>
+        <p>La mayoría de los arreglos quedan en el día. Si la traés a la mañana, a la tarde te la llevás.</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- ======================= PREGUNTAS ======================= -->
+<section id="preguntas">
+  <div class="contenedor">
+    <h2>Preguntas frecuentes</h2>
+
+    <div class="preguntas">
+      <details>
+        <summary>¿Tengo que pedir turno?</summary>
+        <p>Para pinchaduras, frenos y cambios no. Pasás y esperás. Para un service completo conviene avisar antes.</p>
+      </details>
+
+      <details>
+        <summary>¿Los precios incluyen los repuestos?</summary>
+        <p>No. Te decimos cuánto sale el repuesto antes de empezar el arreglo.</p>
+      </details>
+
+      <details>
+        <summary>¿Arreglan bicicletas eléctricas?</summary>
+        <p>La parte mecánica sí. La batería y el motor no.</p>
+      </details>
+
+      <details>
+        <summary>¿Puedo pagar con tarjeta?</summary>
+        <p>Sí, débito y crédito. También transferencia.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= DÓNDE ESTAMOS ======================= -->
+<section id="donde">
+  <div class="contenedor">
+    <h2>Dónde estamos</h2>
+    <p class="intro">Sobre Carlos María Ramírez, a dos cuadras de la parada del 125. Si venís en bici, hay lugar para dejarla adentro mientras esperás.</p>
+
+    <div class="datos">
+      <div>
+        <h3>Horario</h3>
+        <table class="horario">
+          <tr><th scope="row">Lunes a viernes</th><td>9:00 a 19:00</td></tr>
+          <tr><th scope="row">Sábados</th><td>9:00 a 13:00</td></tr>
+          <tr><th scope="row">Domingos</th><td>Cerrado</td></tr>
+        </table>
+
+        <div class="acciones">
+          <!-- Un sitio en GitHub Pages no puede recibir formularios: no tiene
+               servidor detrás. Por eso el contacto son enlaces directos. -->
+          <a class="boton" href="https://wa.me/59899000000">Escribir por WhatsApp</a>
+          <a class="boton secundario" href="tel:+59899000000">Llamar al 099 000 000</a>
+        </div>
+      </div>
+
+      <div>
+        <!-- El mapa viene de Google: es una página ajena mostrada adentro de esta.
+             Si el navegador bloquea el contenido de otro sitio, o si se abre el
+             archivo desde el disco en vez de desde internet, el mapa no carga.
+             Por eso debajo hay un respaldo: la dirección y un enlace. Si el mapa
+             carga, lo tapa; si no carga, queda eso a la vista. -->
+        <div class="caja-mapa">
+          <div class="respaldo">
+            <p>Carlos María Ramírez, Montevideo<br>A dos cuadras de la parada del 125.</p>
+            <a class="boton" href="https://www.google.com/maps/search/?api=1&amp;query=Carlos+Mar%C3%ADa+Ram%C3%ADrez%2C+Montevideo" target="_blank" rel="noopener">Abrir en Google Maps</a>
+          </div>
+          <iframe
+            class="mapa"
+            title="Mapa de la ubicación del taller"
+            src="https://maps.google.com/maps?q=Carlos%20Mar%C3%ADa%20Ram%C3%ADrez%2C%20Montevideo&amp;z=15&amp;output=embed"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= PIE ======================= -->
+<footer>
+  <div class="contenedor">
+    <p><strong>Taller Sur no existe.</strong> Es un ejemplo hecho para la clase de Comunidades Virtuales. La dirección, el teléfono y los precios son inventados.</p>
+    <p style="margin-top:.6rem">Todo lo que ves está en un solo archivo llamado <code>index.html</code>: el contenido en HTML, los colores y las medidas en CSS, y el logo dibujado en SVG.</p>
+  </div>
+</footer>
+
+</body>
+</html>
