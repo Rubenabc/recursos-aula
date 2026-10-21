@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Mirá qué productores hay cerca de vos y guardá tus lugares favoritos. Maqueta del proyecto final de egreso 2026.">
+<meta name="theme-color" content="#0E401F">
+<meta property="og:title" content="Mapa y lugares guardados · Ruta Verde">
+<meta property="og:description" content="Mirá qué productores hay cerca de vos y guardá tus lugares favoritos. Maqueta del proyecto final de egreso 2026.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8C%B1%3C/text%3E%3C/svg%3E">
+<title>Mapa y lugares guardados · Ruta Verde</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Sora:wght@500;700;800&family=Atkinson+Hyperlegible:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<script>document.documentElement.className="js"</script>
+<a class="skip" href="#contenido">Saltar al contenido</a>
+<header class="sitehd"><div class="wrap in">
+  <a class="brand" href="../"><span class="lg" role="img" aria-label="Logo de Ruta Verde"></span><span class="bt"><b>Ruta Verde</b><small>Conectamos orígenes</small></span></a>
+  <nav class="mn" id="menu" aria-label="Principal"><a href="../">Inicio</a><a href="../mapa/" class="on" aria-current="page">Mapa <span id="gcount"></span></a><a href="../productores/">Productores</a><a href="../confianza/">Confianza</a><a href="../preguntas/">Preguntas</a><a href="../proyecto/">Proyecto</a><a class="cta-m" href="../productores/#registro">Soy productor</a></nav>
+  <a class="btn out" href="../productores/#registro">Soy productor</a>
+  <button class="burger" type="button" aria-expanded="false" aria-controls="menu"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>Menú</button>
+</div></header>
+<main id="contenido">
+<div class="wrap pg-h"><div class="eb">Cerca de vos</div><h1>Mapa y lugares guardados</h1><p>Encontrá productores por departamento y guardá los que más te gusten para volver a verlos.</p></div>
+<section id="mapa"><div class="wrap">
+  <h2>Mirá qué hay cerca de vos</h2>
+  <p class="sub">Asomate a los departamentos donde hay productores de ejemplo. Elegí uno de la lista o tocá un departamento marcado.</p>
+  <div class="mapa">
+    <div class="ml" id="mlist"></div>
+    <div>
+      <div class="pmapbox"><div class="ptiles" id="ptiles" role="group" aria-label="Departamentos con productores de ejemplo"></div>
+        <div class="pop" id="pop" aria-live="polite"></div></div>
+      <p class="demo">Esquema de mosaico, con los departamentos ubicados de forma aproximada. En la app, el mapa interactivo usa la ubicación de cada productor con un radio aproximado para cuidar su privacidad.</p>
+    </div>
+  </div>
+</div></section>
+<section id="guardados" class="alt"><div class="wrap">
+  <div class="eb">Tu colección</div><h2>Tus lugares favoritos</h2>
+  <div class="cards" id="glist"></div>
+  <div class="empty" id="gempty">Todavía no guardaste nada. Tocá el ♥ de una ficha y la vas a ver acá.</div>
+</div></section>
+</main>
+<footer id="contacto"><div class="wrap">
+  <div class="fgrid">
+    <div><span class="lg flogo" role="img" aria-label="Logo de Ruta Verde"></span><p><b>Ruta Verde</b><br>Conectamos orígenes, elegimos futuro.</p></div>
+    <div><h4>Navegá</h4><a href="../">Inicio</a><a href="../mapa/">Mapa</a><a href="../productores/">Productores</a><a href="../confianza/">Confianza</a><a href="../preguntas/">Preguntas</a><a href="../proyecto/">Proyecto</a></div>
+    <div><h4>Contacto</h4><p>Proyecto educativo de la Escuela Superior de Comercio Villa Muñoz (UTU-ETP), Montevideo. Las consultas se canalizan a través de la institución.</p></div>
+    <div id="privacidad"><h4>Privacidad</h4><p>Esta demostración no guarda ni envía datos personales. En la versión real, Ruta Verde cumple la Ley N.º 18.331 de protección de datos personales: la ubicación se usa solo para navegar y cada productor acepta de forma expresa qué datos se muestran al público.</p></div>
+  </div>
+  <p>Ruta Verde: conexión digital para productores rurales de Uruguay. Proyecto final de egreso 2026, UTU-ETP / Escuela Superior de Comercio Villa Muñoz. Los productores del mapa y sus precios son ejemplos ficticios.</p>
+  <p><b>Declaración de uso de IA.</b> Esta web se armó con ayuda de IA: Claude (Anthropic) a partir del proyecto de egreso, con los colores y el logo de Ruta Verde. Los datos, el contenido y la autoría del proyecto son de Mariana Maciel, Yamila Bardallo, Verónica Airaudo y Thiago Guedes.</p>
+</div></footer>
+<script src="../assets/app.js"></script>
+</body>
+</html>
