@@ -16,12 +16,12 @@ PR.criador={n:'Criador de ganado',d:'Florida',tag:'Ganadería · San Gabriel',de
 PR.chepastor={n:'Che Pastor',d:'Canelones',tag:'Granja familiar',desc:'Granja familiar en tiempos libres, en Los Cerrillos. Produce huevos y verduras de estación.',pr:'',badge:'Productor real',rt:'',ig:'chepartor.uy',real:1};
 PR.suculentas={n:'Suculentas Adriana',d:'Canelones',tag:'Suculentas',desc:'Suculentas pequeñas muy resistentes para tu maceta. De Rincón de Pando.',pr:'',badge:'Productor real',rt:'',ig:'adriana.falero.146',wa:'59899061190',real:1};
 ART.campovivo=foto('campo-vivo-logo.jpg','Logo de Campo Vivo','#fff');
-ART.criador=foto('campo-vivo-vaca.jpg','Vaca en el campo de un criador de ganado de San Gabriel, Florida');
+ART.criador=foto('campo-vivo-vaca.jpg','Ganado en el campo de San Gabriel, Florida');
 ART.chepastor=foto('che-pastor-logo.jpg','Logo de Che Pastor, huerta agroecológica',true);
 ART.suculentas=foto('suculentas-adriana-plantines.jpg','Plantines de suculentas de Suculentas Adriana');
 ORDER=['campovivo','chepastor','suculentas','criador'].concat(ORDER);
 var GAL={criador:{fotos:[
-  ['campo-vivo-vaca.jpg','Vaca'],['campo-vivo-naranjo.jpg','Naranjo con fruta'],
+  ['campo-vivo-vaca.jpg','Ganadería en San Gabriel (Florida)'],['campo-vivo-naranjo.jpg','Naranjo con fruta'],
   ['campo-vivo-ganado-eucaliptos.jpg','Ganado bajo los eucaliptos'],['campo-vivo-flores.jpg','Flores del campo'],
   ['campo-vivo-campo-florido.jpg','Campo con flores'],['campo-vivo-camino.jpg','Camino de tierra al campo']],
   videos:[['campo-vivo-agua.mp4','campo-vivo-agua-poster.jpg','Agua en el campo'],['campo-vivo-llegada.mp4','campo-vivo-llegada-poster.jpg','Recorrido por el campo']]}};

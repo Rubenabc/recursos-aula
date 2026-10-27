@@ -188,7 +188,7 @@ header.top .hd{display:grid}
 .chips .chip[aria-pressed="true"]{background:var(--forest);border-color:var(--forest);color:#fff}
 .btn.sm{padding:8px 16px;border-radius:8px;font-family:var(--head);font-size:.78rem;background:transparent;border:1.5px solid var(--line);color:var(--ink)}
 .pc{position:relative;padding:0;overflow:hidden;border-radius:12px;display:flex;flex-direction:column}
-.pc .art{display:block;width:100%;aspect-ratio:5/3}
+.pc .art{display:block;width:100%;aspect-ratio:4/3}
 .pc .bd{padding:14px 16px 16px;display:flex;flex-direction:column;flex:1}
 .pc .aw{position:relative}
 .pc .badge{position:absolute;left:10px;bottom:10px;background:#fff;color:#1B2A1A;font-size:.68rem;font-family:var(--head);font-weight:700;border-radius:5px;padding:2px 8px}
@@ -429,3 +429,9 @@ main section:first-child{padding-top:34px}
 .pc .rt+.tag{display:block;padding-right:3.4rem}
 .galdlg .gv{display:flex;flex-wrap:wrap;gap:12px;padding:0 18px 18px}
 .galdlg .gv video{flex:1 1 200px;max-width:280px;width:auto;margin:0}
+
+/* Ajuste visual: fichas y fotos de productores con más presencia */
+#explorar .cards,#guardados .cards{grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:20px}
+#explorar .pc .art,#guardados .pc .art{aspect-ratio:4/3}
+.galdlg .gg{grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:16px}
+.galdlg figure img{aspect-ratio:3/2}
