@@ -10,16 +10,18 @@ var ORDER=["ceibo", "aromos", "quesos", "posada", "lana"];
 /* ---- productores reales (fotos aportadas por el equipo, con autorización) ---- */
 var _s=document.currentScript||document.querySelector('script[src*="assets/app.js"]');
 var BASE=(_s&&_s.src||'').replace(/app\.js(\?.*)?$/,'');
-function foto(f,a,logo){return '<img class="art" src="'+BASE+'img/'+f+'" alt="'+a+'" loading="lazy" width="500" height="300"'+(logo?' style="object-fit:contain;background:#F2EEEB"':'')+'>'}
-PR.campovivo={n:'Campo Vivo',d:'Florida',tag:'Campo · San Gabriel',desc:'Productor de San Gabriel, en Florida, visitado por el equipo de Ruta Verde en sus gestiones de campo.',pr:'',badge:'Productor real',rt:'',ig:'campovivo_71',real:1};
-PR.chepastor={n:'Che Pastor',d:'Canelones',tag:'Huerta agroecológica',desc:'Huerta agroecológica de Los Cerrillos, en Canelones.',pr:'',badge:'Productor real',rt:'',ig:'chepartor.uy',real:1};
-PR.suculentas={n:'Suculentas Adriana',d:'',tag:'Suculentas y plantines',desc:'Suculentas pequeñas y muy resistentes, ideales para macetas.',pr:'',badge:'Productor real',rt:'',ig:'adriana.falero.146',real:1};
-ART.campovivo=foto('campo-vivo-vaca.jpg','Vaca de Campo Vivo en el campo');
+function foto(f,a,logo){return '<img class="art" src="'+BASE+'img/'+f+'" alt="'+a+'" loading="lazy" width="500" height="300"'+(logo?' style="object-fit:contain;background:'+(typeof logo==='string'?logo:'#F2EEEB')+'"':'')+'>'}
+PR.campovivo={n:'Campo Vivo',d:'Montevideo',tag:'Productores hortícolas',desc:'Productores hortícolas en Rincón del Cerro, sobre el Camino Pajas Blancas.',pr:'',badge:'Productor real',rt:'',ig:'campovivo_71',wa:'59891456068',real:1};
+PR.criador={n:'Criador de ganado',d:'Florida',tag:'Ganadería · San Gabriel',desc:'Criador de ganado de San Gabriel, visitado en las gestiones de campo del proyecto.',pr:'',badge:'Productor real',rt:'',real:1};
+PR.chepastor={n:'Che Pastor',d:'Canelones',tag:'Granja familiar',desc:'Granja familiar en tiempos libres, en Los Cerrillos. Produce huevos y verduras de estación.',pr:'',badge:'Productor real',rt:'',ig:'chepartor.uy',real:1};
+PR.suculentas={n:'Suculentas Adriana',d:'Canelones',tag:'Suculentas',desc:'Suculentas pequeñas muy resistentes para tu maceta. De Rincón de Pando.',pr:'',badge:'Productor real',rt:'',ig:'adriana.falero.146',wa:'59899061190',real:1};
+ART.campovivo=foto('campo-vivo-logo.jpg','Logo de Campo Vivo','#fff');
+ART.criador=foto('campo-vivo-vaca.jpg','Vaca en el campo de un criador de ganado de San Gabriel, Florida');
 ART.chepastor=foto('che-pastor-logo.jpg','Logo de Che Pastor, huerta agroecológica',true);
 ART.suculentas=foto('suculentas-adriana-plantines.jpg','Plantines de suculentas de Suculentas Adriana');
-ORDER=['campovivo','chepastor','suculentas'].concat(ORDER);
-var GAL={campovivo:{fotos:[
-  ['campo-vivo-vaca.jpg','Vaca de Campo Vivo'],['campo-vivo-naranjo.jpg','Naranjo con fruta'],
+ORDER=['campovivo','chepastor','suculentas','criador'].concat(ORDER);
+var GAL={criador:{fotos:[
+  ['campo-vivo-vaca.jpg','Vaca'],['campo-vivo-naranjo.jpg','Naranjo con fruta'],
   ['campo-vivo-ganado-eucaliptos.jpg','Ganado bajo los eucaliptos'],['campo-vivo-flores.jpg','Flores del campo'],
   ['campo-vivo-campo-florido.jpg','Campo con flores'],['campo-vivo-camino.jpg','Camino de tierra al campo']],
   videos:[['campo-vivo-agua.mp4','campo-vivo-agua-poster.jpg','Agua en el campo'],['campo-vivo-llegada.mp4','campo-vivo-llegada-poster.jpg','Recorrido por el campo']]}};
@@ -27,6 +29,7 @@ GAL.suculentas={fotos:[['suculentas-adriana-plantines.jpg','Plantines de suculen
 function extras(id){
   var p=PR[id],w=el('div','mini');
   if(p.ig){var a=el('a','btn sm','Instagram');a.href='https://www.instagram.com/'+p.ig+'/';a.target='_blank';a.rel='noopener';a.setAttribute('aria-label','Instagram de '+p.n+' (se abre en otra pestaña)');w.appendChild(a)}
+  if(p.wa){var wa=el('a','btn sm','WhatsApp');wa.href='https://wa.me/'+p.wa+'?text='+encodeURIComponent('Hola, te encontré en Ruta Verde.');wa.target='_blank';wa.rel='noopener';wa.setAttribute('aria-label','WhatsApp de '+p.n+' (se abre en otra pestaña)');w.appendChild(wa)}
   if(GAL[id]){var g=el('button','btn sm gal','Ver fotos y video');g.type='button';g.setAttribute('data-g',id);w.appendChild(g)}
   return w;
 }
@@ -42,7 +45,7 @@ function galeria(){
     var grid=el('div','gg');
     g.fotos.forEach(function(f){var fg=el('figure'),im=document.createElement('img');im.src=BASE+'img/'+f[0];im.alt=f[1];im.loading='lazy';fg.appendChild(im);fg.appendChild(el('figcaption','',f[1]));grid.appendChild(fg)});
     dlg.appendChild(grid);
-    (g.videos||[]).forEach(function(v){var vd=document.createElement('video');vd.controls=true;vd.preload='none';vd.muted=true;vd.setAttribute('playsinline','');vd.poster=BASE+'img/'+v[1];vd.src=BASE+'img/'+v[0];vd.setAttribute('aria-label',v[2]);dlg.appendChild(vd)});
+    var gv=el('div','gv');(g.videos||[]).forEach(function(v){var vd=document.createElement('video');vd.controls=true;vd.preload='none';vd.muted=true;vd.setAttribute('playsinline','');vd.poster=BASE+'img/'+v[1];vd.src=BASE+'img/'+v[0];vd.setAttribute('aria-label',v[2]);gv.appendChild(vd)});if(gv.childNodes.length)dlg.appendChild(gv);
     if(dlg.showModal)dlg.showModal();else dlg.setAttribute('open','');
     c.focus();
   }
@@ -79,10 +82,11 @@ function tarjetas(){
   pinta();
   var chips=document.querySelectorAll('#chips .chip'),q=$('q'),cat='todo';
   function apply(){
-    var t=(q&&q.value||'').toLowerCase().trim();
+    function sinTildes(x){return x.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'')}
+    var t=sinTildes((q&&q.value||'').trim());
     cards.forEach(function(c){
       var okc=cat==='todo'||(' '+c.getAttribute('data-c')+' ').indexOf(' '+cat+' ')>-1;
-      var okt=!t||c.textContent.toLowerCase().indexOf(t)>-1;
+      var okt=!t||sinTildes(c.textContent).indexOf(t)>-1;
       c.style.display=(okc&&okt)?'':'none';
     });
   }
@@ -111,7 +115,7 @@ function flash(e){if(!e)return;e.classList.remove('flash');void e.offsetWidth;e.
 function mapa(){
   var tb=$('ptiles'),ml=$('mlist'),pop=$('pop');
   if(tb&&ml&&pop){
-    var cur='campovivo';
+    var cur='chepastor';
     function porDepto(d){return ORDER.filter(function(k){return PR[k].d===d})}
     function art(id){var d=document.createElement('div');d.innerHTML=ART[id];var a=d.firstChild;a.removeAttribute('class');return a}
     function pinta(){
