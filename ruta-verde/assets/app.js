@@ -7,6 +7,48 @@ function each(l,f){Array.prototype.forEach.call(l,f)}
 var ART={"ceibo": "<svg class=\"art\" viewBox=\"0 0 300 180\" aria-hidden=\"true\"><rect width=\"300\" height=\"180\" fill=\"#F3E6BD\"/><path d=\"M0 130 C70 100 140 125 300 105 V180 H0Z\" fill=\"#9DBF70\"/><rect x=\"190\" y=\"70\" width=\"48\" height=\"66\" rx=\"10\" fill=\"#D9962B\"/><rect x=\"196\" y=\"58\" width=\"36\" height=\"14\" rx=\"4\" fill=\"#7A4A12\"/><rect x=\"198\" y=\"92\" width=\"32\" height=\"22\" rx=\"4\" fill=\"#F6E7B8\"/><g fill=\"#4F8A32\"><ellipse cx=\"80\" cy=\"120\" rx=\"16\" ry=\"30\" transform=\"rotate(-25 80 120)\"/><ellipse cx=\"108\" cy=\"116\" rx=\"16\" ry=\"30\" transform=\"rotate(10 108 116)\"/><ellipse cx=\"136\" cy=\"124\" rx=\"14\" ry=\"26\" transform=\"rotate(35 136 124)\"/></g></svg>", "aromos": "<svg class=\"art\" viewBox=\"0 0 300 180\" aria-hidden=\"true\"><rect width=\"300\" height=\"180\" fill=\"#E9EFD6\"/><path d=\"M0 140 C90 110 170 135 300 118 V180 H0Z\" fill=\"#8FB468\"/><ellipse cx=\"130\" cy=\"118\" rx=\"82\" ry=\"30\" fill=\"#E3BC58\"/><ellipse cx=\"130\" cy=\"100\" rx=\"82\" ry=\"30\" fill=\"#F2D888\"/><path d=\"M130 100 L205 100 L205 118 A82 30 0 0 1 130 148Z\" fill=\"#E9C96C\" opacity=\".55\"/><rect x=\"226\" y=\"86\" width=\"34\" height=\"46\" rx=\"8\" fill=\"#D9962B\"/><rect x=\"230\" y=\"76\" width=\"26\" height=\"12\" rx=\"3\" fill=\"#7A4A12\"/></svg>", "quesos": "<svg class=\"art\" viewBox=\"0 0 300 180\" aria-hidden=\"true\"><rect width=\"300\" height=\"180\" fill=\"#F1E8D2\"/><path d=\"M0 142 C100 118 190 140 300 124 V180 H0Z\" fill=\"#A8C281\"/><path d=\"M60 128 L170 78 L240 128Z\" fill=\"#F2D888\"/><path d=\"M60 128 L240 128 L240 146 L60 146Z\" fill=\"#E3BC58\"/><circle cx=\"130\" cy=\"112\" r=\"6\" fill=\"#E3BC58\"/><circle cx=\"178\" cy=\"120\" r=\"5\" fill=\"#E3BC58\"/></svg>", "posada": "<svg class=\"art\" viewBox=\"0 0 300 180\" aria-hidden=\"true\"><rect width=\"300\" height=\"180\" fill=\"#D4E4EE\"/><circle cx=\"238\" cy=\"48\" r=\"20\" fill=\"#FFE9A8\"/><path d=\"M0 130 C80 100 150 128 300 108 V180 H0Z\" fill=\"#8FB468\"/><rect x=\"92\" y=\"84\" width=\"116\" height=\"60\" fill=\"#FBF7EA\"/><path d=\"M82 88 L150 42 L218 88Z\" fill=\"#8A4B2A\"/><rect x=\"138\" y=\"106\" width=\"24\" height=\"38\" fill=\"#7A4A12\"/><rect x=\"104\" y=\"100\" width=\"20\" height=\"20\" fill=\"#9CC4D8\"/><rect x=\"176\" y=\"100\" width=\"20\" height=\"20\" fill=\"#9CC4D8\"/></svg>", "lana": "<svg class=\"art\" viewBox=\"0 0 300 180\" aria-hidden=\"true\"><rect width=\"300\" height=\"180\" fill=\"#EEDFCB\"/><circle cx=\"110\" cy=\"96\" r=\"48\" fill=\"#C8643C\"/><g fill=\"none\" stroke=\"#F3C9AE\" stroke-width=\"3\"><path d=\"M72 80 C100 104 130 104 148 82\"/><path d=\"M64 98 C100 124 136 122 156 98\"/><path d=\"M76 120 C104 136 130 134 146 118\"/></g><circle cx=\"200\" cy=\"112\" r=\"32\" fill=\"#5E8A3B\"/><g fill=\"none\" stroke=\"#B9D69A\" stroke-width=\"3\"><path d=\"M176 102 C196 118 214 118 226 104\"/><path d=\"M174 118 C196 132 214 130 228 118\"/></g></svg>"};
 var PR={"ceibo": {"n": "Finca Agroecológica El Ceibo", "d": "Colonia", "tag": "Miel y verduras", "desc": "Miel pura, verduras de estación y visita a la huerta.", "pr": "Miel orgánica de pradera (1 kg): $350", "badge": "Cosecha fresca", "rt": "4,9"}, "aromos": {"n": "Granja Tradicional «Los Aromos»", "d": "San José", "tag": "Quesos y experiencias", "desc": "Una familia dedicada a la producción apícola y quesera, con visitas guiadas en finca.", "pr": "Queso Colonia artesanal (kilo): $520 · Visita con degustación: $400 por persona", "badge": "Visitas hoy", "rt": "4,8"}, "quesos": {"n": "Finca Quesos", "d": "Canelones", "tag": "Quesos", "desc": "Quesos artesanales de productores de la zona.", "pr": "", "badge": "Ejemplo", "rt": "4,7"}, "posada": {"n": "Posada", "d": "Colonia", "tag": "Alojamiento", "desc": "Alojamiento rural con paseos por el campo.", "pr": "", "badge": "Reserva previa", "rt": "4,9"}, "lana": {"n": "Taller Lana", "d": "San José", "tag": "Artesanías", "desc": "Piezas artesanales en lana, hechas a mano.", "pr": "", "badge": "Hecho a mano", "rt": "4,8"}};
 var ORDER=["ceibo", "aromos", "quesos", "posada", "lana"];
+/* ---- productores reales (fotos aportadas por el equipo, con autorización) ---- */
+var _s=document.currentScript||document.querySelector('script[src*="assets/app.js"]');
+var BASE=(_s&&_s.src||'').replace(/app\.js(\?.*)?$/,'');
+function foto(f,a,logo){return '<img class="art" src="'+BASE+'img/'+f+'" alt="'+a+'" loading="lazy" width="500" height="300"'+(logo?' style="object-fit:contain;background:#F2EEEB"':'')+'>'}
+PR.campovivo={n:'Campo Vivo',d:'Florida',tag:'Campo · San Gabriel',desc:'Productor de San Gabriel, en Florida, visitado por el equipo de Ruta Verde en sus gestiones de campo.',pr:'',badge:'Productor real',rt:'',ig:'campovivo_71',real:1};
+PR.chepastor={n:'Che Pastor',d:'Canelones',tag:'Huerta agroecológica',desc:'Huerta agroecológica de Los Cerrillos, en Canelones.',pr:'',badge:'Productor real',rt:'',ig:'chepartor.uy',real:1};
+PR.suculentas={n:'Suculentas Adriana',d:'',tag:'Suculentas y plantines',desc:'Suculentas pequeñas y muy resistentes, ideales para macetas.',pr:'',badge:'Productor real',rt:'',ig:'adriana.falero.146',real:1};
+ART.campovivo=foto('campo-vivo-vaca.jpg','Vaca de Campo Vivo en el campo');
+ART.chepastor=foto('che-pastor-logo.jpg','Logo de Che Pastor, huerta agroecológica',true);
+ART.suculentas=foto('suculentas-adriana-plantines.jpg','Plantines de suculentas de Suculentas Adriana');
+ORDER=['campovivo','chepastor','suculentas'].concat(ORDER);
+var GAL={campovivo:{fotos:[
+  ['campo-vivo-vaca.jpg','Vaca de Campo Vivo'],['campo-vivo-naranjo.jpg','Naranjo con fruta'],
+  ['campo-vivo-ganado-eucaliptos.jpg','Ganado bajo los eucaliptos'],['campo-vivo-flores.jpg','Flores del campo'],
+  ['campo-vivo-campo-florido.jpg','Campo con flores'],['campo-vivo-camino.jpg','Camino de tierra al campo']],
+  videos:[['campo-vivo-agua.mp4','campo-vivo-agua-poster.jpg','Agua en el campo'],['campo-vivo-llegada.mp4','campo-vivo-llegada-poster.jpg','Recorrido por el campo']]}};
+GAL.suculentas={fotos:[['suculentas-adriana-plantines.jpg','Plantines de suculentas'],['suculentas-adriana-puesto.jpg','El puesto de Suculentas Adriana en la feria']]};
+function extras(id){
+  var p=PR[id],w=el('div','mini');
+  if(p.ig){var a=el('a','btn sm','Instagram');a.href='https://www.instagram.com/'+p.ig+'/';a.target='_blank';a.rel='noopener';a.setAttribute('aria-label','Instagram de '+p.n+' (se abre en otra pestaña)');w.appendChild(a)}
+  if(GAL[id]){var g=el('button','btn sm gal','Ver fotos y video');g.type='button';g.setAttribute('data-g',id);w.appendChild(g)}
+  return w;
+}
+function galeria(){
+  var dlg=null;
+  function abrir(id){
+    var g=GAL[id];if(!g)return;
+    if(!dlg){dlg=document.createElement('dialog');dlg.className='galdlg';document.body.appendChild(dlg);
+      dlg.addEventListener('click',function(e){if(e.target===dlg)dlg.close()})}
+    dlg.textContent='';dlg.setAttribute('aria-label','Fotos y video de '+PR[id].n);
+    var h=el('div','gh');h.appendChild(el('h3','',PR[id].n));
+    var c=el('button','btn sm','Cerrar');c.type='button';c.addEventListener('click',function(){dlg.close()});h.appendChild(c);dlg.appendChild(h);
+    var grid=el('div','gg');
+    g.fotos.forEach(function(f){var fg=el('figure'),im=document.createElement('img');im.src=BASE+'img/'+f[0];im.alt=f[1];im.loading='lazy';fg.appendChild(im);fg.appendChild(el('figcaption','',f[1]));grid.appendChild(fg)});
+    dlg.appendChild(grid);
+    (g.videos||[]).forEach(function(v){var vd=document.createElement('video');vd.controls=true;vd.preload='none';vd.muted=true;vd.setAttribute('playsinline','');vd.poster=BASE+'img/'+v[1];vd.src=BASE+'img/'+v[0];vd.setAttribute('aria-label',v[2]);dlg.appendChild(vd)});
+    if(dlg.showModal)dlg.showModal();else dlg.setAttribute('open','');
+    c.focus();
+  }
+  document.addEventListener('click',function(e){var b=e.target.closest&&e.target.closest('.gal');if(b)abrir(b.getAttribute('data-g'))});
+}
+
 var saved=[];
 try{saved=JSON.parse(localStorage.getItem('rv-guardados')||'[]')||[]}catch(e){saved=[]}
 function persist(){try{localStorage.setItem('rv-guardados',JSON.stringify(saved))}catch(e){}}
@@ -30,6 +72,7 @@ function menu(){
 function tarjetas(){
   var list=$('list');if(!list)return;
   var cards=Array.prototype.slice.call(list.querySelectorAll('.pc'));
+  cards.forEach(function(c){var id=c.getAttribute('data-id'),mn=c.querySelector('.mini');if(mn&&GAL[id]&&!mn.querySelector('.gal')){var g=el('button','btn sm gal','Ver fotos y video');g.type='button';g.setAttribute('data-g',id);mn.appendChild(g)}});
   function pinta(){cards.forEach(function(c){c.querySelector('.heart').setAttribute('aria-pressed',saved.indexOf(c.getAttribute('data-id'))>-1)})}
   refrescos.push(pinta);
   cards.forEach(function(c){c.querySelector('.heart').addEventListener('click',function(){toggle(c.getAttribute('data-id'))})});
@@ -68,7 +111,7 @@ function flash(e){if(!e)return;e.classList.remove('flash');void e.offsetWidth;e.
 function mapa(){
   var tb=$('ptiles'),ml=$('mlist'),pop=$('pop');
   if(tb&&ml&&pop){
-    var cur='ceibo';
+    var cur='campovivo';
     function porDepto(d){return ORDER.filter(function(k){return PR[k].d===d})}
     function art(id){var d=document.createElement('div');d.innerHTML=ART[id];var a=d.firstChild;a.removeAttribute('class');return a}
     function pinta(){
@@ -84,11 +127,11 @@ function mapa(){
       ml.textContent='';
       ORDER.forEach(function(id){
         var b=el('button','mi');b.type='button';b.setAttribute('aria-pressed',id===cur);b.appendChild(art(id));
-        var d=el('div');d.appendChild(el('b','',PR[id].n));d.appendChild(el('small','',PR[id].tag+' · '+PR[id].d));b.appendChild(d);
+        var d=el('div');d.appendChild(el('b','',PR[id].n));d.appendChild(el('small','',[PR[id].tag,PR[id].d].filter(Boolean).join(' · ')));b.appendChild(d);
         b.addEventListener('click',function(){cur=id;pinta();flash(pop)});ml.appendChild(b);
       });
       pop.textContent='';pop.appendChild(art(cur));
-      var dd=el('div');dd.style.flex='1';dd.appendChild(el('b','',PR[cur].n));dd.appendChild(el('small','',PR[cur].d+' · ★ '+PR[cur].rt));pop.appendChild(dd);
+      var dd=el('div');dd.style.flex='1';dd.appendChild(el('b','',PR[cur].n));dd.appendChild(el('small','',[PR[cur].d,PR[cur].rt?'★ '+PR[cur].rt:''].filter(Boolean).join(' · ')));dd.appendChild(extras(cur));pop.appendChild(dd);
       var g=el('button','btn sm',saved.indexOf(cur)>-1?'♥ Guardado':'♡ Guardar');g.type='button';
       g.setAttribute('aria-pressed',saved.indexOf(cur)>-1);g.addEventListener('click',function(){toggle(cur)});pop.appendChild(g);
     }
@@ -101,8 +144,8 @@ function mapa(){
       saved.forEach(function(id){
         if(!PR[id])return;var p=PR[id];
         var a=el('article','card prod pc');a.setAttribute('data-id',id);
-        a.innerHTML='<div class="aw">'+ART[id]+'<span class="badge">'+p.badge+'</span><button class="heart" type="button" aria-pressed="true" aria-label="Quitar de guardados">♥</button></div><div class="bd"><span class="rt"><i>★</i> '+p.rt+'</span><span class="tag">'+p.tag+'</span><h3>'+p.n+'</h3><div class="m">'+p.d+'</div><p>'+p.desc+'</p>'+(p.pr?'<div class="pr">'+p.pr+'</div>':'')+'</div>';
-        a.querySelector('.heart').addEventListener('click',function(){toggle(id)});
+        a.innerHTML='<div class="aw">'+ART[id]+'<span class="badge'+(p.real?' real':'')+'">'+p.badge+'</span><button class="heart" type="button" aria-pressed="true" aria-label="Quitar de guardados">♥</button></div><div class="bd">'+(p.rt?'<span class="rt"><i>★</i> '+p.rt+'</span>':'')+'<span class="tag">'+p.tag+'</span><h3>'+p.n+'</h3>'+(p.d?'<div class="m">'+p.d+'</div>':'')+'<p>'+p.desc+'</p>'+(p.pr?'<div class="pr">'+p.pr+'</div>':'')+'</div>';
+        a.querySelector('.heart').addEventListener('click',function(){toggle(id)});if(p.real)a.querySelector('.bd').appendChild(extras(id));
         gl.appendChild(a);
       });
       ge.style.display=saved.length?'none':'block';
@@ -253,5 +296,5 @@ function reveal(){
   each(els,function(e){io.observe(e)});
 }
 
-[menu,tarjetas,mapa,offline,verificador,fases,recomendador,registro,faq,reveal,conteo].forEach(function(f){try{f()}catch(e){if(window.console)console.error(f.name,e)}});
+[menu,galeria,tarjetas,mapa,offline,verificador,fases,recomendador,registro,faq,reveal,conteo].forEach(function(f){try{f()}catch(e){if(window.console)console.error(f.name,e)}});
 })();
