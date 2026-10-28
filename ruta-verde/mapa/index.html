@@ -3,13 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="description" content="Qué es el Sello Verde y cómo verificar un código. Proyecto final de egreso 2026.">
+<meta name="description" content="Mirá qué productores hay cerca de vos y guardá tus lugares favoritos. Maqueta del proyecto final de egreso 2026.">
 <meta name="theme-color" content="#0E401F">
-<meta property="og:title" content="Confianza y Sello Verde · Ruta Verde">
-<meta property="og:description" content="Qué es el Sello Verde y cómo verificar un código. Proyecto final de egreso 2026.">
+<meta property="og:title" content="Mapa y lugares guardados · Ruta Verde">
+<meta property="og:description" content="Mirá qué productores hay cerca de vos y guardá tus lugares favoritos. Maqueta del proyecto final de egreso 2026.">
 <meta property="og:type" content="website">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8C%B1%3C/text%3E%3C/svg%3E">
-<title>Confianza y Sello Verde · Ruta Verde</title>
+<title>Mapa y lugares guardados · Ruta Verde</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Sora:wght@500;700;800&family=Atkinson+Hyperlegible:wght@400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../assets/style.css">
@@ -19,41 +19,28 @@
 <a class="skip" href="#contenido">Saltar al contenido</a>
 <header class="sitehd"><div class="wrap in">
   <a class="brand" href="../"><span class="lg" role="img" aria-label="Logo de Ruta Verde"></span><span class="bt"><b>Ruta Verde</b><small>Conectamos orígenes</small></span></a>
-  <nav class="mn" id="menu" aria-label="Principal"><a href="../">Inicio</a><a href="../mapa/">Mapa <span id="gcount"></span></a><a href="../productores/">Productores</a><a href="../confianza/" class="on" aria-current="page">Confianza</a><a href="../preguntas/">Preguntas</a><a href="../proyecto/">Proyecto</a><a class="cta-m" href="../productores/#registro">Soy productor</a></nav>
+  <nav class="mn" id="menu" aria-label="Principal"><a href="../">Inicio</a><a href="../mapa/" class="on" aria-current="page">Mapa <span id="gcount"></span></a><a href="../productores/">Productores</a><a href="../confianza/">Confianza</a><a href="../preguntas/">Preguntas</a><a href="../proyecto/">Proyecto</a><a class="cta-m" href="../productores/#registro">Soy productor</a></nav>
   <a class="btn out" href="../productores/#registro">Soy productor</a>
   <button class="burger" type="button" aria-expanded="false" aria-controls="menu"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>Menú</button>
 </div></header>
 <main id="contenido">
-<div class="wrap pg-h"><div class="eb">Confianza</div><h1>El Sello Verde</h1><p>Cómo sabemos que lo que el productor declara es cierto, y cómo comprobar un sello.</p></div>
-<section id="sello" class="alt"><div class="wrap">
-  <h2>El Sello Verde</h2>
-  <p class="sub">Indica que el productor declaró cómo trabaja y, en el nivel Verificado, que alguien fue a comprobarlo en la finca. Tiene dos niveles.</p>
-  <div class="two">
-    <div class="card seal"><h3>Sello Verde Provisional</h3><p>Lo reciben los productores de los planes Gratuito y Estándar, sin costo, después de revisar su Declaración Jurada Digital.</p><ul><li>Se otorga tras la validación documental</li><li>Vigencia de 60 días corridos</li></ul></div>
-    <div class="card seal v"><h3>Sello Verde Verificado</h3><p>Exclusivo del Plan Premium. Requiere una auditoría presencial en la finca.</p><ul><li>Lista de cotejo de 15 indicadores</li><li>Puntaje mínimo de aprobación: 80 sobre 100</li><li>Re-auditoría anual obligatoria</li><li>Distinción física y código QR oficial</li></ul></div>
-  </div>
-  <h3 style="font-family:var(--head);color:var(--forest);margin:30px 0 4px">Qué se evalúa en la finca</h3>
-  <div class="bars" style="max-width:640px">
-    <div class="bar"><div class="t"><span>Manejo ambiental: agroquímicos, residuos y agua</span><b>30 %</b></div><div class="track"><div class="fill" style="width:30%"></div></div></div>
-    <div class="bar"><div class="t"><span>Bienestar animal e inocuidad de los alimentos</span><b>25 %</b></div><div class="track"><div class="fill" style="width:25%"></div></div></div>
-    <div class="bar"><div class="t"><span>Identidad territorial: patrimonio y tradiciones</span><b>25 %</b></div><div class="track"><div class="fill" style="width:25%"></div></div></div>
-    <div class="bar"><div class="t"><span>Origen y escala: producción familiar o artesanal</span><b>20 %</b></div><div class="track"><div class="fill" style="width:20%"></div></div></div>
-  </div>
-  <p class="demo">El sello se pierde ante denuncias comprobadas, falsedad en la declaración o incumplimientos en la re-auditoría. Antes de revocarlo se notifica al productor y se le da plazo para presentar descargos.</p>
-</div></section>
-<section id="verificador"><div class="wrap">
-  <h2>¿Es de confianza? Verificá el sello</h2>
-  <p class="sub">Cada productor verificado lleva un código QR oficial. Escribilo acá y fijate si el sello es válido antes de comprar o visitar.</p>
-  <div class="panel">
-    <div class="form" style="grid-template-columns:1fr auto">
-      <label class="f">Código del sello<input type="text" id="v-code" placeholder="Ej.: RV-0001" autocomplete="off" autocapitalize="characters"></label>
-      <button class="btn" type="button" id="v-go">Verificar</button>
+<div class="wrap pg-h"><div class="eb">Cerca de vos</div><h1>Mapa y lugares guardados</h1><p>Encontrá productores por departamento y guardá los que más te gusten para volver a verlos.</p></div>
+<section id="mapa"><div class="wrap">
+  <h2>Mirá qué hay cerca de vos</h2>
+  <p class="sub">Asomate a los departamentos donde hay productores reales y de ejemplo. Elegí uno de la lista o tocá un departamento marcado.</p>
+  <div class="mapa">
+    <div class="ml" id="mlist"></div>
+    <div>
+      <div class="pmapbox"><div class="ptiles" id="ptiles" role="group" aria-label="Departamentos con productores"></div>
+        <div class="pop" id="pop" aria-live="polite"></div></div>
+      <p class="demo">Esquema de mosaico, con los departamentos ubicados de forma aproximada. En la app, el mapa interactivo usa la ubicación de cada productor con un radio aproximado para cuidar su privacidad.</p>
     </div>
-    <div class="mini js-only" id="v-ex"><span class="demo" style="margin:0">Probá con un ejemplo:</span><button type="button" data-v="RV-0001">RV-0001</button><button type="button" data-v="RV-0002">RV-0002</button><button type="button" data-v="RV-0003">RV-0003</button><button type="button" data-v="RV-9999">RV-9999</button></div>
-    <div id="v-res" aria-live="polite"></div>
-    <p class="demo">Códigos y productores de ejemplo, ficticios. En la versión real el QR abre esta consulta directo.</p>
-    <p class="nojs-note">Para probar el verificador hay que abrir la página con el navegador (Chrome o Safari).</p>
   </div>
+</div></section>
+<section id="guardados" class="alt"><div class="wrap">
+  <div class="eb">Tu colección</div><h2>Tus lugares favoritos</h2>
+  <div class="cards" id="glist"></div>
+  <div class="empty" id="gempty">Todavía no guardaste nada. Tocá el ♥ de una ficha y la vas a ver acá.</div>
 </div></section>
 </main>
 <footer id="contacto"><div class="wrap">
