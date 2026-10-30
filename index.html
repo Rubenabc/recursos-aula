@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="es-UY">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Glosario del parcial final — Informática Aplicada 3°DG</title>
+<meta name="description" content="Glosario de apoyo del parcial final de Informática Aplicada (3°DG): HTML, CSS, prompt, BUSCARV, fórmulas, incrustar, píxeles, código de color y protección de datos.">
+<meta name="author" content="Ruben Leal">
+<meta name="theme-color" content="#FBFAF6" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#11181E" media="(prefers-color-scheme: dark)">
+<link rel="canonical" href="https://rubenabc.github.io/recursos-aula/glosario/">
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="es_UY">
+<meta property="og:site_name" content="Recursos de aula">
+<meta property="og:title" content="Glosario del parcial final — Informática Aplicada 3°DG">
+<meta property="og:description" content="Glosario de apoyo del parcial final de Informática Aplicada (3°DG): HTML, CSS, prompt, BUSCARV, fórmulas, incrustar, píxeles, código de color y protección de datos.">
+<meta property="og:url" content="https://rubenabc.github.io/recursos-aula/glosario/">
+<meta name="twitter:card" content="summary">
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='18' fill='%231B2630'/%3E%3Ctext x='50' y='68' font-family='monospace' font-size='52' font-weight='bold' fill='%23C9E55C' text-anchor='middle'%3E%26lt;%26gt;%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#FBFAF6;
+  --ink:#16202A;
+  --ink-soft:#56646E;
+  --rule:#DFDCD2;
+  --marker:#D9F26B;
+  --marker-deep:#8FA81F;
+  --signal:#C2452D;
+  --card:#FFFFFF;
+  --code-bg:#1B2630;
+  --code-ink:#E8E6DE;
+  --chip:#F1EFE6;
+  color-scheme: light;
+  box-sizing:border-box;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#11181E;
+    --ink:#ECEAE2;
+    --ink-soft:#9CA9B1;
+    --rule:#2A353D;
+    --marker:#C9E55C;
+    --marker-deep:#C9E55C;
+    --signal:#E8745C;
+    --card:#182128;
+    --code-bg:#0B1116;
+    --chip:#1D272F;
+    color-scheme: dark;
+  }
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-padding-top:1.5rem;-webkit-text-size-adjust:100%}
+body{
+  margin:0;background:var(--paper);color:var(--ink);
+  font-family:"Instrument Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+  font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:46rem;margin:0 auto;padding:0 1.25rem 5rem}
+h1,h2,h3{font-family:"Bricolage Grotesque","Instrument Sans",sans-serif;line-height:1.12;letter-spacing:-0.02em;margin:0}
+p{margin:0 0 1rem}
+ul{margin:0 0 1rem;padding-left:1.25rem}
+li{margin-bottom:.35rem}
+code{font-family:"JetBrains Mono",ui-monospace,Menlo,monospace;font-size:.88em}
+
+.hero{padding:3.25rem 0 2rem;border-bottom:1px solid var(--rule)}
+.kicker{font-size:.84rem;color:var(--ink-soft);margin:0 0 1.75rem}
+.hero h1{font-size:clamp(2rem,7.5vw,3.2rem);font-weight:700}
+.hero h1 .hl{background:linear-gradient(transparent 60%, var(--marker) 60%, var(--marker) 94%, transparent 94%);padding:0 .05em}
+.hero .lead{font-size:1.12rem;color:var(--ink-soft);margin-top:1.4rem;max-width:34rem}
+
+.index{margin:2rem 0 0;padding:1.4rem 0 0}
+.index h2{font-size:.95rem;font-weight:700;margin-bottom:.9rem}
+.chips{display:flex;flex-wrap:wrap;gap:.4rem;padding:0;margin:0;list-style:none}
+.chips a{
+  display:inline-block;background:var(--chip);color:var(--ink);
+  text-decoration:none;font-size:.82rem;padding:.3rem .7rem;border-radius:999px;
+  border:1px solid var(--rule);
+}
+.chips a:hover,.chips a:focus-visible{background:var(--marker);color:#16202A;border-color:var(--marker)}
+
+.chapter{padding:3.25rem 0 0}
+.chapter > h2{font-size:clamp(1.5rem,5.5vw,2.1rem);font-weight:700;margin-bottom:.9rem}
+.group-title{
+  margin:3.5rem 0 0;padding-top:1.5rem;border-top:2px solid var(--ink);
+  font-size:1.25rem;font-weight:700;
+}
+.term{padding:2rem 0 0;scroll-margin-top:1.5rem}
+.term h3{font-size:1.2rem;font-weight:700;margin-bottom:.5rem}
+.term h3 .also{font-family:"Instrument Sans",sans-serif;font-weight:400;font-size:.85rem;color:var(--ink-soft);letter-spacing:0}
+
+.anatomy{background:var(--code-bg);border-radius:14px;padding:2.25rem 1rem 1.25rem;margin:1.5rem 0;overflow-x:auto}
+.anatomy-line{font-family:"JetBrains Mono",monospace;font-size:clamp(.88rem,4.2vw,1.3rem);color:var(--code-ink);white-space:nowrap;text-align:center;font-weight:700}
+.anatomy-line .t{color:#C9E55C}
+.anatomy-line .c{background:rgba(217,242,107,.16);border-radius:3px;padding:.1em .15em}
+.anatomy-key{display:flex;gap:1.1rem;flex-wrap:wrap;justify-content:center;margin-top:1.4rem;font-size:.78rem;color:#8FA0AC}
+.anatomy-key span{display:flex;align-items:center;gap:.4rem}
+.dot{width:9px;height:9px;border-radius:50%;flex:none}
+
+.demo{border:1px solid var(--rule);border-radius:14px;overflow:hidden;margin:1.5rem 0;background:var(--card)}
+.demo-bar{display:flex;align-items:center;justify-content:space-between;gap:.75rem;padding:.7rem .9rem;border-bottom:1px solid var(--rule);flex-wrap:wrap}
+.demo-label{font-size:.8rem;color:var(--ink-soft)}
+button.swap{font-family:inherit;font-size:.85rem;font-weight:600;cursor:pointer;background:var(--marker);color:#16202A;border:1px solid var(--marker-deep);padding:.45rem .9rem;border-radius:999px}
+button.swap:focus-visible{outline:3px solid var(--signal);outline-offset:2px}
+.demo-body{padding:1.25rem}
+.render h4{font-family:"Bricolage Grotesque",sans-serif;font-size:1.3rem;margin:0 0 .3rem}
+.render p{font-size:.95rem;margin:0 0 .7rem;color:var(--ink-soft)}
+.render ul{font-size:.95rem}
+.render a{color:var(--marker-deep);font-weight:600}
+.code-view{display:none;margin:0;background:var(--code-bg);color:var(--code-ink);padding:1.1rem;border-radius:10px;overflow-x:auto;font-family:"JetBrains Mono",monospace;font-size:.8rem;line-height:1.75;white-space:pre}
+.code-view .t{color:#C9E55C}
+.demo.showing-code .render{display:none}
+.demo.showing-code .code-view{display:block}
+
+.tbl{width:100%;border-collapse:collapse;margin:1.2rem 0;font-size:.93rem;display:block;overflow-x:auto}
+.tbl th,.tbl td{text-align:left;padding:.6rem .7rem;border-bottom:1px solid var(--rule);vertical-align:top}
+.tbl th{font-weight:600;font-size:.78rem;color:var(--ink-soft)}
+.tbl td code{color:var(--marker-deep);font-weight:700;white-space:nowrap}
+
+pre.block{background:var(--code-bg);color:var(--code-ink);padding:1.2rem;border-radius:12px;overflow-x:auto;font-family:"JetBrains Mono",monospace;font-size:.8rem;line-height:1.8;margin:1.2rem 0}
+pre.block .t{color:#C9E55C}
+pre.block .cm{color:#7E909C}
+
+.note{border-left:3px solid var(--marker-deep);padding:.2rem 0 .2rem 1.1rem;margin:1.3rem 0;color:var(--ink-soft)}
+.warn{border-left:3px solid var(--signal);padding:.2rem 0 .2rem 1.1rem;margin:1.3rem 0}
+.warn strong{color:var(--signal)}
+.good-bad{display:grid;gap:.8rem;margin:1.2rem 0}
+@media(min-width:34rem){.good-bad{grid-template-columns:1fr 1fr}}
+.gb{border:1px solid var(--rule);border-radius:10px;padding:.9rem;background:var(--card);font-size:.9rem}
+.gb b{display:block;margin-bottom:.4rem;font-size:.78rem;letter-spacing:.01em}
+.gb.ok b{color:var(--marker-deep)}
+.gb.no b{color:var(--signal)}
+.gb code{display:block;word-break:break-all;margin-bottom:.3rem}
+
+.sandbox{border:1px solid var(--rule);border-radius:14px;background:var(--card);margin:1.5rem 0;overflow:hidden}
+.sandbox-head{padding:.7rem .9rem;border-bottom:1px solid var(--rule);font-size:.8rem;color:var(--ink-soft)}
+textarea#editor{width:100%;min-height:10rem;border:0;resize:vertical;display:block;background:var(--code-bg);color:var(--code-ink);font-family:"JetBrains Mono",monospace;font-size:.82rem;line-height:1.7;padding:1rem}
+textarea#editor:focus{outline:2px solid var(--marker-deep);outline-offset:-2px}
+.sandbox-out{padding:1.1rem;border-top:1px solid var(--rule)}
+.out-label{font-size:.72rem;color:var(--ink-soft);margin-bottom:.6rem}
+#salida{min-height:3rem}
+#salida a{color:var(--marker-deep)}
+
+.swatches{display:flex;gap:.5rem;flex-wrap:wrap;margin:1rem 0}
+.sw{width:4.5rem;border-radius:8px;overflow:hidden;border:1px solid var(--rule);font-size:.65rem;text-align:center}
+.sw i{display:block;height:2.6rem}
+.sw span{display:block;padding:.25rem 0;font-family:"JetBrains Mono",monospace;color:var(--ink-soft)}
+
+
+.totop{
+  position:fixed;right:1rem;bottom:calc(1rem + env(safe-area-inset-bottom,0px));
+  background:var(--card);color:var(--ink);border:1px solid var(--rule);
+  border-radius:999px;padding:.5rem .9rem;font-size:.8rem;text-decoration:none;
+  box-shadow:0 2px 10px rgba(0,0,0,.12);opacity:0;pointer-events:none;transition:opacity .2s ease;
+}
+.totop.on{opacity:1;pointer-events:auto}
+.totop:hover,.totop:focus-visible{background:var(--marker);color:#16202A;border-color:var(--marker)}
+@media print{.totop{display:none}}
+
+footer .lic{margin-top:1rem;font-size:.78rem;line-height:1.6}
+footer .lic a{color:var(--marker-deep)}
+
+footer{margin-top:4rem;padding-top:1.5rem;border-top:1px solid var(--rule);font-size:.85rem;color:var(--ink-soft)}
+a{color:var(--marker-deep)}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="hero" id="top">
+  <p class="kicker">Informática Aplicada · 3°DG · Material de apoyo del parcial final</p>
+  <h1><span class="hl">Glosario del parcial</span></h1>
+  <p class="lead">Todas las palabras de la consigna que conviene tener claras antes de empezar. No hace falta leerlo entero: buscá la que necesites.</p>
+
+  <nav class="index">
+    <h2>Buscá tu palabra</h2>
+    <ul class="chips">
+      <li><a href="#html">HTML</a></li>
+      <li><a href="#css">CSS</a></li>
+      <li><a href="#autocontenido">Archivo autocontenido</a></li>
+      <li><a href="#extension">Extensión</a></li>
+      <li><a href="#nombre-archivo">Nombre de archivo</a></li>
+      <li><a href="#formula">Fórmula</a></li>
+      <li><a href="#menu">Menú de la planilla</a></li>
+      <li><a href="#buscarv">BUSCARV</a></li>
+      <li><a href="#incrustar">Incrustar</a></li>
+      <li><a href="#url">URL</a></li>
+      <li><a href="#px">Píxeles</a></li>
+      <li><a href="#hex">Código de color</a></li>
+      <li><a href="#identidad">Identidad visual</a></li>
+      <li><a href="#png">PNG y JPG</a></li>
+      <li><a href="#responsive">Que se vea en el celular</a></li>
+      <li><a href="#prompt">Prompt</a></li>
+      <li><a href="#inventa">Cuando la IA inventa</a></li>
+      <li><a href="#declaracion">Declaración de uso de IA</a></li>
+      <li><a href="#publicar">Publicar</a></li>
+      <li><a href="#captura">Captura de pantalla</a></li>
+      <li><a href="#datos">Datos personales</a></li>
+      <li><a href="#protocolo">Protocolo</a></li>
+    </ul>
+  </nav>
+</header>
+
+<!-- ===================== HTML ===================== -->
+<article class="chapter" id="html">
+  <h2>HTML</h2>
+  <p><strong>HTML</strong> quiere decir <em>HyperText Markup Language</em>: lenguaje de marcado de hipertexto.</p>
+  <p>La palabra importante es <strong>marcado</strong>. HTML no es un lenguaje de programación: no hace cuentas, no toma decisiones, no guarda datos. Lo único que hace es <strong>marcar qué es cada parte de un texto</strong>.</p>
+  <p>Pensalo así. Si te doy en un papel el texto de tu posada y un resaltador, vos ibas a marcar: «esto es el título», «esto es un párrafo», «esto es la lista de servicios», «esto es un botón para reservar». HTML es ese resaltador, escrito de una forma que el navegador entiende.</p>
+  <div class="note">El navegador no sabe qué es un título. Se lo tenés que decir con una etiqueta. Después lo muestra grande y en negrita porque vos lo marcaste como título.</div>
+
+  <h3>La etiqueta</h3>
+  <p>La marca se llama <strong>etiqueta</strong>. Casi siempre viene de a dos: una abre y otra cierra, y en el medio va el contenido.</p>
+
+  <div class="anatomy">
+    <div class="anatomy-line"><span class="t">&lt;h1&gt;</span><span class="c">Posada Luz de Cuchilla</span><span class="t">&lt;/h1&gt;</span></div>
+    <div class="anatomy-key">
+      <span><i class="dot" style="background:#C9E55C"></i>abre</span>
+      <span><i class="dot" style="background:rgba(201,229,92,.35)"></i>el contenido</span>
+      <span><i class="dot" style="background:#C9E55C"></i>cierra</span>
+    </div>
+  </div>
+
+  <ul>
+    <li><code>&lt;h1&gt;</code> abre y dice «acá empieza un título principal»</li>
+    <li>el texto del medio es lo que se ve en la pantalla</li>
+    <li><code>&lt;/h1&gt;</code> cierra y dice «acá termina»</li>
+  </ul>
+  <p>La barra del cierre es lo único que las diferencia. Si te olvidás de cerrar, el navegador le sigue aplicando ese formato a todo lo que viene después, hasta el final de la página.</p>
+
+  <h3>La misma página, de los dos lados</h3>
+  <p>Tocá el botón y vas a ver lo mismo escrito en HTML.</p>
+
+  <div class="demo" id="demo">
+    <div class="demo-bar">
+      <span class="demo-label" id="demo-label">Así lo ve el huésped</span>
+      <button class="swap" id="swap">Ver el HTML</button>
+    </div>
+    <div class="demo-body">
+      <div class="render">
+        <h4>Posada Luz de Cuchilla</h4>
+        <p>Seis cabañas entre los cerros de Villa Serrana.</p>
+        <ul>
+          <li>Wifi en todas las cabañas</li>
+          <li>Parrillero y cocina equipada</li>
+          <li>Se admiten mascotas</li>
+        </ul>
+        <p><a href="#html">Reservá tu estadía</a></p>
+      </div>
+<pre class="code-view"><span class="t">&lt;h2&gt;</span>Posada Luz de Cuchilla<span class="t">&lt;/h2&gt;</span>
+
+<span class="t">&lt;p&gt;</span>Seis cabañas entre los cerros de Villa Serrana.<span class="t">&lt;/p&gt;</span>
+
+<span class="t">&lt;ul&gt;</span>
+  <span class="t">&lt;li&gt;</span>Wifi en todas las cabañas<span class="t">&lt;/li&gt;</span>
+  <span class="t">&lt;li&gt;</span>Parrillero y cocina equipada<span class="t">&lt;/li&gt;</span>
+  <span class="t">&lt;li&gt;</span>Se admiten mascotas<span class="t">&lt;/li&gt;</span>
+<span class="t">&lt;/ul&gt;</span>
+
+<span class="t">&lt;p&gt;&lt;a href="reservas.html"&gt;</span>Reservá tu estadía<span class="t">&lt;/a&gt;&lt;/p&gt;</span></pre>
+    </div>
+  </div>
+
+  <p>El texto es exactamente el mismo de los dos lados. Lo único que cambia es que en la versión de código cada parte está envuelta en una etiqueta que dice qué es.</p>
+
+  <h3>Las diez etiquetas que vas a ver en tu sitio</h3>
+  <table class="tbl">
+    <thead><tr><th>Etiqueta</th><th>Qué marca</th></tr></thead>
+    <tbody>
+      <tr><td><code>&lt;h1&gt;</code></td><td>El título principal. Va uno solo por página: el nombre de tu alojamiento</td></tr>
+      <tr><td><code>&lt;h2&gt;</code></td><td>Los títulos de cada sección: Servicios, Tarifas, Contacto</td></tr>
+      <tr><td><code>&lt;p&gt;</code></td><td>Un párrafo de texto</td></tr>
+      <tr><td><code>&lt;ul&gt;</code> <code>&lt;li&gt;</code></td><td>Una lista y cada uno de sus puntos. Tus servicios van acá</td></tr>
+      <tr><td><code>&lt;a&gt;</code></td><td>Un enlace</td></tr>
+      <tr><td><code>&lt;img&gt;</code></td><td>Una imagen</td></tr>
+      <tr><td><code>&lt;table&gt;</code></td><td>Una tabla. Tus tarifas probablemente vengan así</td></tr>
+      <tr><td><code>&lt;iframe&gt;</code></td><td>Una ventana que muestra otra página adentro. <strong>Tu formulario se incrusta con esta</strong></td></tr>
+      <tr><td><code>&lt;div&gt;</code></td><td>Una caja que agrupa cosas. No se ve, sirve para ordenar</td></tr>
+      <tr><td><code>&lt;footer&gt;</code></td><td>El pie de página: dirección, teléfono, redes</td></tr>
+    </tbody>
+  </table>
+
+  <h3>Los atributos</h3>
+  <p>Algunas etiquetas necesitan información extra. Va adentro de la etiqueta de apertura y se llama atributo:</p>
+<pre class="block"><span class="t">&lt;a href="contacto.html"&gt;</span>Escribinos<span class="t">&lt;/a&gt;</span>
+
+<span class="t">&lt;img src="cabania.jpg" alt="Cabaña vista desde el sendero"&gt;</span></pre>
+  <p><code>href</code>, <code>src</code> y <code>alt</code> son atributos. El valor va siempre entre comillas.</p>
+  <div class="note"><code>alt</code> describe la imagen para alguien que no puede verla, y es lo que aparece si la foto no carga. Una página sin <code>alt</code> deja afuera a parte de tus huéspedes.</div>
+
+  <h3>El esqueleto de toda página</h3>
+<pre class="block"><span class="t">&lt;!DOCTYPE html&gt;</span>
+<span class="t">&lt;html lang="es"&gt;</span>
+
+  <span class="t">&lt;head&gt;</span>
+    <span class="cm">&lt;!-- lo que NO se ve --&gt;</span>
+    <span class="t">&lt;meta charset="UTF-8"&gt;</span>
+    <span class="t">&lt;title&gt;</span>Posada Luz de Cuchilla<span class="t">&lt;/title&gt;</span>
+  <span class="t">&lt;/head&gt;</span>
+
+  <span class="t">&lt;body&gt;</span>
+    <span class="cm">&lt;!-- todo lo que SÍ se ve --&gt;</span>
+    <span class="t">&lt;h1&gt;</span>Posada Luz de Cuchilla<span class="t">&lt;/h1&gt;</span>
+    <span class="t">&lt;p&gt;</span>Seis cabañas en Villa Serrana.<span class="t">&lt;/p&gt;</span>
+  <span class="t">&lt;/body&gt;</span>
+
+<span class="t">&lt;/html&gt;</span></pre>
+  <ul>
+    <li>El <code>&lt;head&gt;</code> es información para el navegador. El <code>&lt;title&gt;</code> es el nombre que aparece en la pestaña del navegador y en Google, pero no se ve dentro de la página.</li>
+    <li>El <code>&lt;body&gt;</code> es todo lo que el huésped realmente ve.</li>
+  </ul>
+  <p>El <code>charset="UTF-8"</code> parece un detalle y no lo es: es lo que hace que las tildes y la ñ se vean bien. Sin eso, «Cabaña» aparece como «CabaÃ±a».</p>
+
+  <h3>Probá vos</h3>
+  <p>Escribí abajo y mirá qué pasa del otro lado.</p>
+  <div class="sandbox">
+    <div class="sandbox-head">Escribí HTML acá</div>
+    <textarea id="editor" spellcheck="false" aria-label="Editor de HTML">&lt;h3&gt;Cabaña grande&lt;/h3&gt;
+&lt;p&gt;Hasta &lt;strong&gt;6 personas&lt;/strong&gt;, con parrillero propio.&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Cocina equipada&lt;/li&gt;
+  &lt;li&gt;Vista a los cerros&lt;/li&gt;
+&lt;/ul&gt;</textarea>
+    <div class="sandbox-out">
+      <div class="out-label">Así lo muestra el navegador</div>
+      <div id="salida" aria-live="polite"></div>
+    </div>
+  </div>
+  <p>Probá esto: borrale la barra al <code>&lt;/strong&gt;</code> y mirá qué le pasa al resto del texto.</p>
+
+  <h3>Espiá cualquier página</h3>
+  <table class="tbl">
+    <thead><tr><th>Para ver</th><th>Hacé esto</th></tr></thead>
+    <tbody>
+      <tr><td>El código entero</td><td><code>Ctrl</code> + <code>U</code></td></tr>
+      <tr><td>El código de una parte</td><td>Clic derecho sobre esa parte → Inspeccionar</td></tr>
+      <tr><td>Las herramientas completas</td><td><code>F12</code></td></tr>
+    </tbody>
+  </table>
+  <p>Cuando veas algo que te gusta en la web de un hotel, fijate cómo está armado.</p>
+</article>
+
+<!-- ===================== ARCHIVOS ===================== -->
+<h2 class="group-title">Archivos</h2>
+
+<section class="term" id="css">
+  <h3>CSS</h3>
+  <p>Si una página tiene solo HTML, funciona pero se ve fea: texto negro sobre fondo blanco, todo apilado, sin colores.</p>
+  <p>El <strong>CSS</strong> es lo que le da el aspecto: colores, tipografías, espacios, dónde va cada cosa.</p>
+  <table class="tbl">
+    <thead><tr><th></th><th>HTML</th><th>CSS</th></tr></thead>
+    <tbody>
+      <tr><td>Define</td><td>Qué es cada cosa</td><td>Cómo se ve cada cosa</td></tr>
+      <tr><td>En tu posada</td><td>«Esto es la lista de servicios»</td><td>«Las listas van en verde, con más espacio»</td></tr>
+      <tr><td>Sin esto</td><td>No hay página</td><td>Hay página, pero fea</td></tr>
+    </tbody>
+  </table>
+  <p>En el paso 6 le pedís a la IA que ponga el CSS adentro del mismo archivo, en una etiqueta <code>&lt;style&gt;</code>.</p>
+</section>
+
+<section class="term" id="autocontenido">
+  <h3>Archivo autocontenido</h3>
+  <p>Un archivo que <strong>no depende de ningún otro</strong> para funcionar. Todo lo que necesita está adentro: el texto, el CSS, los colores.</p>
+  <p>Lo contrario sería un sitio repartido en varios archivos: uno con el HTML, otro con el CSS, una carpeta con las imágenes. Funciona igual de bien, pero si se pierde uno en el camino, el sitio se rompe.</p>
+  <div class="note">Por eso en el paso 6 se pide un solo archivo: para que al entregarlo y publicarlo viaje entero y no falte nada.</div>
+</section>
+
+<section class="term" id="extension">
+  <h3>Extensión <span class="also">— las letras después del punto</span></h3>
+  <p>Es lo que le dice a la computadora qué tipo de archivo es: <code>.html</code>, <code>.pdf</code>, <code>.png</code>, <code>.xlsx</code>.</p>
+  <p>Si un archivo se llama <code>tarifas.pdf</code>, la extensión es <code>.pdf</code> y se abre con un lector de PDF. Si le cambiás la extensión, no cambiás el archivo: solo lográs que no se abra con nada.</p>
+  <div class="warn"><strong>Ojo con esto:</strong> <code>listado.pdf.exe</code> no es un PDF. La extensión real es siempre <strong>la última</strong>. Ese archivo es un programa disfrazado de documento.</div>
+</section>
+
+<section class="term" id="nombre-archivo">
+  <h3>Nombre de archivo para publicar</h3>
+  <p>El nombre de tu archivo HTML va a terminar siendo parte de la dirección web. Por eso tiene reglas:</p>
+  <div class="good-bad">
+    <div class="gb ok"><b>Así sí</b><code>posada-luz-de-cuchilla.html</code>Minúsculas, guiones en vez de espacios, sin tildes ni ñ</div>
+    <div class="gb no"><b>Así no</b><code>Posada Luz de Cuchilla.html</code><code>cabañas serranas.html</code>Espacios, mayúsculas, ñ</div>
+  </div>
+  <p>Los espacios y las tildes en una dirección web se transforman en códigos ilegibles del tipo <code>%20</code> y <code>%C3%B1</code>. El sitio funciona igual, pero el enlace queda impresentable.</p>
+</section>
+
+<!-- ===================== PLANILLA ===================== -->
+<h2 class="group-title">La planilla</h2>
+
+<section class="term" id="formula">
+  <h3>Fórmula, y por qué no es lo mismo que el resultado</h3>
+  <p>Una celda puede tener dos cosas adentro:</p>
+  <ul>
+    <li>Un <strong>valor</strong>: escribiste <code>3.640</code> y ahí quedó, fijo.</li>
+    <li>Una <strong>fórmula</strong>: escribiste <code>=C2*1,3</code> y la planilla calcula el resultado cada vez.</li>
+  </ul>
+  <p>En la pantalla se ven igual: las dos muestran 3.640. La diferencia aparece cuando algo cambia.</p>
+  <div class="note"><strong>La prueba:</strong> cambiá la tarifa de la columna C. Si los demás números se mueven solos, hay fórmulas. Si no se mueven, escribiste valores y el paso 2 está mal.</div>
+  <p>Toda fórmula empieza con el signo <code>=</code>. Sin ese signo, la planilla entiende que es texto y no calcula nada.</p>
+</section>
+
+<section class="term" id="menu">
+  <h3>Menú de la planilla</h3>
+  <p>Son las hojas que hay dentro de un mismo archivo de cálculo, las que aparecen abajo con su nombre.</p>
+  <p>En el parcial vas a tener dos en el mismo archivo: uno llamado <code>Tarifas</code> y otro llamado <code>Presupuesto</code>. Se crean con el botón <strong>+</strong> de abajo a la izquierda.</p>
+  <p>Para usar en un menú un dato que está en otro, se escribe el nombre del menú, un signo de exclamación y la celda: <code>Tarifas!E3</code>.</p>
+</section>
+
+<section class="term" id="buscarv">
+  <h3>BUSCARV</h3>
+  <p>Es una función que <strong>va a buscar un dato a otra tabla</strong> en lugar de que vos lo escribas de nuevo.</p>
+  <p>En el paso 3 la usás para esto: en vez de escribir a mano que la cabaña grande sale 7.140, le pedís a la planilla que vaya al menú <code>Tarifas</code>, busque «Cabaña grande» y traiga el precio que figure ahí.</p>
+<pre class="block">=BUSCARV(B1;Tarifas!A2:E3;5;FALSO)</pre>
+  <table class="tbl">
+    <thead><tr><th>Parte</th><th>Qué significa</th></tr></thead>
+    <tbody>
+      <tr><td><code>B1</code></td><td><strong>Qué busco.</strong> La celda donde dice el tipo de unidad</td></tr>
+      <tr><td><code>Tarifas!A2:E3</code></td><td><strong>Dónde lo busco.</strong> La tabla del otro menú</td></tr>
+      <tr><td><code>5</code></td><td><strong>Qué columna traigo.</strong> La quinta de esa tabla es la tarifa alta</td></tr>
+      <tr><td><code>FALSO</code></td><td><strong>Coincidencia exacta.</strong> Que no traiga algo parecido</td></tr>
+    </tbody>
+  </table>
+  <p>La ventaja: si mañana cambiás una tarifa en el menú <code>Tarifas</code>, el presupuesto se actualiza solo. No tenés que acordarte de corregirlo en dos lados.</p>
+  <div class="warn"><strong>Si te devuelve <code>#N/D</code>:</strong> significa que no encontró lo que buscaba. Casi siempre es porque el texto no coincide exacto. «Cabaña grande» y «Cabaña Grande» son distintos para la planilla.</div>
+</section>
+
+<!-- ===================== FORMULARIO Y WEB ===================== -->
+<h2 class="group-title">El formulario y la web</h2>
+
+<section class="term" id="incrustar">
+  <h3>Incrustar <span class="also">— también: embeber, insertar</span></h3>
+  <p>Es meter una cosa <strong>adentro</strong> de otra, de modo que se use sin salir de ahí.</p>
+  <p>Tu formulario de reservas vive en Google Forms, que es otro sitio. Incrustarlo significa que el huésped lo completa <strong>dentro de tu página</strong>, sin que lo mandes a otro lado.</p>
+  <p>Google te da el código listo: en el formulario, botón <strong>Enviar</strong> → ícono <code>&lt; &gt;</code> → Copiar. Eso que copiás es un <code>&lt;iframe&gt;</code> y se pega dentro del HTML, donde quieras que aparezca.</p>
+  <div class="note">Un formulario incrustado que no se puede completar es el error más común. Probalo siempre desde la página publicada, no desde el editor.</div>
+</section>
+
+<section class="term" id="url">
+  <h3>URL <span class="also">— la dirección web</span></h3>
+  <p>Es la dirección completa de algo en internet. La de tu sitio va a tener esta forma:</p>
+<pre class="block">https://usuario.github.io/carpeta/posada-luz-de-cuchilla.html</pre>
+  <p>Cuando la consigna te pide «el enlace del formulario», te está pidiendo su URL: la copiás desde Google Forms con el botón <strong>Enviar</strong> → ícono de cadena.</p>
+</section>
+
+<section class="term" id="responsive">
+  <h3>Que se vea bien en el celular</h3>
+  <p>Una página pensada solo para computadora, vista en un teléfono, queda con la letra minúscula y hay que arrastrar para los costados para leer.</p>
+  <p>Una página bien hecha se reacomoda sola: lo que en la computadora está en tres columnas, en el celular se apila en una. Eso se pide en el prompt del paso 6.</p>
+  <div class="note">No es un detalle estético. La mayoría de la gente busca alojamiento desde el teléfono.</div>
+</section>
+
+<!-- ===================== DISEÑO ===================== -->
+<h2 class="group-title">El diseño</h2>
+
+<section class="term" id="px">
+  <h3>Píxeles <span class="also">— px</span></h3>
+  <p>Es la unidad con la que se mide el tamaño de una imagen en pantalla. Un píxel es un puntito de color; una imagen de 500 × 500 px tiene 500 puntos de ancho por 500 de alto.</p>
+  <p>Cuando la consigna pide un logo de 500 × 500 px, estás pidiendo una imagen cuadrada. 1200 × 400 px es un rectángulo bien ancho y bajo, que es la forma de un banner de cabecera.</p>
+  <p>En Canva el tamaño se elige al crear el diseño: <strong>Crear diseño → Tamaño personalizado</strong>.</p>
+</section>
+
+<section class="term" id="hex">
+  <h3>Código de color <span class="also">— hexadecimal</span></h3>
+  <p>«Verde» no alcanza: hay miles de verdes. Para que el color sea exactamente el mismo en tu logo, en tu web y en tu promoción, se usa un código.</p>
+  <p>Empieza con <code>#</code> y sigue con seis caracteres. Por ejemplo:</p>
+  <div class="swatches">
+    <div class="sw"><i style="background:#2F4A3C"></i><span>#2F4A3C</span></div>
+    <div class="sw"><i style="background:#D9A441"></i><span>#D9A441</span></div>
+    <div class="sw"><i style="background:#F2EDE4"></i><span>#F2EDE4</span></div>
+  </div>
+  <p>En Canva lo encontrás al elegir un color, en el casillero de arriba. Anotá tus tres códigos en el documento: los vas a necesitar en el prompt del paso 6 para que la web tenga los mismos colores que tu logo.</p>
+</section>
+
+<section class="term" id="identidad">
+  <h3>Identidad visual</h3>
+  <p>Es el conjunto de decisiones visuales que hacen que todas las piezas de tu alojamiento se reconozcan como del mismo lugar: los colores, la tipografía, el logo, el estilo de las fotos.</p>
+  <p>Si tu logo es verde y dorado con letra redondeada, y la promoción es violeta con letra de máquina de escribir, parecen dos negocios distintos.</p>
+  <div class="note">Por eso la consigna pide máximo dos tipografías y tres colores: no es una limitación caprichosa, es lo que hace que se vea como una sola marca.</div>
+</section>
+
+<section class="term" id="png">
+  <h3>PNG y JPG</h3>
+  <table class="tbl">
+    <thead><tr><th></th><th>PNG</th><th>JPG</th></tr></thead>
+    <tbody>
+      <tr><td>Sirve para</td><td>Logos, textos, dibujos</td><td>Fotos</td></tr>
+      <tr><td>Fondo transparente</td><td>Sí</td><td>No, siempre tiene fondo</td></tr>
+      <tr><td>Peso del archivo</td><td>Más pesado</td><td>Más liviano</td></tr>
+    </tbody>
+  </table>
+  <p>Tu logo va en PNG, porque si lo exportás en JPG te queda con un recuadro blanco alrededor cuando lo pongas sobre un fondo de color.</p>
+</section>
+
+<!-- ===================== IA ===================== -->
+<h2 class="group-title">La inteligencia artificial</h2>
+
+<section class="term" id="prompt">
+  <h3>Prompt</h3>
+  <p>Es <strong>lo que vos le escribís a la IA</strong>: la instrucción, el pedido.</p>
+  <p>Y es lo que se evalúa en el paso 6, no el código que sale. Porque el resultado depende casi enteramente de lo que pediste.</p>
+  <div class="good-bad">
+    <div class="gb no"><b>Prompt pobre</b>«Hacé una web para un hotel»<br><br>Devuelve una web de cualquier hotel, con un nombre inventado y datos que no son tuyos.</div>
+    <div class="gb ok"><b>Prompt útil</b>«Hacé la web de la Posada Luz de Cuchilla, 6 cabañas en Villa Serrana, Lavalleja. Servicios: wifi, parrillero, admite mascotas. Check-in 15:00…»<br><br>Devuelve tu web.</div>
+  </div>
+  <p>La regla: <strong>todo dato que no le des, lo va a inventar.</strong> Por eso la consigna lista exactamente qué tiene que incluir tu prompt.</p>
+</section>
+
+<section class="term" id="inventa">
+  <h3>Cuando la IA inventa</h3>
+  <p>Una IA no sabe lo que no le dijiste, pero tampoco te avisa que no lo sabe: <strong>rellena el hueco con algo verosímil y te lo entrega con total seguridad</strong>.</p>
+  <p>En tu sitio eso va a aparecer como un teléfono que no existe, un correo inventado, un spa que nunca pediste, un premio que tu posada no ganó, o una dirección de una ciudad equivocada.</p>
+  <div class="warn"><strong>No es un error que se pueda arreglar pidiéndole que no invente.</strong> Es cómo funciona. La única defensa es revisar: por eso existe el paso 7.</div>
+  <p>Lo que hiciste con esto en agosto, cuando trabajamos los textos generados con IA, es lo mismo: el contenido que devuelve es un borrador, nunca un producto terminado.</p>
+</section>
+
+<section class="term" id="declaracion">
+  <h3>Declaración de uso de IA</h3>
+  <p>Es una sección al final de tu trabajo donde contás, con honestidad, cómo usaste la IA. Va en todas las entregas del curso.</p>
+  <p>Tiene que responder cuatro cosas:</p>
+  <ul>
+    <li><strong>Qué herramienta</strong> usaste</li>
+    <li><strong>En qué partes</strong> del trabajo la usaste</li>
+    <li><strong>Qué le pediste</strong> exactamente</li>
+    <li><strong>Qué modificaste vos</strong> de lo que te devolvió</li>
+  </ul>
+  <div class="good-bad">
+    <div class="gb no"><b>No alcanza</b>«Usé Zapia para hacer la web.»</div>
+    <div class="gb ok"><b>Así sí</b>«Usé Zapia en el paso 6 para generar el HTML. Le pasé los datos de mi ficha y mis tres colores. Me devolvió un sitio que decía que había piscina y traía un teléfono inventado: saqué la piscina y puse mis datos. También reescribí el texto de la sección Servicios porque sonaba a folleto. Las tarifas, el formulario y el protocolo son míos.»</div>
+  </div>
+  <p>Usar IA no está mal ni se penaliza. Lo que se penaliza es entregar algo que no revisaste y decir que es tuyo.</p>
+</section>
+
+<!-- ===================== ENTREGA ===================== -->
+<h2 class="group-title">La entrega</h2>
+
+<section class="term" id="publicar">
+  <h3>Publicar</h3>
+  <p>Mientras tu archivo HTML está en tu computadora o en tu Drive, lo podés abrir vos, pero nadie más.</p>
+  <p><strong>Publicar</strong> es subirlo a un servidor para que tenga una dirección web propia y cualquiera pueda entrar escribiéndola.</p>
+  <p>En este parcial no lo hacés vos: entregás el archivo y se publica en GitHub Pages, que es un servicio gratuito para alojar páginas. Después recibís la URL para mostrarla en tu video.</p>
+</section>
+
+<section class="term" id="captura">
+  <h3>Captura de pantalla</h3>
+  <p>Es una foto de lo que se ve en tu pantalla, para pegar en el documento final.</p>
+  <table class="tbl">
+    <thead><tr><th>En</th><th>Hacé</th></tr></thead>
+    <tbody>
+      <tr><td>Windows</td><td><code>Windows</code> + <code>Shift</code> + <code>S</code>, y elegís la zona</td></tr>
+      <tr><td>Celular</td><td>Botón de encendido + bajar volumen, juntos</td></tr>
+    </tbody>
+  </table>
+  <p>Para el documento final: que se lea. Una captura de la planilla entera, achicada hasta que no se distingan los números, no sirve de nada. Mejor capturar solo la parte que importa.</p>
+</section>
+
+<!-- ===================== DATOS ===================== -->
+<h2 class="group-title">Los datos</h2>
+
+<section class="term" id="datos">
+  <h3>Datos personales</h3>
+  <p>Es cualquier información que permite identificar a una persona concreta: nombre, cédula, teléfono, correo, dirección, foto.</p>
+  <p>Tu formulario de reservas junta varios de esos. Desde el momento en que alguien lo completa, estás guardando datos de una persona real.</p>
+  <p>En Uruguay eso está regulado por la <strong>Ley 18.331 de Protección de Datos Personales</strong>. Lo central para tu protocolo: los datos se piden <strong>para algo puntual</strong> —en este caso, gestionar una reserva— y no se pueden usar para otra cosa, ni pasárselos a nadie más.</p>
+  <div class="note">Esos datos no son tuyos. El huésped te los prestó para poder alojarse.</div>
+</section>
+
+<section class="term" id="protocolo">
+  <h3>Protocolo</h3>
+  <p>Es un conjunto de reglas escritas para que todos hagan lo mismo frente a una situación, sin tener que improvisar ni consultar.</p>
+  <p>La diferencia con un consejo es que el protocolo <strong>dice qué hacer</strong>, en imperativo, y lo puede seguir alguien que entró ayer:</p>
+  <div class="good-bad">
+    <div class="gb no"><b>Consejo</b>«Hay que tener cuidado con los datos de los huéspedes.»<br><br>¿Cuidado cómo?</div>
+    <div class="gb ok"><b>Regla de protocolo</b>«No envíes datos de huéspedes por WhatsApp, aunque te los pida el dueño.»<br><br>Se puede cumplir sin pensar.</div>
+  </div>
+  <p>Y tiene que funcionar incluso cuando el pedido <em>no</em> parece sospechoso. Una regla que arranca con «si te parece raro…» no sirve: nadie que esté siendo engañado piensa que lo están engañando.</p>
+</section>
+
+<footer>
+  <p>Informática Aplicada · 3°DG · Escuela Superior de Gastronomía, Hotelería y Turismo · Material de apoyo del parcial final</p>
+  <div class="lic">
+    <p>Autor: <strong>Ruben Leal</strong>. Material desarrollado con asistencia de inteligencia artificial para la redacción y el maquetado; la selección de contenidos, los ejemplos y la adecuación al programa son de autoría propia.</p>
+    <p>Esta obra se distribuye bajo licencia <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.es" rel="license noopener" target="_blank">Creative Commons Atribución-CompartirIgual 4.0 Internacional (CC BY-SA 4.0)</a>. Se puede usar, adaptar y compartir citando la autoría y manteniendo la misma licencia.</p>
+  </div>
+</footer>
+
+<a class="totop" id="totop" href="#top">↑ Índice</a>
+
+</div>
+
+<script>
+(function(){
+  var demo = document.getElementById('demo');
+  var btn = document.getElementById('swap');
+  var label = document.getElementById('demo-label');
+  if(demo && btn){
+    btn.addEventListener('click', function(){
+      var code = demo.classList.toggle('showing-code');
+      btn.textContent = code ? 'Ver la página' : 'Ver el HTML';
+      label.textContent = code ? 'Así está escrita por dentro' : 'Así lo ve el huésped';
+    });
+  }
+  var editor = document.getElementById('editor');
+  var salida = document.getElementById('salida');
+  function pintar(){
+    try { salida.innerHTML = editor.value; }
+    catch(e){ salida.textContent = 'Algo quedó mal escrito.'; }
+  }
+  if(editor && salida){
+    editor.addEventListener('input', pintar);
+    pintar();
+  }
+
+  var totop = document.getElementById('totop');
+  if(totop){
+    var ticking = false;
+    window.addEventListener('scroll', function(){
+      if(ticking) return;
+      ticking = true;
+      window.requestAnimationFrame(function(){
+        totop.classList.toggle('on', window.scrollY > 700);
+        ticking = false;
+      });
+    }, {passive:true});
+  }
+})();
+</script>
+</body>
+</html>
