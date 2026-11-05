@@ -94,7 +94,23 @@ main > .page:target {display:block}
 main.js-nav > .page{display:none !important}
 main.js-nav > .page.activa{display:block !important}
 </style>
-<meta content="website" property="og:type"/><meta content="Ruben Leal — Informática y herramientas digitales" property="og:title"/><meta content="Servicios online de informática, ciberseguridad, clases y recursos digitales." property="og:description"/><meta content="summary_large_image" name="twitter:card"/><meta content="#14304A" name="theme-color"/></head>
+<meta content="website" property="og:type"/><meta content="Ruben Leal — Informática y herramientas digitales" property="og:title"/><meta content="Servicios online de informática, ciberseguridad, clases y recursos digitales." property="og:description"/><meta content="#14304A" name="theme-color"/><style>
+.temas{display:flex;flex-wrap:wrap;gap:8px;margin:20px 0 8px;padding:0;list-style:none}
+.temas li{font-size:14px;font-weight:600;color:var(--navy);background:#fff;border:1px solid #DCE3EA;border-radius:999px;padding:6px 14px}
+.escritos{display:flex;flex-direction:column;gap:18px;margin-top:24px}
+.escrito{display:flex;flex-wrap:wrap;gap:6px 32px;background:#fff;border:1px solid #DCE3EA;border-left:4px solid var(--blue);border-radius:8px;padding:22px 24px}
+.escrito .meta{flex:0 0 170px;color:var(--grey);font-size:15px}
+.escrito .meta .tema{display:inline-block;margin-bottom:6px;font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--blue)}
+.escrito .texto{flex:1 1 420px;min-width:0}
+.escrito h2{margin:0 0 8px;font-size:22px;line-height:1.25}
+.escrito h2 a{color:var(--navy);text-decoration:none}
+.escrito h2 a:hover{color:var(--blue);text-decoration:underline}
+.escrito p{margin:0 0 10px}
+.escrito .leer{font-weight:600}
+.aviso-escritos{margin:28px 0 0;color:var(--grey);font-size:15px;font-style:italic}
+</style>
+<link rel="icon" href="favicon.svg" type="image/svg+xml"/><link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png"/><link rel="apple-touch-icon" href="apple-touch-icon.png"/><meta property="og:image" content="https://informatica.uy/img/og.jpg"/><meta property="og:image:width" content="1200"/><meta property="og:image:height" content="630"/><meta property="og:image:alt" content="Ruben Leal, docente de informática en Montevideo. informatica.uy"/><meta property="og:site_name" content="Ruben Leal"/><meta property="og:locale" content="es_UY"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:image" content="https://informatica.uy/img/og.jpg"/><meta property="og:url" content="https://informatica.uy/"/><link rel="canonical" href="https://informatica.uy/"/>
+</head>
 <body>
 <header>
 <div class="wrap">
@@ -108,6 +124,7 @@ main.js-nav > .page.activa{display:block !important}
 <a data-nav="blog" href="#blog">Artículos</a>
 <a data-nav="como-trabajo" href="#como-trabajo">Cómo trabajo</a>
 <a data-nav="sobre-mi" href="#sobre-mi">Sobre mí</a>
+<a data-nav="escritos" href="#escritos">Escritos</a>
 <a data-nav="contacto" href="#contacto">Contacto</a></nav>
 </div>
 </header>
@@ -531,12 +548,33 @@ main.js-nav > .page.activa{display:block !important}
 <li>Ciudadanía digital, seguridad de la información, inclusión educativa y neurodidáctica.</li>
 <li>Entornos virtuales de aprendizaje: FOEVA (Campus Virtual UTU, en curso), CREA y eXeLearning.</li>
 </ul>
-<h2 class="label">PUBLICACIONES</h2>
-<article class="entry">
-<div class="date">noviembre de 2026</div>
-<div class="body"><h2><a href="articulos/uruguay-digital.html">La construcción del Uruguay digital (1988–2026)</a></h2><p class="org">Artículo · Instituciones, educación y soberanía tecnológica</p><p style="margin:0">Cómo la Udelar, UTU, Antel, Ceibal, el LATU, AGESIC y el MIDES construyeron el Uruguay digital, y qué se discute hoy sobre datos e inteligencia artificial. Con fuentes enlazadas.</p></div>
-</article>
 
+</div>
+</section>
+<!-- ESCRITOS -->
+<section class="page" data-nav="escritos" data-title="Escritos" id="escritos">
+<div class="wrap">
+<h1 class="label first">ESCRITOS</h1>
+<p class="lead">Textos de análisis y opinión sobre distintos temas que me interesan y me hacen pensar. Los escribo con tiempo, con fuentes cuando hacen falta, y con la idea de abrir preguntas más que de cerrarlas.</p>
+<div class="escritos">
+<article class="escrito">
+<div class="meta"><span class="tema">Política</span><br>noviembre de 2026</div>
+<div class="texto">
+<h2><a href="escritos/politica-para-tontos.html">Política para tontos</a></h2>
+<p>Un archivo personal de recortes, capturas y cadenas (2018–2022), leído hoy con fuentes verificadas: cómo el mensaje político se volvió básico y bien dirigido, y por qué funciona.</p>
+<a class="leer" href="escritos/politica-para-tontos.html">Leer →</a>
+</div>
+</article>
+<article class="escrito">
+<div class="meta"><span class="tema">Tecnología e historia</span><br>noviembre de 2026</div>
+<div class="texto">
+<h2><a href="escritos/uruguay-digital.html">La construcción del Uruguay digital (1988–2026)</a></h2>
+<p>Cómo la Udelar, UTU, Antel, Ceibal, el LATU, AGESIC y el MIDES construyeron el Uruguay digital, y qué se discute hoy sobre datos e inteligencia artificial. Con fuentes enlazadas.</p>
+<a class="leer" href="escritos/uruguay-digital.html">Leer →</a>
+</div>
+</article>
+</div>
+<p class="aviso-escritos">Las opiniones de esta sección son personales y no comprometen a las instituciones donde trabajo.</p>
 </div>
 </section>
 <!-- PREGUNTAS FRECUENTES -->

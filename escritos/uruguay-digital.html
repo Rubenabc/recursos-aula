@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>La construcción del Uruguay digital — Ruben Leal</title>
+<meta content="Cómo se construyó el Uruguay digital entre 1988 y 2026: Udelar, UTU, Antel, Ceibal, LATU, AGESIC, MIDES e INEFOP, y los debates actuales sobre soberanía de datos e IA." name="description"/>
+<meta content="article" property="og:type"/>
+<meta content="La construcción del Uruguay digital (1988–2026)" property="og:title"/>
+<meta content="Cómo se construyó el Uruguay digital entre 1988 y 2026: Udelar, UTU, Antel, Ceibal, LATU, AGESIC, MIDES e INEFOP, y los debates actuales sobre soberanía de datos e IA." property="og:description"/>
+<meta content="#14304A" name="theme-color"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&amp;display=swap" rel="stylesheet"/>
+<style>
+:root{--navy:#14304A;--blue:#1F5FA8;--grey:#4A5866;--line:#C9D2DC;--soft:#E1E7ED;--bg:#F6F8FA;--text:#1B2733}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font-family:'Source Sans 3',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;font-size:17px;line-height:1.55}
+a{color:var(--blue)}a:hover{color:var(--navy)}
+.wrap{max-width:1040px;margin:0 auto;padding:0 24px}
+header{position:sticky;top:0;z-index:10;background:rgba(246,248,250,.96);backdrop-filter:blur(6px);border-bottom:1px solid var(--soft)}
+header .wrap{display:flex;flex-wrap:wrap;gap:4px 24px;justify-content:space-between;align-items:center;padding-top:12px;padding-bottom:12px}
+.brand{display:inline-block;padding:10px 0;min-height:44px;font-weight:700;letter-spacing:.16em;color:var(--navy);text-decoration:none}
+nav{display:flex;flex-wrap:wrap;gap:0 2px}
+nav a{display:inline-block;padding:10px 10px;min-height:44px;text-decoration:none;font-weight:600;font-size:15px;border-bottom:3px solid transparent}
+@media(max-width:640px){header .wrap{padding-top:4px;padding-bottom:0}nav{flex-wrap:nowrap;overflow-x:auto;width:100%;margin:0 -10px;-webkit-overflow-scrolling:touch;scrollbar-width:none}nav::-webkit-scrollbar{display:none}nav a{white-space:nowrap;flex:0 0 auto}}
+nav a[aria-current="page"]{font-weight:700;color:var(--navy);border-bottom-color:var(--blue)}
+.page[hidden]{display:none}
+h1.name{margin:0;font-size:clamp(40px,8vw,64px);line-height:1.05;letter-spacing:.04em;color:var(--navy)}
+h1.title{margin:32px 0 8px;font-size:clamp(30px,5vw,42px);line-height:1.15;color:var(--navy)}
+.kicker{margin:40px 0 0;font-size:15px;letter-spacing:.18em;color:var(--blue);font-weight:700}
+.role{margin:14px 0 0;font-size:clamp(16px,3vw,22px);letter-spacing:.08em;color:var(--grey)}
+.hero{padding-top:56px;padding-bottom:16px;display:flex;align-items:center;gap:clamp(24px,5vw,56px)}
+.hero-copy{flex:1 1 520px;min-width:0}
+.hero-photo{width:clamp(150px,24vw,240px);aspect-ratio:4/5;object-fit:cover;object-position:center 35%;height:auto;border-radius:14px;box-shadow:0 12px 30px rgba(20,48,74,.18);flex:0 0 auto}
+@media(max-width:640px){.hero{align-items:flex-start;gap:18px;padding-top:32px}.hero-photo{width:112px;border-radius:10px}.hero-copy{flex-basis:calc(100% - 130px)}.hero .lead{font-size:17px}.hero .row{gap:8px}.hero .btn{padding:10px 14px}}
+.label{margin:40px 0 16px;padding-bottom:8px;border-bottom:1px solid var(--line);font-size:15px;letter-spacing:.18em;color:var(--blue);font-weight:700}
+.label.first{margin-top:32px}
+.btn{display:inline-block;padding:12px 22px;min-height:44px;border-radius:6px;font-weight:600;text-decoration:none;border:2px solid var(--navy);color:var(--navy);background:transparent}
+.btn.solid{background:var(--navy);color:#fff}
+.btn.solid:hover{color:#fff;background:#0d2236}
+.row{display:flex;flex-wrap:wrap;gap:12px}
+.entry{display:flex;flex-wrap:wrap;gap:4px 40px;padding:22px 0;border-bottom:1px solid var(--soft)}
+.entry:last-of-type{border-bottom:0}
+.date{flex:0 0 200px;color:var(--grey);font-weight:600}
+.body{flex:1 1 440px;min-width:0}
+.body h2{margin:0;font-size:21px;color:var(--navy)}
+.org{margin:2px 0 10px;font-style:italic;color:var(--grey)}
+.body ul,.list{margin:0;padding-left:20px}
+.list li{margin-bottom:8px}
+.cards{display:flex;flex-wrap:wrap;gap:20px}
+.card{flex:1 1 300px;min-width:0;background:#fff;border:1px solid #DCE3EA;border-radius:8px;padding:22px 24px}
+.card h2,.card h3{margin:0 0 6px;font-size:20px;color:var(--navy)}
+.card p{margin:0 0 12px}
+.card p:last-child{margin-bottom:0}
+.card a.more{font-weight:600}
+.lead{margin:0;max-width:820px;font-size:19px}
+.note{margin:24px 0 0;color:var(--grey)}
+.cols{display:flex;flex-wrap:wrap;gap:24px 48px}
+.cols>div{flex:1 1 320px;min-width:0}
+.cols h2{margin:0 0 10px;font-size:19px;color:var(--navy)}
+.cols ul{margin:0;padding-left:20px}
+.cols li{margin-bottom:6px}
+.steps{list-style:none;margin:0;padding:0;counter-reset:s;display:flex;flex-wrap:wrap;gap:20px}
+.steps li{counter-increment:s;flex:1 1 220px;min-width:0;background:#fff;border:1px solid #DCE3EA;border-radius:8px;padding:20px 22px}
+.steps li::before{content:counter(s);display:inline-block;width:32px;height:32px;line-height:32px;text-align:center;border-radius:50%;background:var(--navy);color:#fff;font-weight:700;margin-bottom:10px}
+.steps strong{display:block;color:var(--navy);font-size:18px}
+details{background:#fff;border:1px solid #DCE3EA;border-radius:8px;margin:0 0 14px;padding:0}
+summary{cursor:pointer;padding:16px 22px;min-height:44px;font-weight:700;font-size:19px;color:var(--navy)}
+details .art{padding:0 22px 20px;max-width:760px}
+details .art p{margin:0 0 12px}
+details .art ul{margin:0 0 12px;padding-left:20px}
+.contact{background:var(--navy);color:#fff;border-radius:10px;padding:36px;display:flex;flex-wrap:wrap;gap:24px 40px;align-items:center;justify-content:space-between}
+.contact h2{margin:0;font-size:32px}
+.contact p{margin:8px 0 0;color:#DCE6F0}
+.contact .btn.solid{background:#fff;color:var(--navy)}
+.cta{margin-top:32px}
+.pager{display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;padding:40px 0 56px}
+.pager.end{justify-content:flex-end}
+
+html{scroll-behavior:smooth} .page{scroll-margin-top:100vh;padding-bottom:56px} .contact a.btn{white-space:normal}
+
+/* Navegación por secciones: una vista a la vez, sin JavaScript. */
+main > .page {display:none}
+main > #inicio {display:block}
+main:has(> .page:target:not(#inicio)) > #inicio {display:none}
+main > .page:target {display:block}
+/* Contraste legible de ambos botones en el panel oscuro. */
+.contact .btn, .contact .btn.solid {background:#fff;color:#14304A;border-color:#fff}
+.contact .btn:hover, .contact .btn.solid:hover {background:#e1e7ed;color:#14304A}
+.contact .address {color:#fff;overflow-wrap:anywhere}
+
+.project-image{display:block;width:100%;aspect-ratio:16/10;object-fit:cover;object-position:top center;border:1px solid #dce3ea;border-radius:6px;margin:0 0 18px;background:#edf2f5}.featured .card{display:flex;flex-direction:column}.featured .card .more{margin-top:auto}.featured .card p{flex-grow:1}
+.quotes{display:flex;flex-wrap:wrap;gap:20px}
+.quote{flex:1 1 400px;min-width:0;margin:0;background:#fff;border:1px solid #DCE3EA;border-left:4px solid var(--blue);border-radius:8px;padding:20px 22px}
+.quote blockquote{margin:0 0 10px;font-size:19px;color:var(--navy);font-weight:600}
+.quote figcaption{color:var(--grey);font-size:15px}
+</style>
+<style>
+.articulo{max-width:780px;padding-top:8px;padding-bottom:24px}
+.articulo h1.title{margin-top:24px}
+.byline{margin:0 0 28px;color:var(--grey);font-weight:600}
+.articulo h2{margin:40px 0 12px;font-size:25px;line-height:1.25;color:var(--navy)}
+.articulo p{margin:0 0 16px}
+.articulo ol,.articulo ul{margin:0 0 16px;padding-left:22px}
+.articulo li{margin-bottom:10px}
+.articulo a{overflow-wrap:anywhere}
+.tabla{overflow-x:auto;margin:8px 0 20px;background:#fff;border:1px solid #DCE3EA;border-radius:8px}
+.tabla table{border-collapse:collapse;width:100%;min-width:560px;font-size:16px}
+.tabla th,.tabla td{text-align:left;vertical-align:top;padding:12px 14px;border-bottom:1px solid var(--soft)}
+.tabla th{background:var(--navy);color:#fff}
+.tabla tr:last-child td{border-bottom:0}
+.tabla th:first-child{width:64px}.tabla th:nth-child(2){width:30%}
+@media(max-width:640px){.tabla{background:none;border:0;overflow:visible}.tabla table,.tabla tbody,.tabla tr,.tabla td{display:block;width:100%;min-width:0}.tabla thead{display:none}.tabla tr{background:#fff;border:1px solid #DCE3EA;border-radius:8px;margin-bottom:12px;padding:8px 0}.tabla td{border:0;padding:4px 16px}.tabla td:first-child{font-weight:700;color:var(--blue)}.tabla td:nth-child(2){font-weight:700;color:var(--navy)}}
+.migas{margin:24px 0 0;font-size:15px}
+</style>
+<link rel="icon" href="../favicon.svg" type="image/svg+xml"/><link rel="icon" href="../favicon-32.png" sizes="32x32" type="image/png"/><link rel="apple-touch-icon" href="../apple-touch-icon.png"/><meta property="og:image" content="https://informatica.uy/img/og.jpg"/><meta property="og:image:width" content="1200"/><meta property="og:image:height" content="630"/><meta property="og:image:alt" content="Ruben Leal, docente de informática en Montevideo. informatica.uy"/><meta property="og:site_name" content="Ruben Leal"/><meta property="og:locale" content="es_UY"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:image" content="https://informatica.uy/img/og.jpg"/><meta property="og:url" content="https://informatica.uy/escritos/uruguay-digital.html"/><link rel="canonical" href="https://informatica.uy/escritos/uruguay-digital.html"/>
+</head>
+<body>
+<header>
+<div class="wrap">
+<a class="brand" href="../index.html#inicio">RUBEN LEAL</a>
+<nav aria-label="Páginas">
+<a href="../index.html#inicio">Inicio</a>
+<a href="../index.html#servicios">Servicios</a>
+<a href="../index.html#proyectos">Proyectos</a>
+<a href="../index.html#recursos">Recursos</a>
+<a href="../index.html#blog">Artículos</a>
+<a href="../index.html#como-trabajo">Cómo trabajo</a>
+<a href="../index.html#sobre-mi">Sobre mí</a>
+<a href="../index.html#escritos" aria-current="page">Escritos</a>
+<a href="../index.html#contacto">Contacto</a>
+</nav>
+</div>
+</header>
+<main>
+<article class="wrap articulo">
+<p class="migas"><a href="../index.html#escritos">← Escritos</a></p>
+<p class="kicker">ESCRITOS · TECNOLOGÍA E HISTORIA</p>
+<h1 class="title">La construcción del Uruguay digital: instituciones, educación y soberanía tecnológica (1988–2026)</h1>
+<p class="byline">Por Ruben Leal · noviembre de 2026</p>
+<p>El Uruguay digital no lo construyó una sola institución. Lo construyó una red, en la que cada organismo cumplió un papel distinto. La <strong>Udelar</strong> estuvo en el origen de la conectividad académica del país y, junto con <strong>UTU</strong>, formó a los técnicos. <strong>Antel</strong> tendió la infraestructura.</p>
+<p><strong>Ceibal</strong>, impulsado desde Presidencia y ejecutado por el <strong>LATU</strong>, llevó la tecnología a la escuela pública, con <strong>AGESIC</strong> y Antel en su comisión. El <strong>MIDES</strong> y la capacitación laboral de UTU completaron el andamiaje.</p>
+<p>Este informe trata e intenta presentar esta red a partir de fuentes verificables: leyes y decretos, documentos de los propios organismos, artículos académicos y prensa. Todas están enlazadas en el texto y al final. Me centro en el período 2005–2026, y repaso los años 1988–2004 como antecedentes.</p>
+<h2 id="el-origen-universitario-cuando-la-udelar-conectó-a-uruguay-con-el-mundo-19881994">El origen universitario: cuando la Udelar conectó a Uruguay con el mundo (1988–1994)</h2>
+<p>Internet llegó a Uruguay de la mano de la universidad pública. El 2 de diciembre de 1988, el Instituto de Computación (InCo) de la Facultad de Ingeniería logró la primera conexión estable de correo electrónico con el exterior (<a href="https://www.elobservador.com.uy/nota/ida-holz-la-uruguaya-de-internet-20161125500" target="_blank" rel="noopener noreferrer">El Observador</a>). Al frente de ese trabajo estuvo <strong>Ida Holz</strong>, que dirigió el Servicio Central de Informática (SeCIU) entre 1986 y 2005 (<a href="https://udelar.edu.uy/portal/2023/10/la-rau-ofrece-nuevos-servicios-y-considera-su-gobernanza/" target="_blank" rel="noopener noreferrer">Udelar</a>).</p>
+<p>De ahí nació la <strong>Red Académica Uruguaya (RAU)</strong>, que funciona desde 1988 y depende del SeCIU (<a href="https://redclara.net/en/somos/miembros/uruguay-rau" target="_blank" rel="noopener noreferrer">RedCLARA</a>). Desde el 10 de setiembre de 1990, la Udelar también administra el dominio .uy (<a href="https://www.gub.uy/agencia-gobierno-electronico-sociedad-informacion-conocimiento/comunicacion/noticias/uy-pasaron-20-anos-primer-dominio-web-uruguayo" target="_blank" rel="noopener noreferrer">AGESIC</a>). Y en marzo de 1994 la RAU se conectó en forma directa con la National Science Foundation de Estados Unidos: fue la primera conexión permanente de Uruguay a internet (<a href="https://www.rau.edu.uy/nosotros/" target="_blank" rel="noopener noreferrer">RAU</a>).</p>
+<p>Hay un aporte menos visible, pero igual de importante: la Udelar formó a los ingenieros y técnicos que, años después, construirían la infraestructura y los servicios digitales del Estado.</p>
+<h2 id="nacen-nuevas-instituciones">2005: nacen nuevas instituciones</h2>
+<p>En pocos meses de 2005 se crearon dos organismos clave para esta historia. El primero fue el Ministerio de Desarrollo Social (MIDES), por la <a href="https://impo.com.uy/bases/leyes/17866-2005" target="_blank" rel="noopener noreferrer">Ley 17.866</a> del 21 de marzo. Según su propio informe de transición, nació para responder a la emergencia social que dejó la crisis de 2002 (<a href="https://www.gub.uy/ministerio-desarrollo-social/sites/ministerio-desarrollo-social/files/documentos/publicaciones/MIDES_informe%20de%20transici%C3%B3n.pdf" target="_blank" rel="noopener noreferrer">MIDES</a>).</p>
+<p>El segundo fue AGESIC, la agencia de gobierno electrónico. La creó el artículo 72 de la <a href="https://docs.uruguay.justia.com/nacionales/leyes/ley-17930-dec-19-2005.pdf" target="_blank" rel="noopener noreferrer">Ley 17.930</a>, de presupuesto nacional, el 19 de diciembre de 2005, y su funcionamiento se reglamentó con el Decreto 205/06 (<a href="https://www.gub.uy/agencia-gobierno-electronico-sociedad-informacion-conocimiento/sites/agencia-gobierno-electronico-sociedad-informacion-conocimiento/files/2021-08/PEI%20CI%20para%20portal%20final.pdf" target="_blank" rel="noopener noreferrer">AGESIC, Plan Estratégico</a>). Tenía antecedentes en Presidencia: la Comisión Nacional de Informática (CONADI), el Comité para la Reforma del Estado (CEPRE) y Uruguay en Red (<a href="https://www.impo.com.uy/bases/decretos/184-2015" target="_blank" rel="noopener noreferrer">Decreto 184/015</a>).</p>
+<p>Vale aclarar algo: en 2005 AGESIC existía sobre todo en el papel. Su estructura real llegó en los años siguientes.</p>
+<h2 id="ceibal-el-latu-y-el-despegue-de-agesic">2007–2010: Ceibal, el LATU y el despegue de AGESIC</h2>
+<p>El <strong>Plan Ceibal</strong> fue el gran catalizador de coordinación e inclusión digital de esos años. Nació con el <a href="https://www.impo.com.uy/bases/decretos/144-2007" target="_blank" rel="noopener noreferrer">Decreto 144/007</a> del 18 de abril de 2007, con una meta simple de decir y enorme de cumplir: una computadora portátil para cada escolar y cada maestro de la escuela pública. Arrancó en mayo de 2007 con 200 laptops en una escuela de Villa Cardal (Florida), y en el segundo semestre se extendió a todo el departamento (<a href="https://psico.edu.uy/sites/default/files/cursos/ps-educacional_universalizacion-del-uso-de-laptops-en-la-escuela-uruguaya_prof-adj-susana-martinez_0.pdf" target="_blank" rel="noopener noreferrer">Facultad de Psicología, Udelar</a>).</p>
+<p>Entre 2007 y 2009 se entregaron 380.000 computadoras (362.000 a alumnos y 18.000 a docentes) y se conectaron 2.068 escuelas (<a href="https://cdsa.aacademica.org/000-038/298.pdf" target="_blank" rel="noopener noreferrer">Villalba, Falero y Baute, 2013</a>).</p>
+<p><strong>El LATU, el que lo hizo funcionar.</strong> La idea vino de Miguel Brechner, entonces presidente del LATU, inspirado en el proyecto One Laptop Per Child (<a href="https://www.montevideo.com.uy/En-Perspectiva/Miguel-Brechner--La-satisfaccion-de-Vazquez-era-ver-que-Ceibal-quedo-para-siempre--uc772517" target="_blank" rel="noopener noreferrer">Montevideo Portal</a>). El artículo 4 del decreto le encargó al LATU la implementación técnica y operativa (<a href="https://www.gub.uy/ministerio-industria-energia-mineria/sites/ministerio-industria-energia-mineria/files/documentos/publicaciones/informe_miem-iecon_compras_tic_plan_ceibal.pdf" target="_blank" rel="noopener noreferrer">MIEM–IECON</a>). Recién con la <a href="https://impo.com.uy/bases/leyes/18640-2010" target="_blank" rel="noopener noreferrer">Ley 18.640</a>, del 8 de enero de 2010, el plan tuvo institución propia: el Centro para la Inclusión Tecnológica y Social (CITS), que a fines de ese año pasó a llamarse Centro Ceibal (Ley 18.719).</p>
+<p>La ley previó traspasar los activos del plan en un proceso acordado con el LATU, que integró su consejo de dirección mientras tanto.</p>
+<p><strong>La Udelar acompañó, no impulsó.</strong> La Udelar no integraba la comisión del decreto, y UTU estaba representada solo a través de ANEP. La Universidad se sumó en 2008 con el proyecto Flor de Ceibo, aprobado el 27 de junio, para acompañar la puesta en marcha del plan. Según el convenio firmado con el LATU el 16 de mayo de 2008, la Universidad ponía docentes y estudiantes, y el LATU pagaba transporte y viáticos (<a href="https://psico.edu.uy/sites/default/files/cursos/ps-educacional_la-universidad-de-la-republica-en-tiempos-del-plan-ceibal_0.pdf" target="_blank" rel="noopener noreferrer">Kachinovsky, Facultad de Psicología, Udelar</a>).</p>
+<p><strong>AGESIC, desde adentro de Ceibal.</strong> El artículo 2 del <a href="https://www.impo.com.uy/bases/decretos/144-2007" target="_blank" rel="noopener noreferrer">Decreto 144/007</a> sentó a AGESIC en la comisión que define las condiciones, los ritmos y los contenidos del plan, junto con Presidencia, ANEP, Primaria, el MEC, el LATU, Antel y la Agencia de Innovación (<a href="https://www.redalyc.org/pdf/6061/606166690003.pdf" target="_blank" rel="noopener noreferrer">INNOTEC, LATU, 2008</a>). La propia AGESIC lo cuenta en su memoria de 2008: integra la Comisión de Políticas de Ceibal, y aunque su creación empezó en 2005, se terminó de institucionalizar en 2008 (<a href="https://www.gub.uy/agencia-gobierno-electronico-sociedad-informacion-conocimiento/sites/agencia-gobierno-electronico-sociedad-informacion-conocimiento/files/2019-06/Memoria_Anual2008.pdf" target="_blank" rel="noopener noreferrer">AGESIC, Memoria Anual 2008</a>).</p>
+<p>Ese mismo año creció con tres leyes: la 18.331 (Protección de Datos Personales) y la 18.381 (Acceso a la Información Pública) le sumaron dos unidades, y la 18.362 creó dentro de ella el centro de respuesta a incidentes de seguridad (CERTuy).</p>
+<h2 id="utu-ceibal-en-la-educación-técnica-y-la-alianza-con-la-udelar">UTU: Ceibal en la educación técnica y la alianza con la Udelar</h2>
+<p>Cuando Ceibal terminó de cubrir Primaria, en 2009, pasó a la educación media a partir de 2010 (<a href="https://redined.educacion.gob.es/xmlui/bitstream/handle/11162/146344/Art.%206.pdf?sequence=1" target="_blank" rel="noopener noreferrer">REDINED</a>). Las laptops llegaron a Secundaria y a UTU; en UTU también a los bachilleratos tecnológicos y a la Formación Profesional Básica (<a href="https://www.montevideo.com.uy/Archivo/Expansion-del-Plan-Ceibal-a-la-Ensenanza-Media-uc121687" target="_blank" rel="noopener noreferrer">Montevideo Portal</a>). En 2011, Ceibal ya estaba en 103 centros de UTU (el 82 % de sus locales con estudiantes de Ceibal) y en 250 liceos (el 99 % de los liceos con ciclo básico).</p>
+<p>Además daba equipos y conectividad a programas de reinserción propios de UTU, como Rumbo y FPB (<a href="https://medios.presidencia.gub.uy/jm_portal/2012/mem_anual/presidencia/ceibal.pdf" target="_blank" rel="noopener noreferrer">Presidencia, Memoria 2011</a>).</p>
+<p>En paralelo, el 17 de noviembre de 2006, UTU y la Facultad de Ingeniería firmaron el acuerdo para crear el Tecnólogo en Informática, una carrera terciaria con título conjunto (<a href="https://www.fing.edu.uy/tecnoinf/mvd/docsgrales/acuerdoti_espec.pdf" target="_blank" rel="noopener noreferrer">Facultad de Ingeniería, acuerdo UTU–Udelar</a>). Venía de un convenio marco ANEP–Udelar de 1999, y la sede de Paysandú empezó en mayo de 2009 (<a href="https://dialnet.unirioja.es/descarga/articulo/9512881.pdf" target="_blank" rel="noopener noreferrer">Dialnet</a>).</p>
+<p>Hoy se dicta en Montevideo, Maldonado, Paysandú y San José (<a href="https://www.gub.uy/ministerio-desarrollo-social/sites/ministerio-desarrollo-social/files/documentos/publicaciones/549.pdf" target="_blank" rel="noopener noreferrer">MIDES</a>), y desde 2018 UTEC gestiona en el interior los tecnólogos compartidos con la Udelar y ANEP (<a href="https://www.gub.uy/ministerio-economia-finanzas/node/1587" target="_blank" rel="noopener noreferrer">MEF</a>).</p>
+<h2 id="capacitaciones-educación-no-formal-dicas-mides-e-inefop">Capacitaciones (educación no formal): DICAS, MIDES e INEFOP</h2>
+<p>La División de Capacitación y Acreditación de Saberes (DICAS) era la parte de UTU que dictaba cursos de capacitación laboral fuera de los ciclos formales, y que acreditaba lo que las personas habían aprendido trabajando o en su vida (<a href="https://www.utu.edu.uy/wp-content/uploads/2025/10/res-3292-2025_exp2023254005581.pdf" target="_blank" rel="noopener noreferrer">UTU, Resolución 3292/2025</a>). La <a href="https://impo.com.uy/bases/leyes-originales/18437-2008/64" target="_blank" rel="noopener noreferrer">Ley General de Educación 18.437</a> (2008) le encarga a UTU impartir cursos de capacitación laboral, y define la educación no formal como la que se da fuera de la educación formal (art. 37, según la redacción de la <a href="https://rrhh.utu.edu.uy/wp-content/uploads/2022/09/luc-capitulo-educacion.pdf" target="_blank" rel="noopener noreferrer">Ley 19.889</a>, art. 141).</p>
+<p>Por eso las capacitaciones de DICAS son educación no formal. Y su vínculo con lo digital es directo: entre esos oficios estaba la informática, y capacitarse es la forma en que los trabajadores se adaptan a los cambios tecnológicos.</p>
+<p>Recuerdo, de mis años como docente de DICAS (2015–2019), que las capacitaciones solían organizarse por niveles (básico, intermedio y avanzado), con 120 horas cada una, en 3 días por semana de 5 horas.</p>
+<p>DICAS creció al mismo ritmo que el resto de esta historia. Según la propia UTU, la primera acreditación de saberes fue en 2007 y en 2009 se creó la Unidad de Acreditación de Saberes. Desde 2010 se diseñaron propuestas para terminar ciclos educativos, como Rumbo y Trayectos, y en 2012 nació la certificación de competencias laborales (<a href="https://www.utu.edu.uy/wp-content/uploads/2025/10/res-3292-2025_exp2023254005581.pdf" target="_blank" rel="noopener noreferrer">UTU, Resolución 3292/2025</a>).</p>
+<p><strong>El vínculo con el MIDES.</strong> El MIDES derivaba a DICAS a personas en situación de vulnerabilidad. En 2021 firmaron un convenio marco para ocho capacitaciones técnicas, dictadas por DICAS a personas en situación de calle que usan los centros nocturnos del MIDES (<a href="https://www.gub.uy/ministerio-desarrollo-social/comunicacion/noticias/capacitaciones-utu-para-usuarios-refugios" target="_blank" rel="noopener noreferrer">MIDES</a>). En 2024 se renovó otro acuerdo, esta vez con el MIDES y el MTOP, para cursos de atención al público, carpintería y herrería del programa Accesos (<a href="https://www.gub.uy/ministerio-desarrollo-social/comunicacion/noticias/utu-brindara-capacitaciones-carpinteria-herreria-atencion-publico" target="_blank" rel="noopener noreferrer">MIDES</a>).</p>
+<p><strong>INEFOP, otra forma de hacer las cosas.</strong> El Instituto Nacional de Empleo y Formación Profesional nació con la <a href="https://docs.uruguay.justia.com/nacionales/leyes/ley-18406-oct-24-2008.pdf" target="_blank" rel="noopener noreferrer">Ley 18.406</a> del 24 de octubre de 2008. Es una persona pública no estatal, tripartita, y no forma parte de UTU. Administra el Fondo de Reconversión Laboral y contrata según el derecho privado (arts. 2 y 15).</p>
+<p>Los cursos los dictan entidades de capacitación (ECA) inscriptas en su registro, a las que INEFOP les paga por cada curso (<a href="https://www.gub.uy/ministerio-economia-finanzas/sites/ministerio-economia-finanzas/files/documentos/noticias/2023_PDPNE-InstitutoNacionaldeEmpleoyFormacionProfesional-ECAs.pdf" target="_blank" rel="noopener noreferrer">Auditoría Interna de la Nación, 2023</a>). Es decir: INEFOP financia cursos de entidades registradas, en lugar de que los dicte directamente UTU.</p>
+<p><strong>El cambio de 2025.</strong> El 29 de setiembre de 2025, UTU resolvió que DICAS pasara a llamarse División de Capacitación y Formación Profesional, con cometidos que todavía están por definirse. Su departamento pedagógico se separó y pasó a ser el Departamento de Acreditación de Saberes (<a href="https://www.utu.edu.uy/wp-content/uploads/2025/10/res-3292-2025_exp2023254005581.pdf" target="_blank" rel="noopener noreferrer">UTU, Resolución 3292/2025</a>).</p>
+<h2 id="antel-la-infraestructura-física">Antel: la infraestructura física</h2>
+<p>Antel no se limitó a tender cables. Construyó, capa por capa, la infraestructura que hoy está en el centro de la discusión sobre soberanía digital: el acceso a los hogares, el almacenamiento de datos, la conexión internacional y la red móvil. Estas son sus cuatro obras principales:</p>
+<div class="tabla"><table>
+
+<thead>
+<tr class="header">
+<th>Año</th>
+<th>Obra</th>
+<th>Dato clave</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>2011</td>
+<td>Fibra óptica al hogar</td>
+<td>Primera instalación en octubre de 2011, con un plan de US$ 400 millones (<a href="https://www.telesemana.com/blog/2011/10/19/antel-concreta-su-primera-instalacion-de-fibra-optica-al-hogar/" target="_blank" rel="noopener noreferrer">TeleSemana</a>). En 2026 llegó a todas las localidades de más de 1.000 habitantes: Uruguay fue el primer país de América en lograrlo (<a href="https://www.gub.uy/presidencia/comunicacion/noticias/uruguay-es-primer-pais-america-fibra-optica-pequenas-localidades" target="_blank" rel="noopener noreferrer">Presidencia</a>).</td>
+</tr>
+<tr class="even">
+<td>2016</td>
+<td>Data Center Internacional José Luis Massera (Pando)</td>
+<td>Inaugurado en 2016 (<a href="https://www.gub.uy/presidencia/comunicacion/noticias/uruguay-se-posiciona-entre-10-primeros-paises-hogares-conectados-internet" target="_blank" rel="noopener noreferrer">Presidencia</a>), diseñado para certificación Tier III (<a href="https://www.telesemana.com/blog/2015/11/18/antel-retrasa-hasta-2016-la-inauguracion-de-su-datacenter-en-pando/" target="_blank" rel="noopener noreferrer">TeleSemana</a>).</td>
+</tr>
+<tr class="odd">
+<td>2017</td>
+<td>Cable submarino Tannat (Maldonado–Santos)</td>
+<td>Unos 2.000 km, en sociedad con Google (<a href="https://latam.googleblog.com/2015/11/tannat-un-cable-nuevo-para-america-del-sur.html" target="_blank" rel="noopener noreferrer">Google</a>). Se inauguró en agosto de 2017; Antel puso US$ 73,8 millones de fondos propios (<a href="https://www.elobservador.com.uy/nota/antel-califico-de-hito-historico-el-primer-cable-submarino-de-fibra-optica-201781717290" target="_blank" rel="noopener noreferrer">El Observador</a>).</td>
+</tr>
+<tr class="even">
+<td>2019</td>
+<td>Red 5G</td>
+<td>Primera red 5G comercial de América Latina, con Nokia. Al principio eran solo dos bases, en Maldonado y Colonia, y la prensa especializada lo vio más como una prueba de campo que como un lanzamiento comercial completo (<a href="https://www.telesemana.com/blog/2019/04/10/antel-anuncia-red-comercial-5g-pero-limitada-a-una-zona-de-maldonado/" target="_blank" rel="noopener noreferrer">TeleSemana</a>, <a href="https://dplnews.com/?p=7575" target="_blank" rel="noopener noreferrer">DPL News</a>).</td>
+</tr>
+</tbody>
+</table></div>
+<p>En 2019, el entonces presidente de Antel, Andrés Tolosa, definió el cable submarino como un elemento estratégico de soberanía nacional (<a href="https://dplnews.com/?p=26302" target="_blank" rel="noopener noreferrer">DPL News</a>). Ese mismo argumento es el que hoy se invoca, y se pone a prueba, con el acuerdo entre Antel y Google Cloud.</p>
+<h2 id="debates-actuales-soberanía-de-datos-e-inteligencia-artificial">Debates actuales: soberanía de datos e inteligencia artificial</h2>
+<p>Veinte años después, la pregunta cambió. Ya no es cómo conectar al país, sino quién controla la infraestructura y los datos.</p>
+<p><strong>¿Qué entendemos por soberanía tecnológica?</strong> No alcanza con que los servidores estén en Uruguay. También importa quién administra la infraestructura, quién tiene las claves y los accesos, qué leyes se aplican a los datos, cómo se usan y de qué proveedores depende el servicio.</p>
+<p><strong>El data center de Google (proyecto aprobado).</strong> Google construye en el Parque de las Ciencias (Canelones) su segundo centro de datos en la región, después del de Chile (<a href="https://uruguayxxi.gub.uy/en/news/article/google-confirms-the-construction-of-a-global-data-center-in-uruguay" target="_blank" rel="noopener noreferrer">Uruguay XXI</a>), con una inversión de US$ 850 millones (<a href="https://www.elobservador.com.uy/tag/data-center-de-google" target="_blank" rel="noopener noreferrer">El Observador</a>). El proyecto original preveía usar hasta 7,6 millones de litros de agua potable por día, y se ajustó por la escasez de agua en el país (<a href="https://www.cronista.com/mexico/actualidad-mx/el-pais-de-sudamerica-en-el-que-google-invertira-mas-de-usd-800-millones-para-un-megaproyecto-tecnologico" target="_blank" rel="noopener noreferrer">El Cronista</a>): la versión aprobada se enfría con aire.</p>
+<p>Consumirá como máximo 560 GWh de energía por año (<a href="https://datacenterdynamics.com/en/news/googles-uruguay-data-center-approved-after-reformulation" target="_blank" rel="noopener noreferrer">DCD</a>). En 2023, a pedido de un investigador de la Facultad de Ciencias Sociales, el Tribunal de lo Contencioso Administrativo le ordenó al Ministerio de Ambiente informar cuánta agua usaría. El ministerio alegó reserva industrial y anunció que apelaría (<a href="https://www.xn--lamaana-7za.uy/?p=47243" target="_blank" rel="noopener noreferrer">La Mañana</a>).</p>
+<p><strong>Nuevos anuncios y reacciones (todavía sin concretar).</strong> En octubre de 2026, el gobierno anunció con la empresa española Solaria un parque de centros de datos de hasta US$ 5.700 millones. Pocos días después, el 22 de octubre, el senador Sebastián da Silva (Partido Nacional) presentó un proyecto de ley para prohibir nuevos data centers sobre los acuíferos Guaraní y Raigón y en la zona de Libertad (San José), sin afectar a los que ya están habilitados (<a href="https://www.elobservador.com.uy/nacional/senador-da-silva-presento-proyecto-ley-prohibir-instalacion-centros-datos-los-acuiferos-guarani-y-raigon-n6061322" target="_blank" rel="noopener noreferrer">El Observador</a>).</p>
+<p>Por ahora, uno es un anuncio y el otro un proyecto.</p>
+<p><strong>El acuerdo Antel–Google Cloud.</strong> En febrero de 2026, Antel y Google Cloud acordaron instalar infraestructura de Google Distributed Cloud en el data center de Antel. El gobierno lo presentó como una apuesta a la soberanía de datos (<a href="https://www.gub.uy/ministerio-industria-energia-mineria/comunicacion/noticias/antel-google-cloud-sellan-acuerdo-para-alojar-infraestructura-nube-hibrida" target="_blank" rel="noopener noreferrer">MIEM</a>). La tensión salta a la vista: la empresa pública que construyó infraestructura propia ahora aloja tecnología de una multinacional.</p>
+<p>¿Un dato es soberano solo porque está físicamente en Uruguay?</p>
+<p><strong>La regulación de la IA.</strong> Uruguay fue el primer país latinoamericano en firmar el Convenio Marco del Consejo de Europa sobre IA, Derechos Humanos, Democracia y Estado de Derecho, el 2 de setiembre de 2025 (<a href="https://www.lexmundi.com/guides/ai-legislative-guide/jurisdictions/latin-america/uruguay/" target="_blank" rel="noopener noreferrer">Lex Mundi</a>). En el Índice Global de IA Responsable 2026 quedó 22.° en el mundo y tercero en América del Sur y Central (<a href="https://www.gub.uy/agencia-gobierno-electronico-sociedad-informacion-conocimiento/comunicacion/noticias/uruguay-lidera-region-su-gobernanza-ia-responsable" target="_blank" rel="noopener noreferrer">AGESIC</a>).</p>
+<p>Aun así, todavía no tiene una ley integral de IA, y el Parlamento no ratificó el convenio europeo (<a href="https://www.lexmundi.com/guides/ai-legislative-guide/jurisdictions/latin-america/uruguay/" target="_blank" rel="noopener noreferrer">Lex Mundi</a>). La Ley 20.212 (2023) le encargó a AGESIC diseñar una estrategia nacional de datos e inteligencia artificial.</p>
+<p>Estos temas son justamente el eje del ciclo de debates “Soberanía en tiempos de inteligencia artificial”, que organiza la Fundación Vivian Trías en FUCVAM el 10 y el 17 de noviembre de 2026.</p>
+<h2 id="conclusiones">Conclusiones</h2>
+<ol type="1">
+<li><strong>El Uruguay digital fue obra pública y en red.</strong> La Udelar estuvo en el origen de la conectividad del país (correo electrónico en 1988, internet en 1994), UTU y la Udelar formaron a los técnicos, y Antel tendió la infraestructura. Ceibal, impulsado desde Presidencia y ejecutado por el LATU, llevó la tecnología a cada escolar y maestro de la escuela pública, y después a la educación media; la Udelar lo acompañó desde 2008 con Flor de Ceibo.</li>
+<li><strong>Ceibal fue el catalizador.</strong> AGESIC existía en la ley desde 2005, pero tomó forma real con Ceibal, en cuya comisión participaba desde 2007, con el LATU como ejecutor.</li>
+<li><strong>UTU fue una pieza central.</strong> Recibió a Ceibal desde 2010 en el ciclo básico, los bachilleratos tecnológicos y programas de reinserción como Rumbo y FPB. Creó con la Udelar el Tecnólogo en Informática y, a través de DICAS, llevó capacitación laboral pública y acreditación de saberes a quienes estaban fuera del sistema.</li>
+<li><strong>Hoy el modelo está cambiando.</strong> En 2025 UTU reestructuró DICAS; INEFOP financia capacitación a través de entidades externas, y el data center público de Antel empieza a alojar tecnología de Google.</li>
+<li><strong>La pregunta de fondo es la soberanía.</strong> Con la IA, recalificar trabajadores y controlar los datos va a ser decisivo. La acreditación de saberes de UTU e INEFOP nacieron en la misma época (2007–2009). Lo que importa no es cuál de las dos existe, sino qué forma de capacitar va a predominar: la de UTU, con docentes propios y una larga tradición pública de educación técnica, o la de INEFOP, que financia entidades externas.</li>
+</ol>
+<h2 id="fuentes">Fuentes</h2>
+<ul>
+<li>Ley 17.866 (creación del MIDES): <a href="https://impo.com.uy/bases/leyes/17866-2005" target="_blank" rel="noopener noreferrer" class="uri">https://impo.com.uy/bases/leyes/17866-2005</a></li>
+<li>Ley 17.930 (creación de AGESIC): <a href="https://docs.uruguay.justia.com/nacionales/leyes/ley-17930-dec-19-2005.pdf" target="_blank" rel="noopener noreferrer" class="uri">https://docs.uruguay.justia.com/nacionales/leyes/ley-17930-dec-19-2005.pdf</a></li>
+<li>Decreto 144/007 (creación de Ceibal): <a href="https://www.impo.com.uy/bases/decretos/144-2007" target="_blank" rel="noopener noreferrer" class="uri">https://www.impo.com.uy/bases/decretos/144-2007</a></li>
+<li>Ley 18.406 (creación de INEFOP): <a href="https://docs.uruguay.justia.com/nacionales/leyes/ley-18406-oct-24-2008.pdf" target="_blank" rel="noopener noreferrer" class="uri">https://docs.uruguay.justia.com/nacionales/leyes/ley-18406-oct-24-2008.pdf</a></li>
+<li>Ley 19.889, art. 141 (educación no formal): <a href="https://rrhh.utu.edu.uy/wp-content/uploads/2022/09/luc-capitulo-educacion.pdf" target="_blank" rel="noopener noreferrer" class="uri">https://rrhh.utu.edu.uy/wp-content/uploads/2022/09/luc-capitulo-educacion.pdf</a></li>
+<li>UTU, Resolución 3292/2025 (reestructura de DICAS): <a href="https://www.utu.edu.uy/wp-content/uploads/2025/10/res-3292-2025_exp2023254005581.pdf" target="_blank" rel="noopener noreferrer" class="uri">https://www.utu.edu.uy/wp-content/uploads/2025/10/res-3292-2025_exp2023254005581.pdf</a></li>
+<li>AGESIC, Memoria Anual 2008: <a href="https://www.gub.uy/agencia-gobierno-electronico-sociedad-informacion-conocimiento/sites/agencia-gobierno-electronico-sociedad-informacion-conocimiento/files/2019-06/Memoria_Anual2008.pdf" target="_blank" rel="noopener noreferrer" class="uri">https://www.gub.uy/agencia-gobierno-electronico-sociedad-informacion-conocimiento/sites/agencia-gobierno-electronico-sociedad-informacion-conocimiento/files/2019-06/Memoria_Anual2008.pdf</a></li>
+<li>MIDES, Informe de transición: <a href="https://www.gub.uy/ministerio-desarrollo-social/sites/ministerio-desarrollo-social/files/documentos/publicaciones/MIDES_informe%20de%20transici%C3%B3n.pdf" target="_blank" rel="noopener noreferrer" class="uri">https://www.gub.uy/ministerio-desarrollo-social/sites/ministerio-desarrollo-social/files/documentos/publicaciones/MIDES_informe%20de%20transici%C3%B3n.pdf</a></li>
+<li>El Observador, Ida Holz, la uruguaya de internet: <a href="https://www.elobservador.com.uy/nota/ida-holz-la-uruguaya-de-internet-20161125500" target="_blank" rel="noopener noreferrer" class="uri">https://www.elobservador.com.uy/nota/ida-holz-la-uruguaya-de-internet-20161125500</a></li>
+<li>Udelar, La RAU ofrece nuevos servicios y considera su gobernanza: <a href="https://udelar.edu.uy/portal/2023/10/la-rau-ofrece-nuevos-servicios-y-considera-su-gobernanza/" target="_blank" rel="noopener noreferrer" class="uri">https://udelar.edu.uy/portal/2023/10/la-rau-ofrece-nuevos-servicios-y-considera-su-gobernanza/</a></li>
+<li>Red Académica Uruguaya, Nosotros: <a href="https://www.rau.edu.uy/nosotros/" target="_blank" rel="noopener noreferrer" class="uri">https://www.rau.edu.uy/nosotros/</a></li>
+<li>Montevideo Portal, entrevista a Miguel Brechner: <a href="https://www.montevideo.com.uy/En-Perspectiva/Miguel-Brechner--La-satisfaccion-de-Vazquez-era-ver-que-Ceibal-quedo-para-siempre--uc772517" target="_blank" rel="noopener noreferrer" class="uri">https://www.montevideo.com.uy/En-Perspectiva/Miguel-Brechner--La-satisfaccion-de-Vazquez-era-ver-que-Ceibal-quedo-para-siempre--uc772517</a></li>
+<li>Villalba, Falero y Baute (2013), Plan Ceibal 2007–2009: <a href="https://cdsa.aacademica.org/000-038/298.pdf" target="_blank" rel="noopener noreferrer" class="uri">https://cdsa.aacademica.org/000-038/298.pdf</a></li>
+<li>Kachinovsky, La Universidad de la República en tiempos del Plan Ceibal (Flor de Ceibo): <a href="https://psico.edu.uy/sites/default/files/cursos/ps-educacional_la-universidad-de-la-republica-en-tiempos-del-plan-ceibal_0.pdf" target="_blank" rel="noopener noreferrer" class="uri">https://psico.edu.uy/sites/default/files/cursos/ps-educacional_la-universidad-de-la-republica-en-tiempos-del-plan-ceibal_0.pdf</a></li>
+<li>Presidencia, Memoria 2011 de Plan Ceibal: <a href="https://medios.presidencia.gub.uy/jm_portal/2012/mem_anual/presidencia/ceibal.pdf" target="_blank" rel="noopener noreferrer" class="uri">https://medios.presidencia.gub.uy/jm_portal/2012/mem_anual/presidencia/ceibal.pdf</a></li>
+<li>Facultad de Ingeniería, acuerdo UTU–Udelar para el Tecnólogo en Informática: <a href="https://www.fing.edu.uy/tecnoinf/mvd/docsgrales/acuerdoti_espec.pdf" target="_blank" rel="noopener noreferrer" class="uri">https://www.fing.edu.uy/tecnoinf/mvd/docsgrales/acuerdoti_espec.pdf</a></li>
+<li>Auditoría Interna de la Nación (2023), INEFOP y Entidades de Capacitación: <a href="https://www.gub.uy/ministerio-economia-finanzas/sites/ministerio-economia-finanzas/files/documentos/noticias/2023_PDPNE-InstitutoNacionaldeEmpleoyFormacionProfesional-ECAs.pdf" target="_blank" rel="noopener noreferrer" class="uri">https://www.gub.uy/ministerio-economia-finanzas/sites/ministerio-economia-finanzas/files/documentos/noticias/2023_PDPNE-InstitutoNacionaldeEmpleoyFormacionProfesional-ECAs.pdf</a></li>
+<li>TeleSemana, primera instalación de fibra al hogar (2011): <a href="https://www.telesemana.com/blog/2011/10/19/antel-concreta-su-primera-instalacion-de-fibra-optica-al-hogar/" target="_blank" rel="noopener noreferrer" class="uri">https://www.telesemana.com/blog/2011/10/19/antel-concreta-su-primera-instalacion-de-fibra-optica-al-hogar/</a></li>
+<li>Presidencia, Uruguay primer país de América con fibra en pequeñas localidades: <a href="https://www.gub.uy/presidencia/comunicacion/noticias/uruguay-es-primer-pais-america-fibra-optica-pequenas-localidades" target="_blank" rel="noopener noreferrer" class="uri">https://www.gub.uy/presidencia/comunicacion/noticias/uruguay-es-primer-pais-america-fibra-optica-pequenas-localidades</a></li>
+<li>El Observador, inauguración del cable Tannat (2017): <a href="https://www.elobservador.com.uy/nota/antel-califico-de-hito-historico-el-primer-cable-submarino-de-fibra-optica-201781717290" target="_blank" rel="noopener noreferrer" class="uri">https://www.elobservador.com.uy/nota/antel-califico-de-hito-historico-el-primer-cable-submarino-de-fibra-optica-201781717290</a></li>
+<li>TeleSemana, red 5G de Antel (2019): <a href="https://www.telesemana.com/blog/2019/04/10/antel-anuncia-red-comercial-5g-pero-limitada-a-una-zona-de-maldonado/" target="_blank" rel="noopener noreferrer" class="uri">https://www.telesemana.com/blog/2019/04/10/antel-anuncia-red-comercial-5g-pero-limitada-a-una-zona-de-maldonado/</a></li>
+<li>El Observador, data center de Google: <a href="https://www.elobservador.com.uy/tag/data-center-de-google" target="_blank" rel="noopener noreferrer" class="uri">https://www.elobservador.com.uy/tag/data-center-de-google</a></li>
+<li>El Observador, proyecto de ley sobre data centers y acuíferos (2026): <a href="https://www.elobservador.com.uy/nacional/senador-da-silva-presento-proyecto-ley-prohibir-instalacion-centros-datos-los-acuiferos-guarani-y-raigon-n6061322" target="_blank" rel="noopener noreferrer" class="uri">https://www.elobservador.com.uy/nacional/senador-da-silva-presento-proyecto-ley-prohibir-instalacion-centros-datos-los-acuiferos-guarani-y-raigon-n6061322</a></li>
+<li>MIEM, acuerdo Antel–Google Cloud: <a href="https://www.gub.uy/ministerio-industria-energia-mineria/comunicacion/noticias/antel-google-cloud-sellan-acuerdo-para-alojar-infraestructura-nube-hibrida" target="_blank" rel="noopener noreferrer" class="uri">https://www.gub.uy/ministerio-industria-energia-mineria/comunicacion/noticias/antel-google-cloud-sellan-acuerdo-para-alojar-infraestructura-nube-hibrida</a></li>
+<li>Lex Mundi, guía legislativa de IA en Uruguay: <a href="https://www.lexmundi.com/guides/ai-legislative-guide/jurisdictions/latin-america/uruguay/" target="_blank" rel="noopener noreferrer" class="uri">https://www.lexmundi.com/guides/ai-legislative-guide/jurisdictions/latin-america/uruguay/</a></li>
+<li>Ley 18.437, Ley General de Educación, art. 64: <a href="https://impo.com.uy/bases/leyes-originales/18437-2008/64" target="_blank" rel="noopener noreferrer" class="uri">https://impo.com.uy/bases/leyes-originales/18437-2008/64</a></li>
+<li>Ley 18.640 (Centro Ceibal): <a href="https://impo.com.uy/bases/leyes/18640-2010" target="_blank" rel="noopener noreferrer" class="uri">https://impo.com.uy/bases/leyes/18640-2010</a></li>
+<li>Decreto 184/015 (cometidos de AGESIC): <a href="https://www.impo.com.uy/bases/decretos/184-2015" target="_blank" rel="noopener noreferrer" class="uri">https://www.impo.com.uy/bases/decretos/184-2015</a></li>
+<li>AGESIC, Plan Estratégico Institucional: <a href="https://www.gub.uy/agencia-gobierno-electronico-sociedad-informacion-conocimiento/sites/agencia-gobierno-electronico-sociedad-informacion-conocimiento/files/2021-08/PEI%20CI%20para%20portal%20final.pdf" target="_blank" rel="noopener noreferrer" class="uri">https://www.gub.uy/agencia-gobierno-electronico-sociedad-informacion-conocimiento/sites/agencia-gobierno-electronico-sociedad-informacion-conocimiento/files/2021-08/PEI%20CI%20para%20portal%20final.pdf</a></li>
+<li>AGESIC, 20 años del dominio .uy: <a href="https://www.gub.uy/agencia-gobierno-electronico-sociedad-informacion-conocimiento/comunicacion/noticias/uy-pasaron-20-anos-primer-dominio-web-uruguayo" target="_blank" rel="noopener noreferrer" class="uri">https://www.gub.uy/agencia-gobierno-electronico-sociedad-informacion-conocimiento/comunicacion/noticias/uy-pasaron-20-anos-primer-dominio-web-uruguayo</a></li>
+<li>AGESIC, Uruguay en el Índice Global de IA Responsable 2026: <a href="https://www.gub.uy/agencia-gobierno-electronico-sociedad-informacion-conocimiento/comunicacion/noticias/uruguay-lidera-region-su-gobernanza-ia-responsable" target="_blank" rel="noopener noreferrer" class="uri">https://www.gub.uy/agencia-gobierno-electronico-sociedad-informacion-conocimiento/comunicacion/noticias/uruguay-lidera-region-su-gobernanza-ia-responsable</a></li>
+<li>MIDES, Capacitaciones en UTU para usuarios de refugios: <a href="https://www.gub.uy/ministerio-desarrollo-social/comunicacion/noticias/capacitaciones-utu-para-usuarios-refugios" target="_blank" rel="noopener noreferrer" class="uri">https://www.gub.uy/ministerio-desarrollo-social/comunicacion/noticias/capacitaciones-utu-para-usuarios-refugios</a></li>
+<li>MIDES, UTU brindará capacitaciones para el programa Accesos: <a href="https://www.gub.uy/ministerio-desarrollo-social/comunicacion/noticias/utu-brindara-capacitaciones-carpinteria-herreria-atencion-publico" target="_blank" rel="noopener noreferrer" class="uri">https://www.gub.uy/ministerio-desarrollo-social/comunicacion/noticias/utu-brindara-capacitaciones-carpinteria-herreria-atencion-publico</a></li>
+<li>MIDES, oferta de tecnólogos: <a href="https://www.gub.uy/ministerio-desarrollo-social/sites/ministerio-desarrollo-social/files/documentos/publicaciones/549.pdf" target="_blank" rel="noopener noreferrer" class="uri">https://www.gub.uy/ministerio-desarrollo-social/sites/ministerio-desarrollo-social/files/documentos/publicaciones/549.pdf</a></li>
+<li>MIEM–IECON, Compras TIC del Plan Ceibal: <a href="https://www.gub.uy/ministerio-industria-energia-mineria/sites/ministerio-industria-energia-mineria/files/documentos/publicaciones/informe_miem-iecon_compras_tic_plan_ceibal.pdf" target="_blank" rel="noopener noreferrer" class="uri">https://www.gub.uy/ministerio-industria-energia-mineria/sites/ministerio-industria-energia-mineria/files/documentos/publicaciones/informe_miem-iecon_compras_tic_plan_ceibal.pdf</a></li>
+<li>MEF, exposición de motivos (tecnólogos UTEC–Udelar–ANEP): <a href="https://www.gub.uy/ministerio-economia-finanzas/node/1587" target="_blank" rel="noopener noreferrer" class="uri">https://www.gub.uy/ministerio-economia-finanzas/node/1587</a></li>
+<li>RedCLARA, Red Académica Uruguaya: <a href="https://redclara.net/en/somos/miembros/uruguay-rau" target="_blank" rel="noopener noreferrer" class="uri">https://redclara.net/en/somos/miembros/uruguay-rau</a></li>
+<li>Martínez, A. (2008), La evaluación de impacto social del Plan Ceibal, INNOTEC-LATU: <a href="https://www.redalyc.org/pdf/6061/606166690003.pdf" target="_blank" rel="noopener noreferrer" class="uri">https://www.redalyc.org/pdf/6061/606166690003.pdf</a></li>
+<li>Martínez, S., Universalización del uso de laptops en la escuela uruguaya, Facultad de Psicología (Udelar): <a href="https://psico.edu.uy/sites/default/files/cursos/ps-educacional_universalizacion-del-uso-de-laptops-en-la-escuela-uruguaya_prof-adj-susana-martinez_0.pdf" target="_blank" rel="noopener noreferrer" class="uri">https://psico.edu.uy/sites/default/files/cursos/ps-educacional_universalizacion-del-uso-de-laptops-en-la-escuela-uruguaya_prof-adj-susana-martinez_0.pdf</a></li>
+<li>Angeriz y otros (2012), Plan CEIBAL en Uruguay: una mirada universitaria: <a href="https://redined.educacion.gob.es/xmlui/bitstream/handle/11162/146344/Art.%206.pdf?sequence=1" target="_blank" rel="noopener noreferrer" class="uri">https://redined.educacion.gob.es/xmlui/bitstream/handle/11162/146344/Art.%206.pdf?sequence=1</a></li>
+<li>Currículum y Tecnólogo en Informática: tensiones y desafíos (Dialnet): <a href="https://dialnet.unirioja.es/descarga/articulo/9512881.pdf" target="_blank" rel="noopener noreferrer" class="uri">https://dialnet.unirioja.es/descarga/articulo/9512881.pdf</a></li>
+<li>Montevideo Portal, expansión del Plan Ceibal a la enseñanza media (2010): <a href="https://www.montevideo.com.uy/Archivo/Expansion-del-Plan-Ceibal-a-la-Ensenanza-Media-uc121687" target="_blank" rel="noopener noreferrer" class="uri">https://www.montevideo.com.uy/Archivo/Expansion-del-Plan-Ceibal-a-la-Ensenanza-Media-uc121687</a></li>
+<li>TeleSemana, data center de Pando (2015): <a href="https://www.telesemana.com/blog/2015/11/18/antel-retrasa-hasta-2016-la-inauguracion-de-su-datacenter-en-pando/" target="_blank" rel="noopener noreferrer" class="uri">https://www.telesemana.com/blog/2015/11/18/antel-retrasa-hasta-2016-la-inauguracion-de-su-datacenter-en-pando/</a></li>
+<li>Presidencia, Uruguay entre los 10 primeros países en hogares con fibra (2017): <a href="https://www.gub.uy/presidencia/comunicacion/noticias/uruguay-se-posiciona-entre-10-primeros-paises-hogares-conectados-internet" target="_blank" rel="noopener noreferrer" class="uri">https://www.gub.uy/presidencia/comunicacion/noticias/uruguay-se-posiciona-entre-10-primeros-paises-hogares-conectados-internet</a></li>
+<li>Google, Tannat, un cable nuevo para América del Sur (2015): <a href="https://latam.googleblog.com/2015/11/tannat-un-cable-nuevo-para-america-del-sur.html" target="_blank" rel="noopener noreferrer" class="uri">https://latam.googleblog.com/2015/11/tannat-un-cable-nuevo-para-america-del-sur.html</a></li>
+<li>DPL News, el 5G en Uruguay (2019): <a href="https://dplnews.com/?p=7575" target="_blank" rel="noopener noreferrer" class="uri">https://dplnews.com/?p=7575</a></li>
+<li>DPL News, entrevista a Andrés Tolosa (2019): <a href="https://dplnews.com/?p=26302" target="_blank" rel="noopener noreferrer" class="uri">https://dplnews.com/?p=26302</a></li>
+<li>Uruguay XXI, Google confirma la construcción del data center: <a href="https://uruguayxxi.gub.uy/en/news/article/google-confirms-the-construction-of-a-global-data-center-in-uruguay" target="_blank" rel="noopener noreferrer" class="uri">https://uruguayxxi.gub.uy/en/news/article/google-confirms-the-construction-of-a-global-data-center-in-uruguay</a></li>
+<li>El Cronista, inversión de Google en Uruguay: <a href="https://www.cronista.com/mexico/actualidad-mx/el-pais-de-sudamerica-en-el-que-google-invertira-mas-de-usd-800-millones-para-un-megaproyecto-tecnologico" target="_blank" rel="noopener noreferrer" class="uri">https://www.cronista.com/mexico/actualidad-mx/el-pais-de-sudamerica-en-el-que-google-invertira-mas-de-usd-800-millones-para-un-megaproyecto-tecnologico</a></li>
+<li>DCD, aprobación del data center de Google: <a href="https://datacenterdynamics.com/en/news/googles-uruguay-data-center-approved-after-reformulation" target="_blank" rel="noopener noreferrer" class="uri">https://datacenterdynamics.com/en/news/googles-uruguay-data-center-approved-after-reformulation</a></li>
+<li>La Mañana, el TCA intima al Ministerio de Ambiente (2023): <a href="https://www.xn--lamaana-7za.uy/?p=47243" target="_blank" rel="noopener noreferrer" class="uri">https://www.xn--lamaana-7za.uy/?p=47243</a></li>
+</ul>
+
+<div class="pager"><a class="btn" href="../index.html#escritos">← Volver a Escritos</a><a class="btn solid" href="../index.html#contacto">Contacto</a></div>
+</article>
+</main>
+</body>
+</html>
