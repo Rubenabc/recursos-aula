@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Excel: formatos, porcentajes y funciones · Ruben Leal</title>
+<meta content="Ejercicios de Excel: formatos de celda, formato condicional, porcentajes e IVA, y funciones PROMEDIO, MAX y MIN, con ejercicios resueltos sobre costos de obra." name="description"/>
+<meta content="website" property="og:type"/>
+<meta content="Excel: formatos, porcentajes y funciones" property="og:title"/>
+<meta content="Ejercicios de Excel: formatos de celda, formato condicional, porcentajes e IVA, y funciones PROMEDIO, MAX y MIN, con ejercicios resueltos sobre costos de obra." property="og:description"/>
+<meta content="#14304A" name="theme-color"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&amp;display=swap" rel="stylesheet"/>
+<style>
+:root{--navy:#14304A;--blue:#1F5FA8;--grey:#4A5866;--line:#C9D2DC;--soft:#E1E7ED;--bg:#F6F8FA;--text:#1B2733}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font-family:'Source Sans 3',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;font-size:17px;line-height:1.55}
+a{color:var(--blue)}a:hover{color:var(--navy)}
+.wrap{max-width:1040px;margin:0 auto;padding:0 24px}
+header{position:sticky;top:0;z-index:10;background:rgba(246,248,250,.96);backdrop-filter:blur(6px);border-bottom:1px solid var(--soft)}
+header .wrap{display:flex;flex-wrap:wrap;gap:4px 24px;justify-content:space-between;align-items:center;padding-top:12px;padding-bottom:12px}
+.brand{display:inline-block;padding:10px 0;min-height:44px;font-weight:700;letter-spacing:.16em;color:var(--navy);text-decoration:none}
+nav{display:flex;flex-wrap:wrap;gap:0 2px}
+nav a{display:inline-block;padding:10px 10px;min-height:44px;text-decoration:none;font-weight:600;font-size:15px;border-bottom:3px solid transparent}
+@media(max-width:640px){header .wrap{padding-top:4px;padding-bottom:0}nav{flex-wrap:nowrap;overflow-x:auto;width:100%;margin:0 -10px;-webkit-overflow-scrolling:touch;scrollbar-width:none}nav::-webkit-scrollbar{display:none}nav a{white-space:nowrap;flex:0 0 auto}}
+nav a[aria-current="page"]{font-weight:700;color:var(--navy);border-bottom-color:var(--blue)}
+.page[hidden]{display:none}
+h1.name{margin:0;font-size:clamp(40px,8vw,64px);line-height:1.05;letter-spacing:.04em;color:var(--navy)}
+h1.title{margin:32px 0 8px;font-size:clamp(30px,5vw,42px);line-height:1.15;color:var(--navy)}
+.kicker{margin:40px 0 0;font-size:15px;letter-spacing:.18em;color:var(--blue);font-weight:700}
+.role{margin:14px 0 0;font-size:clamp(16px,3vw,22px);letter-spacing:.08em;color:var(--grey)}
+.hero{padding-top:56px;padding-bottom:16px;display:flex;align-items:center;gap:clamp(24px,5vw,56px)}
+.hero-copy{flex:1 1 520px;min-width:0}
+.hero-photo{width:clamp(150px,24vw,240px);aspect-ratio:4/5;object-fit:cover;object-position:center 35%;height:auto;border-radius:14px;box-shadow:0 12px 30px rgba(20,48,74,.18);flex:0 0 auto}
+@media(max-width:640px){.hero{align-items:flex-start;gap:18px;padding-top:32px}.hero-photo{width:112px;border-radius:10px}.hero-copy{flex-basis:calc(100% - 130px)}.hero .lead{font-size:17px}.hero .row{gap:8px}.hero .btn{padding:10px 14px}}
+.label{margin:40px 0 16px;padding-bottom:8px;border-bottom:1px solid var(--line);font-size:15px;letter-spacing:.18em;color:var(--blue);font-weight:700}
+.label.first{margin-top:32px}
+.btn{display:inline-block;padding:12px 22px;min-height:44px;border-radius:6px;font-weight:600;text-decoration:none;border:2px solid var(--navy);color:var(--navy);background:transparent}
+.btn.solid{background:var(--navy);color:#fff}
+.btn.solid:hover{color:#fff;background:#0d2236}
+.row{display:flex;flex-wrap:wrap;gap:12px}
+.entry{display:flex;flex-wrap:wrap;gap:4px 40px;padding:22px 0;border-bottom:1px solid var(--soft)}
+.entry:last-of-type{border-bottom:0}
+.date{flex:0 0 200px;color:var(--grey);font-weight:600}
+.body{flex:1 1 440px;min-width:0}
+.body h2{margin:0;font-size:21px;color:var(--navy)}
+.org{margin:2px 0 10px;font-style:italic;color:var(--grey)}
+.body ul,.list{margin:0;padding-left:20px}
+.list li{margin-bottom:8px}
+.cards{display:flex;flex-wrap:wrap;gap:20px}
+.card{flex:1 1 300px;min-width:0;background:#fff;border:1px solid #DCE3EA;border-radius:8px;padding:22px 24px}
+.card h2,.card h3{margin:0 0 6px;font-size:20px;color:var(--navy)}
+.card p{margin:0 0 12px}
+.card p:last-child{margin-bottom:0}
+.card a.more{font-weight:600}
+.lead{margin:0;max-width:820px;font-size:19px}
+.note{margin:24px 0 0;color:var(--grey)}
+.cols{display:flex;flex-wrap:wrap;gap:24px 48px}
+.cols>div{flex:1 1 320px;min-width:0}
+.cols h2{margin:0 0 10px;font-size:19px;color:var(--navy)}
+.cols ul{margin:0;padding-left:20px}
+.cols li{margin-bottom:6px}
+.steps{list-style:none;margin:0;padding:0;counter-reset:s;display:flex;flex-wrap:wrap;gap:20px}
+.steps li{counter-increment:s;flex:1 1 220px;min-width:0;background:#fff;border:1px solid #DCE3EA;border-radius:8px;padding:20px 22px}
+.steps li::before{content:counter(s);display:inline-block;width:32px;height:32px;line-height:32px;text-align:center;border-radius:50%;background:var(--navy);color:#fff;font-weight:700;margin-bottom:10px}
+.steps strong{display:block;color:var(--navy);font-size:18px}
+details{background:#fff;border:1px solid #DCE3EA;border-radius:8px;margin:0 0 14px;padding:0}
+summary{cursor:pointer;padding:16px 22px;min-height:44px;font-weight:700;font-size:19px;color:var(--navy)}
+details .art{padding:0 22px 20px;max-width:760px}
+details .art p{margin:0 0 12px}
+details .art ul{margin:0 0 12px;padding-left:20px}
+.contact{background:var(--navy);color:#fff;border-radius:10px;padding:36px;display:flex;flex-wrap:wrap;gap:24px 40px;align-items:center;justify-content:space-between}
+.contact h2{margin:0;font-size:32px}
+.contact p{margin:8px 0 0;color:#DCE6F0}
+.contact .btn.solid{background:#fff;color:var(--navy)}
+.cta{margin-top:32px}
+.pager{display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;padding:40px 0 56px}
+.pager.end{justify-content:flex-end}
+
+html{scroll-behavior:smooth} .page{scroll-margin-top:100vh;padding-bottom:56px} .contact a.btn{white-space:normal}
+
+/* Navegación por secciones: una vista a la vez, sin JavaScript. */
+main > .page {display:none}
+main > #inicio {display:block}
+main:has(> .page:target:not(#inicio)) > #inicio {display:none}
+main > .page:target {display:block}
+/* Contraste legible de ambos botones en el panel oscuro. */
+.contact .btn, .contact .btn.solid {background:#fff;color:#14304A;border-color:#fff}
+.contact .btn:hover, .contact .btn.solid:hover {background:#e1e7ed;color:#14304A}
+.contact .address {color:#fff;overflow-wrap:anywhere}
+
+.project-image{display:block;width:100%;aspect-ratio:16/10;object-fit:cover;object-position:top center;border:1px solid #dce3ea;border-radius:6px;margin:0 0 18px;background:#edf2f5}.featured .card{display:flex;flex-direction:column}.featured .card .more{margin-top:auto}.featured .card p{flex-grow:1}
+.quotes{display:flex;flex-wrap:wrap;gap:20px}
+.quote{flex:1 1 400px;min-width:0;margin:0;background:#fff;border:1px solid #DCE3EA;border-left:4px solid var(--blue);border-radius:8px;padding:20px 22px}
+.quote blockquote{margin:0 0 10px;font-size:19px;color:var(--navy);font-weight:600}
+.quote figcaption{color:var(--grey);font-size:15px}
+</style>
+<style>
+.guia{max-width:900px;padding-top:8px;padding-bottom:24px}
+.guia h1.title{margin-top:24px}
+.guia h2.sec{margin:48px 0 12px;font-size:26px;color:var(--navy);display:flex;gap:12px;align-items:baseline}
+.guia h2.sec span{display:inline-block;min-width:38px;height:38px;line-height:38px;text-align:center;border-radius:50%;background:var(--navy);color:#fff;font-size:19px}
+.guia p{max-width:780px}
+.guia ol,.guia ul{max-width:780px}
+.guia li{margin-bottom:6px}
+.tabla{width:100%;border-collapse:collapse;margin:14px 0 20px;background:#fff;font-size:16px}
+.tabla th,.tabla td{border:1px solid #DCE3EA;padding:9px 12px;text-align:left;vertical-align:top}
+.tabla th{background:#EEF3F8;color:var(--navy)}
+.scroll{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.scroll .tabla{min-width:620px}
+.ej{background:#fff;border:1px solid #DCE3EA;border-left:5px solid var(--blue);border-radius:8px;padding:20px 24px;margin:24px 0}
+.ej h3{margin:0 0 8px;color:var(--blue);font-size:15px;letter-spacing:.14em}
+.ej h4{margin:0 0 10px;font-size:21px;color:var(--navy)}
+.ok{background:#EAF6EE;border:1px solid #BFE3CB;border-radius:6px;padding:10px 14px;margin:14px 0 0}
+.hoja{display:inline-block;max-width:100%;overflow-x:auto;margin:10px 0 4px;border:1px solid #B9C4CF;border-radius:6px;background:#fff;box-shadow:0 3px 10px rgba(20,48,74,.08)}
+.hoja table{border-collapse:collapse;font-family:Calibri,'Segoe UI',Arial,sans-serif;font-size:15px}
+.hoja th{background:#F1F3F5;color:#5B6670;font-weight:600;border:1px solid #D5DBE1;padding:4px 10px;min-width:34px;text-align:center}
+.hoja td{border:1px solid #E2E6EA;padding:5px 12px;white-space:nowrap}
+.hoja td.n{text-align:right}
+.hoja td.h{font-weight:700;background:#F7F9FB}
+.hoja td.f{color:#1F5FA8;font-family:Consolas,monospace;font-size:14px}
+.hoja td.alerta{background:#FFC7CE;color:#9C0006}
+.hoja td.sel{outline:2px solid #217346;outline-offset:-2px}
+.money{display:flex;justify-content:space-between;gap:14px}
+.pie{font-size:14px;color:var(--grey);margin:2px 0 0}
+.ruta{display:inline-block;background:#EEF3F8;border-radius:4px;padding:1px 8px;font-weight:600;color:var(--navy);font-size:15px}
+.creditos{margin-top:48px;padding-top:16px;border-top:1px solid var(--line);color:var(--grey);font-size:15px}
+.migas{margin:24px 0 0;font-size:15px}
+</style>
+<link rel="icon" href="../favicon.svg" type="image/svg+xml"/><link rel="icon" href="../favicon-32.png" sizes="32x32" type="image/png"/><link rel="apple-touch-icon" href="../apple-touch-icon.png"/>
+<meta property="og:image" content="https://informatica.uy/img/og.jpg"/><meta property="og:image:width" content="1200"/><meta property="og:image:height" content="630"/><meta property="og:site_name" content="Ruben Leal"/><meta property="og:locale" content="es_UY"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:image" content="https://informatica.uy/img/og.jpg"/>
+<meta property="og:url" content="https://informatica.uy/excel-ejercicios/"/><link rel="canonical" href="https://informatica.uy/excel-ejercicios/"/>
+</head>
+<body>
+<header>
+<div class="wrap">
+<a class="brand" href="../index.html#inicio">RUBEN LEAL</a>
+<nav aria-label="Páginas">
+<a href="../index.html#inicio">Inicio</a>
+<a href="../index.html#servicios">Servicios</a>
+<a href="../index.html#proyectos">Proyectos</a>
+<a href="../index.html#recursos" aria-current="page">Recursos</a>
+<a href="../index.html#blog">Artículos</a>
+<a href="../index.html#como-trabajo">Cómo trabajo</a>
+<a href="../index.html#sobre-mi">Sobre mí</a>
+<a href="../index.html#escritos">Escritos</a>
+<a href="../index.html#contacto">Contacto</a>
+</nav>
+</div>
+</header>
+<main>
+<article class="wrap guia">
+<p class="migas"><a href="../index.html#recursos">← Recursos</a></p>
+<p class="kicker">RECURSOS · EJERCICIOS</p>
+<h1 class="title">Excel: formatos, porcentajes y funciones</h1>
+<p class="lead">Formatos de celda, formato condicional, porcentajes y funciones básicas, aplicados al análisis de costos y presupuestos. Cada tema trae un ejercicio práctico con el resultado que tenés que obtener.</p>
+<p class="nota" style="color:var(--grey)">Es la continuación de la <a href="../excel-paso-a-paso/">guía ilustrada de Excel</a>. Sirve para Excel 365 (escritorio y online) y versiones 2016 o posteriores. Los cinco ejercicios se hacen en un mismo libro.</p>
+
+<h2 class="sec"><span>1</span>Tipos de formato de celda</h2>
+<p>El formato de una celda define cómo Excel interpreta y muestra los datos, y eso afecta los cálculos. Por defecto todas las celdas están en formato <strong>General</strong>. Elegir el formato correcto es el primer paso antes de hacer cualquier operación.</p>
+<div class="scroll"><table class="tabla"><tr><th>Formato</th><th>Qué hace</th><th>Ejemplo de uso</th></tr>
+<tr><td><strong>Texto</strong></td><td>Guarda caracteres sin valor matemático. Se alinea a la izquierda.</td><td>Códigos de materiales, RUT, números de factura.</td></tr>
+<tr><td><strong>Número</strong></td><td>Valores para calcular. Permite controlar los decimales.</td><td>Cantidades, rendimientos, stock.</td></tr>
+<tr><td><strong>Moneda / Contabilidad</strong></td><td>Agrega el símbolo $; en Contabilidad queda alineado a la izquierda.</td><td>Costos, subtotales, precios unitarios.</td></tr>
+<tr><td><strong>Fecha</strong></td><td>Muestra como fecha un número interno (por ejemplo, 23/06/2026).</td><td>Plazos de entrega, cronogramas.</td></tr>
+<tr><td><strong>Personalizado</strong></td><td>Aplica una máscara de visualización propia.</td><td>Mantener ceros iniciales en códigos (máscara <code>00000</code>).</td></tr></table></div>
+<p><strong>Cómo cambiar el formato:</strong></p>
+<ol><li>Seleccioná las celdas.</li><li>Andá a la pestaña <span class="ruta">Inicio</span>.</li><li>Buscá el grupo <span class="ruta">Número</span>.</li><li>Abrí el desplegable que dice <em>General</em> y elegí el formato.</li></ol>
+
+<div class="ej"><h3>EJERCICIO 1</h3><h4>Inventario de obra</h4>
+<p>Creá un libro en blanco y guardalo con <kbd>Ctrl</kbd> + <kbd>G</kbd>. En la fila 3 escribí los encabezados y en la fila 4 los datos. Usá formato Personalizado <code>00000</code> para el código y Contabilidad para el costo.</p>
+<div class="hoja"><table><tr><th></th><th>A</th><th>B</th><th>C</th><th>D</th></tr><tr><th>3</th><td class="h">Código de barra</td><td class="h">Descripción</td><td class="h">Cantidad en depósito</td><td class="h">Costo unitario</td></tr><tr><th>4</th><td class="n sel">00154</td><td>Cemento Portland (bolsa)</td><td class="n">120</td><td><span class="money"><span>$</span><span>450,45</span></span></td></tr></table></div><p class="pie">Así tiene que verse: el código conserva los ceros y el signo $ queda a la izquierda de la celda.</p>
+<p class="ok">✅ <strong>Resultado esperado:</strong> A4 muestra «00154» (no «154») y en D4 el signo $ aparece alineado a la izquierda.</p></div>
+
+<h2 class="sec"><span>2</span>Formato condicional</h2>
+<p>El formato condicional cambia solo el color de una celda cuando se cumple una regla. Es ideal para detectar a simple vista un gasto que se pasó del límite.</p>
+<ol><li>Seleccioná el rango que querés controlar.</li><li>En <span class="ruta">Inicio</span>, grupo <span class="ruta">Estilos</span>, abrí <span class="ruta">Formato condicional</span>.</li><li>Elegí <span class="ruta">Reglas para resaltar celdas → Es mayor que…</span></li><li>Escribí el valor límite y elegí el estilo <em>Relleno rojo claro con texto rojo oscuro</em>.</li><li>Tocá <strong>Aceptar</strong>.</li></ol>
+<p>También sirve para marcar fechas vencidas con <span class="ruta">Reglas para resaltar celdas → Una fecha que ocurre…</span></p>
+
+<div class="ej"><h3>EJERCICIO 2</h3><h4>Alerta de costos excesivos</h4>
+<p>En el mismo archivo, desde la fila 6, cargá estos gastos. Aplicá Contabilidad a B7:B9 y una regla «Es mayor que… 10000».</p>
+<div class="hoja"><table><tr><th></th><th>A</th><th>B</th></tr><tr><th>6</th><td class="h">Detalle del gasto</td><td class="h">Importe mensual</td></tr><tr><th>7</th><td>Hierro de construcción</td><td class="alerta"><span class="money"><span>$</span><span>18.500</span></span></td></tr><tr><th>8</th><td>Arena (m³)</td><td><span class="money"><span>$</span><span>4.200</span></span></td></tr><tr><th>9</th><td>Piedra partida</td><td class="alerta"><span class="money"><span>$</span><span>12.000</span></span></td></tr></table></div><p class="pie">Las celdas que superan $ 10.000 se pintan solas de rojo.</p>
+<p class="ok">✅ <strong>Resultado esperado:</strong> B7 y B9 aparecen en rojo; B8 queda sin cambios.</p></div>
+
+<h2 class="sec"><span>3</span>Operaciones aritméticas</h2>
+<p>Las operaciones básicas combinan celdas con operadores matemáticos. Siempre empiezan con el signo <strong>=</strong>.</p>
+<div class="scroll"><table class="tabla"><tr><th>Operación</th><th>Operador</th><th>Ejemplo</th><th>Para qué sirve</th></tr>
+<tr><td>Suma</td><td><code>+</code></td><td><code>=A1+B1</code></td><td>Juntar costos separados.</td></tr>
+<tr><td>Resta</td><td><code>-</code></td><td><code>=A1-B1</code></td><td>Comparar presupuesto y costo real.</td></tr>
+<tr><td>Multiplicación</td><td><code>*</code></td><td><code>=A1*B1</code></td><td>Subtotales (cantidad × precio).</td></tr>
+<tr><td>División</td><td><code>/</code></td><td><code>=A1/B1</code></td><td>Repartir gastos entre partidas.</td></tr></table></div>
+
+<div class="ej"><h3>EJERCICIO 3</h3><h4>Costo real y desvío</h4>
+<p>Desde la fila 11, cargá los datos y escribí las dos fórmulas. Aplicá Contabilidad a los importes.</p>
+<div class="hoja"><table><tr><th></th><th>A</th><th>B</th><th>C</th><th>D</th><th>E</th><th>F</th></tr><tr><th>11</th><td class="h">Insumo</td><td class="h">Cantidad</td><td class="h">Precio unitario</td><td class="h">Costo real total</td><td class="h">Presupuesto</td><td class="h">Desvío</td></tr><tr><th>12</th><td>Ladrillos de prensa (millar)</td><td class="n">3</td><td><span class="money"><span>$</span><span>8.500</span></span></td><td class="sel"><span class="money"><span>$</span><span>25.500</span></span></td><td><span class="money"><span>$</span><span>27.000</span></span></td><td><span class="money"><span>$</span><span>1.500</span></span></td></tr><tr><th></th><td></td><td></td><td></td><td class="f">=B12*C12</td><td></td><td class="f">=E12-D12</td></tr></table></div><p class="pie">En azul, la fórmula que va en cada celda.</p>
+<p class="ok">✅ <strong>Resultado esperado:</strong> D12 = $ 25.500 y F12 = $ 1.500 a favor del presupuesto.</p></div>
+
+<h2 class="sec"><span>4</span>Porcentajes: IVA y precio final</h2>
+<p>Excel guarda los porcentajes como decimales: 22 % es 0,22. Para sumarle el IVA a un precio en un solo paso se usa <code>=B16*(1+C16)</code>.</p>
+<p>El <strong>1+</strong> representa el 100 % del costo original. Así, Excel calcula al mismo tiempo el costo base (B16 × 1) y el impuesto (B16 × 0,22). En la práctica multiplica por 1,22: $ 45.000 × 1,22 = $ 54.900.</p>
+
+<div class="ej"><h3>EJERCICIO 4</h3><h4>Cálculo de IVA y precio final</h4>
+<p>En las filas 15 y 16, cargá el concepto, el costo base y la tasa. Aplicá Porcentaje a C16 y Contabilidad a B16, D16 y E16.</p>
+<div class="hoja"><table><tr><th></th><th>A</th><th>B</th><th>C</th><th>D</th><th>E</th></tr><tr><th>15</th><td class="h">Concepto</td><td class="h">Costo base (neto)</td><td class="h">Tasa IVA</td><td class="h">Valor del IVA</td><td class="h">Precio final con IVA</td></tr><tr><th>16</th><td>Partida de sanitaria</td><td><span class="money"><span>$</span><span>45.000</span></span></td><td class="n">22%</td><td><span class="money"><span>$</span><span>9.900</span></span></td><td class="sel"><span class="money"><span>$</span><span>54.900</span></span></td></tr><tr><th></th><td></td><td></td><td></td><td class="f">=B16*C16</td><td class="f">=B16*(1+C16)</td></tr></table></div>
+<p class="ok">✅ <strong>Resultado esperado:</strong> D16 = $ 9.900 de IVA y E16 = $ 54.900 de precio final.</p></div>
+
+<h2 class="sec"><span>5</span>Funciones estadísticas</h2>
+<p>Estas funciones trabajan con un <strong>rango</strong> de celdas, que se escribe con dos puntos: <code>B20:B23</code> significa «desde B20 hasta B23».</p>
+<div class="scroll"><table class="tabla"><tr><th>Función</th><th>Qué devuelve</th><th>Sintaxis</th></tr>
+<tr><td><strong>PROMEDIO</strong></td><td>El promedio de los valores.</td><td><code>=PROMEDIO(rango)</code></td></tr>
+<tr><td><strong>MAX</strong></td><td>El valor más alto.</td><td><code>=MAX(rango)</code></td></tr>
+<tr><td><strong>MIN</strong></td><td>El valor más bajo.</td><td><code>=MIN(rango)</code></td></tr>
+<tr><td><strong>CONTAR</strong></td><td>Cuántas celdas tienen números.</td><td><code>=CONTAR(rango)</code></td></tr>
+<tr><td><strong>CONTARA</strong></td><td>Cuántas celdas no están vacías (números o texto).</td><td><code>=CONTARA(rango)</code></td></tr></table></div>
+<p>CONTAR sirve para saber cuántos materiales tienen precio cargado; CONTARA, para saber cuántos proveedores hay en la lista aunque alguno todavía no tenga precio.</p>
+
+<div class="ej"><h3>EJERCICIO 5</h3><h4>Análisis de cotizaciones de proveedores</h4>
+<p>Desde la fila 19, cargá las cotizaciones y, en las filas 25 a 27, las tres funciones. Aplicá Contabilidad a la columna B.</p>
+<div class="hoja"><table><tr><th></th><th>A</th><th>B</th></tr><tr><th>19</th><td class="h">Proveedor</td><td class="h">Cotización</td></tr><tr><th>20</th><td>Barraca Central</td><td><span class="money"><span>$</span><span>1.650</span></span></td></tr><tr><th>21</th><td>Distribuidora Norte</td><td><span class="money"><span>$</span><span>1.420</span></span></td></tr><tr><th>22</th><td>Mega Materiales</td><td><span class="money"><span>$</span><span>1.580</span></span></td></tr><tr><th>23</th><td>Hierros del Sur</td><td><span class="money"><span>$</span><span>1.390</span></span></td></tr><tr><th>24</th><td></td><td></td></tr><tr><th>25</th><td>Precio promedio</td><td class="sel"><span class="money"><span>$</span><span>1.510</span></span></td></tr><tr><th>26</th><td>Cotización máxima</td><td><span class="money"><span>$</span><span>1.650</span></span></td></tr><tr><th>27</th><td>Cotización mínima</td><td><span class="money"><span>$</span><span>1.390</span></span></td></tr></table></div><p class="pie">Fórmulas: B25 =PROMEDIO(B20:B23) · B26 =MAX(B20:B23) · B27 =MIN(B20:B23)</p>
+<p class="ok">✅ <strong>Resultado esperado:</strong> promedio $ 1.510, máximo $ 1.650 y mínimo $ 1.390.</p></div>
+
+<p class="creditos">Material elaborado por Ruben Leal para el Bachillerato Tecnológico, en coordinación con la docente de Costos y Presupuestos Verónica Vaghi, con apoyo de herramientas de inteligencia artificial para la redacción.</p>
+<div class="pager"><a class="btn" href="../index.html#recursos">← Volver a Recursos</a><a class="btn solid" href="../excel-funcion-si/">Siguiente: función SI →</a></div>
+</article>
+</main>
+</body>
+</html>

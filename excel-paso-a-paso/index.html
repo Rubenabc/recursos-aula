@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Excel paso a paso: guía ilustrada · Ruben Leal</title>
+<meta content="Guía ilustrada para empezar con Excel: la ventana, filas, columnas y celdas, cómo seleccionar, ancho de columnas, deshacer, copiar y pegar, autorrelleno, formatos y atajos." name="description"/>
+<meta content="website" property="og:type"/>
+<meta content="Excel paso a paso: guía ilustrada" property="og:title"/>
+<meta content="Guía ilustrada para empezar con Excel: la ventana, filas, columnas y celdas, cómo seleccionar, ancho de columnas, deshacer, copiar y pegar, autorrelleno, formatos y atajos." property="og:description"/>
+<meta content="#14304A" name="theme-color"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&amp;display=swap" rel="stylesheet"/>
+<style>
+:root{--navy:#14304A;--blue:#1F5FA8;--grey:#4A5866;--line:#C9D2DC;--soft:#E1E7ED;--bg:#F6F8FA;--text:#1B2733}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font-family:'Source Sans 3',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;font-size:17px;line-height:1.55}
+a{color:var(--blue)}a:hover{color:var(--navy)}
+.wrap{max-width:1040px;margin:0 auto;padding:0 24px}
+header{position:sticky;top:0;z-index:10;background:rgba(246,248,250,.96);backdrop-filter:blur(6px);border-bottom:1px solid var(--soft)}
+header .wrap{display:flex;flex-wrap:wrap;gap:4px 24px;justify-content:space-between;align-items:center;padding-top:12px;padding-bottom:12px}
+.brand{display:inline-block;padding:10px 0;min-height:44px;font-weight:700;letter-spacing:.16em;color:var(--navy);text-decoration:none}
+nav{display:flex;flex-wrap:wrap;gap:0 2px}
+nav a{display:inline-block;padding:10px 10px;min-height:44px;text-decoration:none;font-weight:600;font-size:15px;border-bottom:3px solid transparent}
+@media(max-width:640px){header .wrap{padding-top:4px;padding-bottom:0}nav{flex-wrap:nowrap;overflow-x:auto;width:100%;margin:0 -10px;-webkit-overflow-scrolling:touch;scrollbar-width:none}nav::-webkit-scrollbar{display:none}nav a{white-space:nowrap;flex:0 0 auto}}
+nav a[aria-current="page"]{font-weight:700;color:var(--navy);border-bottom-color:var(--blue)}
+.page[hidden]{display:none}
+h1.name{margin:0;font-size:clamp(40px,8vw,64px);line-height:1.05;letter-spacing:.04em;color:var(--navy)}
+h1.title{margin:32px 0 8px;font-size:clamp(30px,5vw,42px);line-height:1.15;color:var(--navy)}
+.kicker{margin:40px 0 0;font-size:15px;letter-spacing:.18em;color:var(--blue);font-weight:700}
+.role{margin:14px 0 0;font-size:clamp(16px,3vw,22px);letter-spacing:.08em;color:var(--grey)}
+.hero{padding-top:56px;padding-bottom:16px;display:flex;align-items:center;gap:clamp(24px,5vw,56px)}
+.hero-copy{flex:1 1 520px;min-width:0}
+.hero-photo{width:clamp(150px,24vw,240px);aspect-ratio:4/5;object-fit:cover;object-position:center 35%;height:auto;border-radius:14px;box-shadow:0 12px 30px rgba(20,48,74,.18);flex:0 0 auto}
+@media(max-width:640px){.hero{align-items:flex-start;gap:18px;padding-top:32px}.hero-photo{width:112px;border-radius:10px}.hero-copy{flex-basis:calc(100% - 130px)}.hero .lead{font-size:17px}.hero .row{gap:8px}.hero .btn{padding:10px 14px}}
+.label{margin:40px 0 16px;padding-bottom:8px;border-bottom:1px solid var(--line);font-size:15px;letter-spacing:.18em;color:var(--blue);font-weight:700}
+.label.first{margin-top:32px}
+.btn{display:inline-block;padding:12px 22px;min-height:44px;border-radius:6px;font-weight:600;text-decoration:none;border:2px solid var(--navy);color:var(--navy);background:transparent}
+.btn.solid{background:var(--navy);color:#fff}
+.btn.solid:hover{color:#fff;background:#0d2236}
+.row{display:flex;flex-wrap:wrap;gap:12px}
+.entry{display:flex;flex-wrap:wrap;gap:4px 40px;padding:22px 0;border-bottom:1px solid var(--soft)}
+.entry:last-of-type{border-bottom:0}
+.date{flex:0 0 200px;color:var(--grey);font-weight:600}
+.body{flex:1 1 440px;min-width:0}
+.body h2{margin:0;font-size:21px;color:var(--navy)}
+.org{margin:2px 0 10px;font-style:italic;color:var(--grey)}
+.body ul,.list{margin:0;padding-left:20px}
+.list li{margin-bottom:8px}
+.cards{display:flex;flex-wrap:wrap;gap:20px}
+.card{flex:1 1 300px;min-width:0;background:#fff;border:1px solid #DCE3EA;border-radius:8px;padding:22px 24px}
+.card h2,.card h3{margin:0 0 6px;font-size:20px;color:var(--navy)}
+.card p{margin:0 0 12px}
+.card p:last-child{margin-bottom:0}
+.card a.more{font-weight:600}
+.lead{margin:0;max-width:820px;font-size:19px}
+.note{margin:24px 0 0;color:var(--grey)}
+.cols{display:flex;flex-wrap:wrap;gap:24px 48px}
+.cols>div{flex:1 1 320px;min-width:0}
+.cols h2{margin:0 0 10px;font-size:19px;color:var(--navy)}
+.cols ul{margin:0;padding-left:20px}
+.cols li{margin-bottom:6px}
+.steps{list-style:none;margin:0;padding:0;counter-reset:s;display:flex;flex-wrap:wrap;gap:20px}
+.steps li{counter-increment:s;flex:1 1 220px;min-width:0;background:#fff;border:1px solid #DCE3EA;border-radius:8px;padding:20px 22px}
+.steps li::before{content:counter(s);display:inline-block;width:32px;height:32px;line-height:32px;text-align:center;border-radius:50%;background:var(--navy);color:#fff;font-weight:700;margin-bottom:10px}
+.steps strong{display:block;color:var(--navy);font-size:18px}
+details{background:#fff;border:1px solid #DCE3EA;border-radius:8px;margin:0 0 14px;padding:0}
+summary{cursor:pointer;padding:16px 22px;min-height:44px;font-weight:700;font-size:19px;color:var(--navy)}
+details .art{padding:0 22px 20px;max-width:760px}
+details .art p{margin:0 0 12px}
+details .art ul{margin:0 0 12px;padding-left:20px}
+.contact{background:var(--navy);color:#fff;border-radius:10px;padding:36px;display:flex;flex-wrap:wrap;gap:24px 40px;align-items:center;justify-content:space-between}
+.contact h2{margin:0;font-size:32px}
+.contact p{margin:8px 0 0;color:#DCE6F0}
+.contact .btn.solid{background:#fff;color:var(--navy)}
+.cta{margin-top:32px}
+.pager{display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;padding:40px 0 56px}
+.pager.end{justify-content:flex-end}
+
+html{scroll-behavior:smooth} .page{scroll-margin-top:100vh;padding-bottom:56px} .contact a.btn{white-space:normal}
+
+/* Navegación por secciones: una vista a la vez, sin JavaScript. */
+main > .page {display:none}
+main > #inicio {display:block}
+main:has(> .page:target:not(#inicio)) > #inicio {display:none}
+main > .page:target {display:block}
+/* Contraste legible de ambos botones en el panel oscuro. */
+.contact .btn, .contact .btn.solid {background:#fff;color:#14304A;border-color:#fff}
+.contact .btn:hover, .contact .btn.solid:hover {background:#e1e7ed;color:#14304A}
+.contact .address {color:#fff;overflow-wrap:anywhere}
+
+.project-image{display:block;width:100%;aspect-ratio:16/10;object-fit:cover;object-position:top center;border:1px solid #dce3ea;border-radius:6px;margin:0 0 18px;background:#edf2f5}.featured .card{display:flex;flex-direction:column}.featured .card .more{margin-top:auto}.featured .card p{flex-grow:1}
+.quotes{display:flex;flex-wrap:wrap;gap:20px}
+.quote{flex:1 1 400px;min-width:0;margin:0;background:#fff;border:1px solid #DCE3EA;border-left:4px solid var(--blue);border-radius:8px;padding:20px 22px}
+.quote blockquote{margin:0 0 10px;font-size:19px;color:var(--navy);font-weight:600}
+.quote figcaption{color:var(--grey);font-size:15px}
+</style>
+<style>
+.guia{max-width:900px;padding-top:8px;padding-bottom:24px}
+.guia h1.title{margin-top:24px}
+.guia h2.sec{margin:48px 0 12px;font-size:26px;color:var(--navy);display:flex;gap:12px;align-items:baseline}
+.guia h2.sec span{display:inline-block;min-width:38px;height:38px;line-height:38px;text-align:center;border-radius:50%;background:var(--navy);color:#fff;font-size:19px}
+.guia p{max-width:780px}
+.guia ol,.guia ul{max-width:780px}
+.guia li{margin-bottom:6px}
+.tabla{width:100%;border-collapse:collapse;margin:14px 0 20px;background:#fff;font-size:16px}
+.tabla th,.tabla td{border:1px solid #DCE3EA;padding:9px 12px;text-align:left;vertical-align:top}
+.tabla th{background:#EEF3F8;color:var(--navy)}
+.scroll{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.scroll .tabla{min-width:620px}
+.ej{background:#fff;border:1px solid #DCE3EA;border-left:5px solid var(--blue);border-radius:8px;padding:20px 24px;margin:24px 0}
+.ej h3{margin:0 0 8px;color:var(--blue);font-size:15px;letter-spacing:.14em}
+.ej h4{margin:0 0 10px;font-size:21px;color:var(--navy)}
+.ok{background:#EAF6EE;border:1px solid #BFE3CB;border-radius:6px;padding:10px 14px;margin:14px 0 0}
+.hoja{display:inline-block;max-width:100%;overflow-x:auto;margin:10px 0 4px;border:1px solid #B9C4CF;border-radius:6px;background:#fff;box-shadow:0 3px 10px rgba(20,48,74,.08)}
+.hoja table{border-collapse:collapse;font-family:Calibri,'Segoe UI',Arial,sans-serif;font-size:15px}
+.hoja th{background:#F1F3F5;color:#5B6670;font-weight:600;border:1px solid #D5DBE1;padding:4px 10px;min-width:34px;text-align:center}
+.hoja td{border:1px solid #E2E6EA;padding:5px 12px;white-space:nowrap}
+.hoja td.n{text-align:right}
+.hoja td.h{font-weight:700;background:#F7F9FB}
+.hoja td.f{color:#1F5FA8;font-family:Consolas,monospace;font-size:14px}
+.hoja td.alerta{background:#FFC7CE;color:#9C0006}
+.hoja td.sel{outline:2px solid #217346;outline-offset:-2px}
+.money{display:flex;justify-content:space-between;gap:14px}
+.pie{font-size:14px;color:var(--grey);margin:2px 0 0}
+.ruta{display:inline-block;background:#EEF3F8;border-radius:4px;padding:1px 8px;font-weight:600;color:var(--navy);font-size:15px}
+.creditos{margin-top:48px;padding-top:16px;border-top:1px solid var(--line);color:var(--grey);font-size:15px}
+.migas{margin:24px 0 0;font-size:15px}
+.fig{margin:18px 0 6px;background:#fff;border:1px solid #DCE3EA;border-radius:8px;padding:10px;box-shadow:0 2px 10px rgba(20,48,74,.06)}
+.fig img{display:block;width:100%;height:auto}
+.fig figcaption{font-size:14px;color:var(--grey);margin:8px 4px 0}
+.tip{background:#FFF8E6;border:1px solid #F1DFAE;border-radius:6px;padding:10px 14px;max-width:780px}
+</style>
+<link rel="icon" href="../favicon.svg" type="image/svg+xml"/><link rel="icon" href="../favicon-32.png" sizes="32x32" type="image/png"/><link rel="apple-touch-icon" href="../apple-touch-icon.png"/>
+<meta property="og:image" content="https://informatica.uy/img/og.jpg"/><meta property="og:image:width" content="1200"/><meta property="og:image:height" content="630"/><meta property="og:site_name" content="Ruben Leal"/><meta property="og:locale" content="es_UY"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:image" content="https://informatica.uy/img/og.jpg"/>
+<meta property="og:url" content="https://informatica.uy/excel-paso-a-paso/"/><link rel="canonical" href="https://informatica.uy/excel-paso-a-paso/"/>
+</head>
+<body>
+<header>
+<div class="wrap">
+<a class="brand" href="../index.html#inicio">RUBEN LEAL</a>
+<nav aria-label="Páginas">
+<a href="../index.html#inicio">Inicio</a>
+<a href="../index.html#servicios">Servicios</a>
+<a href="../index.html#proyectos">Proyectos</a>
+<a href="../index.html#recursos" aria-current="page">Recursos</a>
+<a href="../index.html#blog">Artículos</a>
+<a href="../index.html#como-trabajo">Cómo trabajo</a>
+<a href="../index.html#sobre-mi">Sobre mí</a>
+<a href="../index.html#escritos">Escritos</a>
+<a href="../index.html#contacto">Contacto</a>
+</nav>
+</div>
+</header>
+<main>
+<article class="wrap guia">
+<p class="migas"><a href="../index.html#recursos">← Recursos</a></p>
+<p class="kicker">RECURSOS · GUÍA</p>
+<h1 class="title">Excel paso a paso: guía ilustrada</h1>
+<p class="lead">Guía para quienes recién empiezan con Excel. Explica cómo es la ventana, cómo se estructura una hoja, cómo seleccionar, cambiar el ancho de las columnas, aplicar formatos, deshacer y rehacer, entre otras acciones básicas. Sirve para leer y para consultar mientras se practica.</p>
+<p class="tip"><strong>Sobre las imágenes:</strong> son ilustraciones esquemáticas, no capturas de pantalla. Excel puede verse un poco distinto según la versión (Excel 365, Excel 2016 o Excel para la Web), pero los nombres y los lugares de los botones son los mismos.</p>
+
+<h2 class="sec"><span>1</span>La ventana de Excel</h2>
+<p>Al abrir Excel aparece una ventana con varias partes. Cada número de la imagen se corresponde con la tabla de abajo.</p>
+<figure class="fig"><img src="img/fig1.webp" alt="Partes de la ventana de Excel." width="1400" height="759" loading="lazy"/><figcaption>Figura 1. Partes de la ventana de Excel.</figcaption></figure>
+<div class="scroll"><table class="tabla"><tr><th>N.º</th><th>Parte</th><th>Para qué sirve</th></tr><tr><td>1</td><td><strong>Barra de título</strong></td><td>Muestra el nombre del archivo y los botones para minimizar, maximizar y cerrar la ventana.</td></tr><tr><td>2</td><td><strong>Barra de acceso rápido</strong></td><td>Reúne botones de uso frecuente: Guardar, Deshacer y Rehacer.</td></tr><tr><td>3</td><td><strong>Barra de menú</strong></td><td>Tiene los menús Archivo, Inicio, Insertar, Fórmulas, Datos, entre otros. Al hacer clic en uno cambian las herramientas que se muestran debajo.</td></tr><tr><td>4</td><td><strong>Cinta de opciones</strong></td><td>Muestra las herramientas del menú elegido, agrupadas por tema (Portapapeles, Fuente, Alineación, Número, Estilos…).</td></tr><tr><td>5</td><td><strong>Cuadro de nombres</strong></td><td>Indica la dirección de la celda seleccionada (en la imagen, B5).</td></tr><tr><td>6</td><td><strong>Barra de fórmulas</strong></td><td>Muestra el contenido de la celda seleccionada y permite editarlo.</td></tr><tr><td>7</td><td><strong>Encabezados de columnas</strong></td><td>Las letras (A, B, C…) que identifican cada columna.</td></tr><tr><td>8</td><td><strong>Encabezados de filas</strong></td><td>Los números (1, 2, 3…) que identifican cada fila.</td></tr><tr><td>9</td><td><strong>Celda activa</strong></td><td>La celda seleccionada, con el borde verde grueso. Lo que se escribe va en ella.</td></tr><tr><td>10</td><td><strong>Etiquetas de hojas</strong></td><td>Un archivo de Excel (libro) puede tener varias hojas. El botón + agrega una hoja nueva.</td></tr><tr><td>11</td><td><strong>Barra de estado</strong></td><td>Está abajo de todo. Muestra información de las celdas seleccionadas (por ejemplo, la suma y el promedio) y permite cambiar el zoom.</td></tr><tr><td>12</td><td><strong>Barras de desplazamiento</strong></td><td>Sirven para moverse hacia abajo, arriba o a los costados de la hoja.</td></tr></table></div>
+
+<h2 class="sec"><span>2</span>Cómo se estructura una hoja</h2>
+<p>Una hoja de cálculo es una gran tabla formada por columnas, filas y celdas.</p>
+<ul><li><strong>Columna:</strong> va en vertical y se identifica con letras (A, B, C…).</li><li><strong>Fila:</strong> va en horizontal y se identifica con números (1, 2, 3…).</li><li><strong>Celda:</strong> es el cuadrito donde se cruzan una columna y una fila. Es donde se escribe cada dato.</li><li><strong>Dirección de celda:</strong> se forma con la letra de la columna y el número de la fila. La celda de la columna C y la fila 4 es la C4.</li></ul>
+<figure class="fig"><img src="img/fig2.webp" alt="Columna, fila y celda." width="1400" height="597" loading="lazy"/><figcaption>Figura 2. Columna, fila y celda.</figcaption></figure>
+<p class="tip"><strong>Dato curioso:</strong> una hoja de Excel tiene 16.384 columnas (la última es la XFD) y 1.048.576 filas.</p>
+
+<h2 class="sec"><span>3</span>Cómo seleccionar</h2>
+<p>Antes de dar formato, copiar o borrar, hay que seleccionar las celdas con las que se va a trabajar. Lo seleccionado se ve con un fondo verde claro. Para quitar la selección alcanza con hacer clic en otra celda.</p>
+<figure class="fig"><img src="img/fig3.webp" alt="Seis formas de seleccionar." width="1400" height="716" loading="lazy"/><figcaption>Figura 3. Seis formas de seleccionar.</figcaption></figure>
+<div class="scroll"><table class="tabla"><tr><th>Qué se quiere seleccionar</th><th>Cómo</th></tr><tr><td>Una celda</td><td>Clic sobre la celda.</td></tr><tr><td>Un rango (varias celdas juntas)</td><td>Arrastrar desde la primera hasta la última, o clic en la primera, mantener Mayús y clic en la última.</td></tr><tr><td>Una columna o una fila</td><td>Clic en la letra de la columna o en el número de la fila.</td></tr><tr><td>Varias columnas o filas</td><td>Arrastrar sobre los encabezados.</td></tr><tr><td>Celdas que no están juntas</td><td>Mantener Ctrl y hacer clic en cada celda.</td></tr><tr><td>Toda la hoja</td><td>Clic en el triángulo de la esquina superior izquierda, o Ctrl + A.</td></tr></table></div>
+<p><strong>Rango:</strong> un rango es un grupo de celdas seleccionadas. Se nombra con la primera y la última celda separadas por dos puntos. Por ejemplo, B2:D4.</p>
+
+<h2 class="sec"><span>4</span>Escribir, editar y borrar</h2>
+<ul><li><strong>Escribir:</strong> seleccionar la celda y escribir. Enter confirma y baja a la celda de abajo; Tab confirma y pasa a la de la derecha.</li><li><strong>Editar:</strong> hacer doble clic sobre la celda, o seleccionarla y presionar F2, o modificar el contenido en la barra de fórmulas.</li><li><strong>Cancelar:</strong> Esc deja la celda como estaba antes de escribir.</li><li><strong>Borrar el contenido:</strong> seleccionar y presionar Supr.</li><li><strong>Reemplazar:</strong> si se escribe sobre una celda que ya tiene un dato, el dato anterior se pierde. Si fue un error, se puede deshacer (sección 6).</li></ul>
+
+<h2 class="sec"><span>5</span>Ancho de columnas y alto de filas</h2>
+<p>Cuando un número no entra en la columna, Excel muestra <strong>#####</strong> en lugar del dato. El dato no se perdió: hay que ensanchar la columna.</p>
+<figure class="fig"><img src="img/fig4.webp" alt="Columna angosta y columna ensanchada." width="1400" height="461" loading="lazy"/><figcaption>Figura 4. Columna angosta y columna ensanchada.</figcaption></figure>
+<ul><li><strong>Arrastrando:</strong> ubicar el cursor sobre la línea que separa dos encabezados de columnas (el cursor se convierte en una flecha doble) y arrastrar hacia la derecha para ensanchar o hacia la izquierda para achicar.</li><li><strong>Ajuste automático:</strong> hacer doble clic sobre esa misma línea. La columna se ajusta sola al dato más largo.</li><li><strong>Medida exacta:</strong> clic derecho sobre la letra de la columna, elegir <span class="ruta">Ancho de columna</span>, escribir el valor y Aceptar.</li><li><strong>Varias columnas a la vez:</strong> seleccionar varias columnas y cambiar el ancho de una: todas quedan iguales.</li><li><strong>Desde el menú:</strong> <span class="ruta">Inicio → Celdas → Formato → Autoajustar ancho de columna</span>.</li></ul>
+<p>Con las filas se procede igual: se usa la línea que separa los números de fila y la opción <span class="ruta">Alto de fila</span>.</p>
+
+<h2 class="sec"><span>6</span>Deshacer y rehacer</h2>
+<figure class="fig"><img src="img/fig5.webp" alt="Botones Guardar, Deshacer y Rehacer." width="1300" height="270" loading="lazy"/><figcaption>Figura 5. Botones Guardar, Deshacer y Rehacer.</figcaption></figure>
+<ul><li><strong>Deshacer (Ctrl + Z):</strong> anula la última acción. Se puede repetir varias veces para volver más atrás. La flechita al lado del botón muestra la lista de los últimos pasos.</li><li><strong>Rehacer (Ctrl + Y):</strong> vuelve a aplicar la acción que se acaba de deshacer.</li></ul>
+<p class="tip"><strong>Tener en cuenta:</strong> al cerrar el archivo ya no se pueden deshacer los cambios. Conviene probar y deshacer antes de guardar y cerrar.</p>
+
+<h2 class="sec"><span>7</span>Copiar, cortar, pegar y autorrelleno</h2>
+<ol><li>Seleccionar la celda o el rango.</li><li>Copiar (Ctrl + C) o cortar (Ctrl + X). Alrededor de lo copiado aparece un marco punteado.</li><li>Hacer clic en la celda de destino.</li><li>Pegar (Ctrl + V).</li></ol>
+<p>Copiar deja el dato en su lugar y lo repite en el destino. Cortar lo mueve. Para quitar el marco punteado, presionar Esc.</p>
+<p><strong>Autorrelleno:</strong> sirve para completar series (meses, días, números) o repetir fórmulas sin escribir todo. El controlador de relleno es el cuadradito verde de la esquina inferior derecha de la selección.</p>
+<figure class="fig"><img src="img/fig6.webp" alt="Autorrelleno de una serie de meses." width="1400" height="428" loading="lazy"/><figcaption>Figura 6. Autorrelleno de una serie de meses.</figcaption></figure>
+<ol><li>Escribir Enero en A1 y Febrero en A2.</li><li>Seleccionar ambas celdas.</li><li>Arrastrar el controlador de relleno hacia abajo hasta donde se quiera completar.</li></ol>
+
+<h2 class="sec"><span>8</span>Los formatos</h2>
+<p>El formato cambia cómo se ve un dato, no el dato en sí. El número 45000 puede mostrarse como 45000, como 45.000,00 o como $ 45.000,00, y en todos los casos sigue siendo el mismo número para hacer cálculos. Por eso conviene escribir los números sin símbolos (sin $ ni %) y aplicar el formato después.</p>
+<figure class="fig"><img src="img/fig7.webp" alt="Cómo aplicar un formato desde el menú Inicio." width="1400" height="708" loading="lazy"/><figcaption>Figura 7. Cómo aplicar un formato desde el menú Inicio.</figcaption></figure>
+<div class="scroll"><table class="tabla"><tr><th>Formato</th><th>Se escribe</th><th>Se ve</th><th>Para qué sirve</th></tr><tr><td><strong>General</strong></td><td><code>45000</code></td><td>45000</td><td>Es el formato por defecto. No tiene una estructura definida.</td></tr><tr><td><strong>Número</strong></td><td><code>45000</code></td><td>45.000,00</td><td>Cantidades. Permite elegir cuántos decimales mostrar.</td></tr><tr><td><strong>Contabilidad</strong></td><td><code>45000</code></td><td>$ 45.000,00</td><td>Importes de dinero. El signo $ queda a la izquierda de la celda.</td></tr><tr><td><strong>Porcentaje</strong></td><td><code>0,22</code></td><td>22%</td><td>Tasas y márgenes. Multiplica por 100 y agrega el símbolo %.</td></tr><tr><td><strong>Fecha corta</strong></td><td><code>45000</code></td><td>15/03/2023</td><td>Fechas. Excel guarda cada fecha como un número.</td></tr><tr><td><strong>Texto</strong></td><td><code>00154</code></td><td>00154</td><td>Códigos y datos que no se calculan. Conserva los ceros iniciales.</td></tr></table></div>
+<p><strong>Cómo aplicar un formato:</strong> seleccionar las celdas, ir a <span class="ruta">Inicio → Número</span>, abrir el desplegable donde dice General y elegir el formato. En el mismo grupo hay botones directos para Contabilidad ($), Porcentaje (%), Millares (000) y para aumentar o disminuir decimales. También se puede hacer clic derecho y elegir <span class="ruta">Formato de celdas</span>.</p>
+<ul><li><strong>Grupo Fuente:</strong> tipo y tamaño de letra, negrita, cursiva, color de letra, color de relleno y bordes.</li><li><strong>Grupo Alineación:</strong> izquierda, centro o derecha, y ajustar el texto dentro de la celda.</li><li><strong>Grupo Estilos:</strong> formato condicional, que cambia el color de una celda cuando se cumple una regla.</li></ul>
+
+<h2 class="sec"><span>9</span>Guardar y Guardar como</h2>
+<div class="scroll"><table class="tabla"><tr><th></th><th>Guardar</th><th>Guardar como</th></tr><tr><td><strong>Qué hace</strong></td><td>Actualiza el archivo actual con los cambios.</td><td>Crea un archivo nuevo a partir del actual.</td></tr><tr><td><strong>Nombre y lugar</strong></td><td>Se mantienen. La primera vez, Excel los pide.</td><td>Se puede elegir otro nombre, otra ubicación u otro formato.</td></tr><tr><td><strong>Archivo original</strong></td><td>Se modifica.</td><td>Queda como estaba.</td></tr></table></div>
+<p>Al guardar, Excel permite elegir entre <em>Este equipo</em> (guardado local) y <em>OneDrive</em> (en la nube). En Excel para la Web los cambios se guardan solos en OneDrive.</p>
+
+<h2 class="sec"><span>10</span>Atajos útiles</h2>
+<div class="scroll"><table class="tabla"><tr><th>Atajo</th><th>Qué hace</th></tr><tr><td><kbd>Ctrl + C</kbd></td><td>Copiar.</td></tr><tr><td><kbd>Ctrl + X</kbd></td><td>Cortar.</td></tr><tr><td><kbd>Ctrl + V</kbd></td><td>Pegar.</td></tr><tr><td><kbd>Ctrl + Z</kbd></td><td>Deshacer.</td></tr><tr><td><kbd>Ctrl + Y</kbd></td><td>Rehacer.</td></tr><tr><td><kbd>Ctrl + A</kbd></td><td>Seleccionar toda la hoja.</td></tr><tr><td><kbd>Ctrl + G</kbd></td><td>Guardar (Excel en español).</td></tr><tr><td><kbd>F2</kbd></td><td>Editar la celda seleccionada.</td></tr><tr><td><kbd>Supr</kbd></td><td>Borrar el contenido de la selección.</td></tr><tr><td><kbd>Esc</kbd></td><td>Cancelar lo que se está escribiendo.</td></tr><tr><td><kbd>Mayús + clic</kbd></td><td>Seleccionar un rango desde la celda activa hasta la que se hace clic.</td></tr><tr><td><kbd>Ctrl + clic</kbd></td><td>Seleccionar celdas que no están juntas.</td></tr></table></div>
+
+<p class="tip" style="margin-top:36px"><strong>¿Y después?</strong> Para practicar formatos, porcentajes y funciones con ejercicios resueltos, seguí con <a href="../excel-ejercicios/">Excel: formatos, porcentajes y funciones</a>.</p>
+<p class="creditos">Material elaborado por Ruben Leal para el Bachillerato Tecnológico, en coordinación con la docente de Costos y Presupuestos Verónica Vaghi. Redactada y organizada con apoyo de inteligencia artificial (Claude, de Anthropic) a partir de los contenidos y el nivel definidos por el docente. Las ilustraciones son dibujos esquemáticos generados con código, no capturas de pantalla.</p>
+<div class="pager"><a class="btn" href="../index.html#recursos">← Volver a Recursos</a><a class="btn solid" href="../excel-ejercicios/">Siguiente: ejercicios →</a></div>
+</article>
+</main>
+</body>
+</html>
