@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Autodiagnóstico de ciberseguridad · Ruben Leal</title>
+<meta content="Respondé 12 preguntas en menos de 5 minutos y conocé tu nivel de riesgo en ciberseguridad, tus puntos débiles y qué hacer primero. Gratis y sin registrarte." name="description"/>
+<meta content="website" property="og:type"/>
+<meta content="Autodiagnóstico de ciberseguridad" property="og:title"/>
+<meta content="Respondé 12 preguntas en menos de 5 minutos y conocé tu nivel de riesgo en ciberseguridad, tus puntos débiles y qué hacer primero. Gratis y sin registrarte." property="og:description"/>
+<meta content="#14304A" name="theme-color"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&amp;display=swap" rel="stylesheet"/>
+<style>
+:root{--navy:#14304A;--blue:#1F5FA8;--grey:#4A5866;--line:#C9D2DC;--soft:#E1E7ED;--bg:#F6F8FA;--text:#1B2733}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font-family:'Source Sans 3',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;font-size:17px;line-height:1.55}
+a{color:var(--blue)}a:hover{color:var(--navy)}
+.wrap{max-width:1040px;margin:0 auto;padding:0 24px}
+header{position:sticky;top:0;z-index:10;background:rgba(246,248,250,.96);backdrop-filter:blur(6px);border-bottom:1px solid var(--soft)}
+header .wrap{display:flex;flex-wrap:wrap;gap:4px 24px;justify-content:space-between;align-items:center;padding-top:12px;padding-bottom:12px}
+.brand{display:inline-block;padding:10px 0;min-height:44px;font-weight:700;letter-spacing:.16em;color:var(--navy);text-decoration:none}
+nav{display:flex;flex-wrap:wrap;gap:0 2px}
+nav a{display:inline-block;padding:10px 10px;min-height:44px;text-decoration:none;font-weight:600;font-size:15px;border-bottom:3px solid transparent}
+@media(max-width:640px){header .wrap{padding-top:4px;padding-bottom:0}nav{flex-wrap:nowrap;overflow-x:auto;width:100%;margin:0 -10px;-webkit-overflow-scrolling:touch;scrollbar-width:none}nav::-webkit-scrollbar{display:none}nav a{white-space:nowrap;flex:0 0 auto}}
+nav a[aria-current="page"]{font-weight:700;color:var(--navy);border-bottom-color:var(--blue)}
+.page[hidden]{display:none}
+h1.name{margin:0;font-size:clamp(40px,8vw,64px);line-height:1.05;letter-spacing:.04em;color:var(--navy)}
+h1.title{margin:32px 0 8px;font-size:clamp(30px,5vw,42px);line-height:1.15;color:var(--navy)}
+.kicker{margin:40px 0 0;font-size:15px;letter-spacing:.18em;color:var(--blue);font-weight:700}
+.role{margin:14px 0 0;font-size:clamp(16px,3vw,22px);letter-spacing:.08em;color:var(--grey)}
+.hero{padding-top:56px;padding-bottom:16px;display:flex;align-items:center;gap:clamp(24px,5vw,56px)}
+.hero-copy{flex:1 1 520px;min-width:0}
+.hero-photo{width:clamp(150px,24vw,240px);aspect-ratio:4/5;object-fit:cover;object-position:center 35%;height:auto;border-radius:14px;box-shadow:0 12px 30px rgba(20,48,74,.18);flex:0 0 auto}
+@media(max-width:640px){.hero{align-items:flex-start;gap:18px;padding-top:32px}.hero-photo{width:112px;border-radius:10px}.hero-copy{flex-basis:calc(100% - 130px)}.hero .lead{font-size:17px}.hero .row{gap:8px}.hero .btn{padding:10px 14px}}
+.label{margin:40px 0 16px;padding-bottom:8px;border-bottom:1px solid var(--line);font-size:15px;letter-spacing:.18em;color:var(--blue);font-weight:700}
+.label.first{margin-top:32px}
+.btn{display:inline-block;padding:12px 22px;min-height:44px;border-radius:6px;font-weight:600;text-decoration:none;border:2px solid var(--navy);color:var(--navy);background:transparent}
+.btn.solid{background:var(--navy);color:#fff}
+.btn.solid:hover{color:#fff;background:#0d2236}
+.row{display:flex;flex-wrap:wrap;gap:12px}
+.entry{display:flex;flex-wrap:wrap;gap:4px 40px;padding:22px 0;border-bottom:1px solid var(--soft)}
+.entry:last-of-type{border-bottom:0}
+.date{flex:0 0 200px;color:var(--grey);font-weight:600}
+.body{flex:1 1 440px;min-width:0}
+.body h2{margin:0;font-size:21px;color:var(--navy)}
+.org{margin:2px 0 10px;font-style:italic;color:var(--grey)}
+.body ul,.list{margin:0;padding-left:20px}
+.list li{margin-bottom:8px}
+.cards{display:flex;flex-wrap:wrap;gap:20px}
+.card{flex:1 1 300px;min-width:0;background:#fff;border:1px solid #DCE3EA;border-radius:8px;padding:22px 24px}
+.card h2,.card h3{margin:0 0 6px;font-size:20px;color:var(--navy)}
+.card p{margin:0 0 12px}
+.card p:last-child{margin-bottom:0}
+.card a.more{font-weight:600}
+.lead{margin:0;max-width:820px;font-size:19px}
+.note{margin:24px 0 0;color:var(--grey)}
+.cols{display:flex;flex-wrap:wrap;gap:24px 48px}
+.cols>div{flex:1 1 320px;min-width:0}
+.cols h2{margin:0 0 10px;font-size:19px;color:var(--navy)}
+.cols ul{margin:0;padding-left:20px}
+.cols li{margin-bottom:6px}
+.steps{list-style:none;margin:0;padding:0;counter-reset:s;display:flex;flex-wrap:wrap;gap:20px}
+.steps li{counter-increment:s;flex:1 1 220px;min-width:0;background:#fff;border:1px solid #DCE3EA;border-radius:8px;padding:20px 22px}
+.steps li::before{content:counter(s);display:inline-block;width:32px;height:32px;line-height:32px;text-align:center;border-radius:50%;background:var(--navy);color:#fff;font-weight:700;margin-bottom:10px}
+.steps strong{display:block;color:var(--navy);font-size:18px}
+details{background:#fff;border:1px solid #DCE3EA;border-radius:8px;margin:0 0 14px;padding:0}
+summary{cursor:pointer;padding:16px 22px;min-height:44px;font-weight:700;font-size:19px;color:var(--navy)}
+details .art{padding:0 22px 20px;max-width:760px}
+details .art p{margin:0 0 12px}
+details .art ul{margin:0 0 12px;padding-left:20px}
+.contact{background:var(--navy);color:#fff;border-radius:10px;padding:36px;display:flex;flex-wrap:wrap;gap:24px 40px;align-items:center;justify-content:space-between}
+.contact h2{margin:0;font-size:32px}
+.contact p{margin:8px 0 0;color:#DCE6F0}
+.contact .btn.solid{background:#fff;color:var(--navy)}
+.cta{margin-top:32px}
+.pager{display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;padding:40px 0 56px}
+.pager.end{justify-content:flex-end}
+
+html{scroll-behavior:smooth} .page{scroll-margin-top:100vh;padding-bottom:56px} .contact a.btn{white-space:normal}
+
+/* Navegación por secciones: una vista a la vez, sin JavaScript. */
+main > .page {display:none}
+main > #inicio {display:block}
+main:has(> .page:target:not(#inicio)) > #inicio {display:none}
+main > .page:target {display:block}
+/* Contraste legible de ambos botones en el panel oscuro. */
+.contact .btn, .contact .btn.solid {background:#fff;color:#14304A;border-color:#fff}
+.contact .btn:hover, .contact .btn.solid:hover {background:#e1e7ed;color:#14304A}
+.contact .address {color:#fff;overflow-wrap:anywhere}
+
+.project-image{display:block;width:100%;aspect-ratio:16/10;object-fit:cover;object-position:top center;border:1px solid #dce3ea;border-radius:6px;margin:0 0 18px;background:#edf2f5}.featured .card{display:flex;flex-direction:column}.featured .card .more{margin-top:auto}.featured .card p{flex-grow:1}
+.quotes{display:flex;flex-wrap:wrap;gap:20px}
+.quote{flex:1 1 400px;min-width:0;margin:0;background:#fff;border:1px solid #DCE3EA;border-left:4px solid var(--blue);border-radius:8px;padding:20px 22px}
+.quote blockquote{margin:0 0 10px;font-size:19px;color:var(--navy);font-weight:600}
+.quote figcaption{color:var(--grey);font-size:15px}
+</style>
+<style>
+.demo{max-width:980px;padding-top:8px;padding-bottom:24px}
+.demo h1.title{margin-top:24px}
+.migas{margin:24px 0 0;font-size:15px}
+.hero-ad{background:var(--navy);color:#fff;border-radius:12px;padding:clamp(24px,5vw,44px);margin-top:18px}
+.hero-ad .kicker{color:#9cc3ef;margin-top:0}
+.hero-ad h1{margin:10px 0 12px;font-size:clamp(28px,5vw,42px);line-height:1.12;color:#fff}
+.hero-ad h1 span{color:#9cc3ef}
+.hero-ad p{margin:0 0 18px;color:#DCE6F0;max-width:720px;font-size:18px}
+.hero-ad .btn.solid{background:#fff;color:var(--navy);border-color:#fff}
+.hero-ad .btn.solid:hover{background:#e1e7ed;color:var(--navy)}
+.chips{list-style:none;padding:0;margin:20px 0 0;display:flex;flex-wrap:wrap;gap:10px}
+.chips li{border:1px solid rgba(255,255,255,.35);border-radius:999px;padding:6px 14px;font-size:15px;color:#fff}
+.chips li::before{content:"✓ ";color:#9cc3ef;font-weight:700}
+h2.sec{margin:44px 0 14px;font-size:clamp(23px,4vw,30px);color:var(--navy)}
+.feat{display:flex;flex-wrap:wrap;gap:16px}
+.feat>div{flex:1 1 260px;min-width:0;background:#fff;border:1px solid #DCE3EA;border-radius:8px;padding:18px 20px}
+.feat h3{margin:0 0 6px;font-size:18px;color:var(--navy)}
+.feat p{margin:0;color:var(--grey)}
+.feat .ico{font-size:26px;line-height:1;margin-bottom:8px}
+.quiz{margin-top:8px}
+.area-h{margin:30px 0 10px;font-size:15px;letter-spacing:.14em;color:var(--blue);font-weight:700;text-transform:uppercase;border-bottom:1px solid var(--line);padding-bottom:6px}
+fieldset{border:1px solid #DCE3EA;border-radius:8px;background:#fff;margin:0 0 12px;padding:16px 20px}
+fieldset.falta{border-color:#c0392b;box-shadow:0 0 0 2px rgba(192,57,43,.15)}
+legend{padding:0;font-weight:600;font-size:18px;color:var(--navy);float:left;width:100%;margin-bottom:10px}
+legend .n{color:var(--blue);margin-right:6px}
+.ops{clear:both;display:flex;flex-wrap:wrap;gap:8px}
+.ops label{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:8px 16px;border:1px solid var(--line);border-radius:6px;cursor:pointer;background:var(--bg);font-weight:600}
+.ops input{accent-color:var(--navy);width:18px;height:18px}
+.ops label:has(input:checked){border-color:var(--navy);background:#e8eef5}
+.barra-prog{position:sticky;top:70px;z-index:5;background:var(--bg);padding:10px 0;margin-top:10px}
+.prog{height:8px;background:var(--soft);border-radius:99px;overflow:hidden}
+.prog i{display:block;height:100%;width:0;background:var(--blue);transition:width .25s}
+.prog-t{font-size:14px;color:var(--grey);margin-top:4px}
+.aviso{color:#c0392b;font-weight:600;margin:12px 0 0;min-height:1.5em}
+#resultado{display:none;margin-top:36px;scroll-margin-top:90px}
+#resultado.ver{display:block}
+.res-top{border-radius:12px;padding:26px 28px;color:#fff}
+.res-top.bajo{background:#1e7b4f}.res-top.medio{background:#b7791f}.res-top.alto{background:#b03a2e}
+.res-top h2{margin:0;font-size:clamp(26px,5vw,36px);color:#fff}
+.res-top p{margin:8px 0 0;font-size:18px}
+.areas{margin-top:20px;display:grid;gap:12px}
+.ar{background:#fff;border:1px solid #DCE3EA;border-radius:8px;padding:12px 16px}
+.ar-h{display:flex;justify-content:space-between;gap:10px;font-weight:600;color:var(--navy)}
+.ar-b{height:10px;background:var(--soft);border-radius:99px;overflow:hidden;margin-top:8px}
+.ar-b i{display:block;height:100%}
+.acc{counter-reset:a;list-style:none;padding:0;margin:0}
+.acc li{counter-increment:a;background:#fff;border:1px solid #DCE3EA;border-left:4px solid var(--blue);border-radius:8px;padding:14px 18px 14px 56px;margin-bottom:10px;position:relative}
+.acc li::before{content:counter(a);position:absolute;left:16px;top:14px;width:28px;height:28px;line-height:28px;text-align:center;border-radius:50%;background:var(--navy);color:#fff;font-weight:700}
+.acc strong{display:block;color:var(--navy)}
+button.btn{font:inherit;font-weight:600;cursor:pointer}
+.privado{font-size:15px;color:var(--grey);margin-top:14px}
+.cierre{background:#fff;border:1px solid #DCE3EA;border-radius:12px;padding:24px 26px;margin-top:28px}
+.cierre h3{margin:0 0 6px;color:var(--navy);font-size:22px}
+.cierre p{margin:0 0 16px}
+@media print{header,.migas,.hero-ad,.no-print,.quiz,.barra-prog,.pager{display:none!important}#resultado{display:block;margin:0}body{background:#fff}.res-top{-webkit-print-color-adjust:exact;print-color-adjust:exact}.ar-b i{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+</style>
+<link rel="icon" href="../favicon.svg" type="image/svg+xml"/><link rel="icon" href="../favicon-32.png" sizes="32x32" type="image/png"/><link rel="apple-touch-icon" href="../apple-touch-icon.png"/>
+<meta property="og:image" content="https://informatica.uy/img/og.jpg"/><meta property="og:image:width" content="1200"/><meta property="og:image:height" content="630"/><meta property="og:site_name" content="Ruben Leal"/><meta property="og:locale" content="es_UY"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:image" content="https://informatica.uy/img/og.jpg"/>
+<meta property="og:url" content="https://informatica.uy/autodiagnostico/"/><link rel="canonical" href="https://informatica.uy/autodiagnostico/"/>
+</head>
+<body>
+<header>
+<div class="wrap">
+<a class="brand" href="../index.html#inicio">RUBEN LEAL</a>
+<nav aria-label="Páginas">
+<a href="../index.html#inicio">Inicio</a>
+<a href="../index.html#servicios" aria-current="page">Servicios</a>
+<a href="../index.html#proyectos">Proyectos</a>
+<a href="../index.html#recursos">Recursos</a>
+<a href="../index.html#blog">Artículos</a>
+<a href="../index.html#como-trabajo">Cómo trabajo</a>
+<a href="../index.html#sobre-mi">Sobre mí</a>
+<a href="../index.html#escritos">Escritos</a>
+<a href="../index.html#contacto">Contacto</a>
+</nav>
+</div>
+</header>
+<main>
+<article class="wrap demo">
+<p class="migas"><a href="../index.html#ciberseguridad">← Ciberseguridad</a></p>
+
+<section class="hero-ad">
+<p class="kicker">AUTODIAGNÓSTICO GRATUITO</p>
+<h1>¿Qué tan protegidos están tus datos? <span>Averigualo en menos de 5 minutos.</span></h1>
+<p>Respondé 12 preguntas simples sobre tus cuentas, tu celular y tu computadora. Al terminar vas a ver tu nivel de riesgo, cuáles son tus puntos débiles y qué conviene hacer primero.</p>
+<a class="btn solid" href="#test">Empezar el autodiagnóstico</a>
+<ul class="chips">
+<li>Resultado al instante</li>
+<li>Recomendaciones prácticas</li>
+<li>Sin registrarte</li>
+</ul>
+</section>
+
+<h2 class="sec">La mayoría de los problemas se notan cuando ya pasaron</h2>
+<p class="lead">Una cuenta de WhatsApp robada, fotos perdidas, un correo que manda estafas a tus contactos: casi siempre empiezan con un descuido pequeño que nadie había revisado. Este autodiagnóstico te ayuda a encontrarlos antes.</p>
+
+<h2 class="sec">Qué vas a obtener</h2>
+<div class="feat">
+<div><div class="ico" aria-hidden="true">📊</div><h3>Tu nivel de riesgo</h3><p>Bajo, medio o alto, con un porcentaje que lo resume.</p></div>
+<div><div class="ico" aria-hidden="true">🧭</div><h3>Tus puntos débiles</h3><p>Seis áreas evaluadas para que veas dónde mirar primero.</p></div>
+<div><div class="ico" aria-hidden="true">✅</div><h3>Tus primeros pasos</h3><p>Acciones concretas, ordenadas por importancia, que podés hacer hoy.</p></div>
+<div><div class="ico" aria-hidden="true">🖨️</div><h3>Para guardar</h3><p>Podés imprimir tu resultado o guardarlo como PDF.</p></div>
+</div>
+
+<h2 class="sec">Qué áreas revisa</h2>
+<div class="feat">
+<div><h3>Cuentas y contraseñas</h3><p>Contraseñas repetidas y verificación en dos pasos.</p></div>
+<div><h3>Correo y mensajes</h3><p>Enlaces sospechosos, estafas y pedidos de códigos.</p></div>
+<div><h3>Dispositivos</h3><p>Actualizaciones y bloqueo de pantalla.</p></div>
+<div><h3>Copias de seguridad</h3><p>Si perdés el celular, ¿perdés todo?</p></div>
+<div><h3>Privacidad y filtraciones</h3><p>Qué se ve de vos y si tus datos ya circularon.</p></div>
+<div><h3>Red e internet</h3><p>El router de tu casa y las redes Wi-Fi públicas.</p></div>
+</div>
+
+<h2 class="sec" id="test" style="scroll-margin-top:90px">Respondé con sinceridad</h2>
+<p style="margin:0">Si una pregunta no te queda clara, elegí «No estoy seguro»: también cuenta como un punto a revisar. <strong>Tus respuestas no se guardan ni se envían a ningún lado.</strong></p>
+
+<div class="barra-prog no-print"><div class="prog"><i id="progBar"></i></div><div class="prog-t" id="progTxt">0 de 12 respondidas</div></div>
+
+<form class="quiz" id="quiz" novalidate></form>
+<p class="aviso no-print" id="aviso" role="alert"></p>
+<div class="row no-print"><button type="button" class="btn solid" id="verRes">Ver mi resultado</button><button type="button" class="btn" id="reiniciar">Empezar de nuevo</button></div>
+
+<section id="resultado" aria-live="polite">
+<div class="res-top" id="resTop"><h2 id="resTit"></h2><p id="resTxt"></p></div>
+<h2 class="sec">Tus áreas</h2>
+<div class="areas" id="resAreas"></div>
+<h2 class="sec">Por dónde empezar</h2>
+<ol class="acc" id="resAcc"></ol>
+<p class="privado">Este resultado es orientativo y se calcula en tu propio navegador. No reemplaza una revisión personalizada.</p>
+<div class="cierre no-print">
+<h3>¿Querés que lo revisemos juntos?</h3>
+<p>Te ayudo a poner en práctica estas recomendaciones, online o presencial. También doy talleres para grupos, centros educativos y pequeños equipos.</p>
+<div class="row"><a class="btn solid" id="waRes" href="#" target="_blank" rel="noopener noreferrer">Consultar por WhatsApp</a><button type="button" class="btn" onclick="window.print()">Imprimir o guardar en PDF</button></div>
+</div>
+</section>
+
+<h2 class="sec no-print">Cómo funciona</h2>
+<ol class="steps no-print">
+<li><strong>Respondé</strong>12 preguntas sobre tus hábitos digitales.</li>
+<li><strong>Mirá tu resultado</strong>Nivel de riesgo y áreas a mejorar.</li>
+<li><strong>Actuá</strong>Seguí los pasos sugeridos o consultame para hacerlo juntos.</li>
+</ol>
+
+<div class="pager"><a class="btn" href="../index.html#ciberseguridad">← Volver a Ciberseguridad</a><a class="btn solid" href="#test">Hacer el autodiagnóstico</a></div>
+</article>
+</main>
+<script>
+(function(){
+var AREAS=["Cuentas y contraseñas","Correo y mensajes","Dispositivos","Copias de seguridad","Privacidad y filtraciones","Red e internet"];
+var P=[
+{a:0,q:"¿Usás contraseñas distintas en tus cuentas importantes (correo, banco, redes)?",t:"Usá una contraseña distinta en cada cuenta importante",d:"Empezá por el correo: quien entra ahí puede recuperar todas las demás. Un gestor de contraseñas te evita tener que recordarlas."},
+{a:0,q:"¿Tenés activada la verificación en dos pasos en tu correo y en WhatsApp?",t:"Activá la verificación en dos pasos",d:"En WhatsApp: Ajustes → Cuenta → Verificación en dos pasos. En tu correo, desde la configuración de seguridad de la cuenta. Es la medida que más ataques frena."},
+{a:1,q:"¿Revisás quién envía un correo o mensaje antes de abrir enlaces o adjuntos?",t:"Desconfiá de enlaces y adjuntos inesperados",d:"Mirá bien la dirección del remitente y no abras enlaces que piden datos o pagos con urgencia. Ante la duda, entrá al sitio escribiendo la dirección vos mismo."},
+{a:1,q:"Si te piden dinero o un código por mensaje, aunque parezca de un conocido, ¿lo confirmás por otra vía antes de responder?",t:"Nunca compartas códigos de verificación",d:"Ninguna empresa ni conocido necesita el código que te llega por SMS. Si alguien te pide dinero con urgencia, llamalo por teléfono antes de hacer nada."},
+{a:2,q:"¿Tu celular y tu computadora se actualizan cuando sale una versión nueva?",t:"Mantené tus dispositivos actualizados",d:"Las actualizaciones corrigen fallas que los atacantes ya conocen. Activá las actualizaciones automáticas en el celular, la computadora y las aplicaciones."},
+{a:2,q:"¿Tus dispositivos tienen bloqueo de pantalla (PIN, huella o patrón)?",t:"Poné bloqueo de pantalla en todos tus dispositivos",d:"Si perdés el celular o te lo roban, el bloqueo es lo que separa a otra persona de tus fotos, tu correo y tu banco."},
+{a:3,q:"¿Tenés copia de seguridad de tus fotos y archivos importantes fuera del dispositivo?",t:"Hacé una copia de seguridad",d:"Usá la copia en la nube del celular (Google Fotos, iCloud) o un disco externo. Lo ideal: una copia automática y otra guardada aparte."},
+{a:3,q:"Si mañana perdés el celular o se rompe la computadora, ¿sabrías recuperar tus archivos?",t:"Probá recuperar algo de tu copia",d:"Una copia que nunca se probó puede fallar justo cuando la necesitás. Intentá recuperar un archivo para confirmar que funciona."},
+{a:4,q:"¿Revisaste quién puede ver tus publicaciones y tus datos personales en redes sociales?",t:"Revisá la privacidad de tus redes",d:"Limitá quién ve tu teléfono, tu correo y tus publicaciones. Cuanto menos se sepa de vos, más difícil es armar una estafa creíble."},
+{a:4,q:"¿Comprobaste si tu correo apareció en alguna filtración de datos?",t:"Comprobá si tus datos se filtraron",d:"En sitios como haveibeenpwned.com podés ver si tu correo apareció en una filtración. Si aparece, cambiá esa contraseña y las que se le parezcan."},
+{a:5,q:"¿Cambiaste la contraseña que venía de fábrica en el router de tu casa o local?",t:"Cambiá la contraseña del router",d:"La clave de fábrica suele ser fácil de averiguar. Cambiá la del Wi-Fi y también la de acceso a la configuración del router."},
+{a:5,q:"¿Evitás entrar a tu banco o a tu correo desde redes Wi-Fi públicas?",t:"Cuidado con las redes Wi-Fi públicas",d:"En bares, terminales o lugares públicos, usá los datos móviles para el banco y las cuentas importantes, o una VPN de confianza."}
+];
+var OPS=[["Sí",0],["No estoy seguro",1],["No",2]];
+var f=document.getElementById('quiz'),h="",last=-1;
+P.forEach(function(p,i){
+ if(p.a!==last){h+='<h3 class="area-h">'+AREAS[p.a]+'</h3>';last=p.a;}
+ h+='<fieldset id="f'+i+'"><legend><span class="n">'+(i+1)+'.</span>'+p.q+'</legend><div class="ops">';
+ OPS.forEach(function(o){h+='<label><input type="radio" name="p'+i+'" value="'+o[1]+'"> '+o[0]+'</label>';});
+ h+='</div></fieldset>';
+});
+f.innerHTML=h;
+function resp(){var r=[];for(var i=0;i<P.length;i++){var c=f.querySelector('input[name=p'+i+']:checked');r.push(c?+c.value:null);}return r;}
+function prog(){var r=resp(),n=r.filter(function(x){return x!==null}).length;document.getElementById('progBar').style.width=(n/P.length*100)+'%';document.getElementById('progTxt').textContent=n+' de '+P.length+' respondidas';}
+f.addEventListener('change',function(e){prog();var fs=e.target.closest('fieldset');if(fs)fs.classList.remove('falta');});
+document.getElementById('verRes').addEventListener('click',function(){
+ var r=resp(),av=document.getElementById('aviso'),falt=[];
+ r.forEach(function(x,i){var fs=document.getElementById('f'+i);if(x===null){falt.push(i);fs.classList.add('falta');}});
+ if(falt.length){av.textContent='Te faltan '+falt.length+' pregunta'+(falt.length>1?'s':'')+' por responder.';document.getElementById('f'+falt[0]).scrollIntoView({behavior:'smooth',block:'center'});return;}
+ av.textContent='';
+ var tot=r.reduce(function(a,b){return a+b},0),pct=Math.round(tot/(P.length*2)*100);
+ var niv=pct<=25?'bajo':(pct<=55?'medio':'alto');
+ var txt={bajo:'Tenés buenos hábitos. Revisá los detalles de abajo para quedar todavía mejor protegido.',medio:'Hay varias puertas abiertas. Con unos pocos cambios podés bajar mucho el riesgo.',alto:'Tus cuentas y datos están expuestos. Conviene actuar cuanto antes, empezando por los primeros pasos de abajo.'};
+ var top=document.getElementById('resTop');top.className='res-top '+niv;
+ document.getElementById('resTit').textContent='Riesgo '+niv+' · '+pct+'%';
+ document.getElementById('resTxt').textContent=txt[niv];
+ var as=AREAS.map(function(){return 0});P.forEach(function(p,i){as[p.a]+=r[i];});
+ var ah='',debiles=[];
+ AREAS.forEach(function(n,k){var v=Math.round(as[k]/4*100),c=v<=25?'#1e7b4f':(v<=50?'#b7791f':'#b03a2e'),e=v<=25?'Bien':(v<=50?'A mejorar':'Prioridad');if(v>50)debiles.push(n);
+  ah+='<div class="ar"><div class="ar-h"><span>'+n+'</span><span style="color:'+c+'">'+e+'</span></div><div class="ar-b"><i style="width:'+Math.max(v,4)+'%;background:'+c+'"></i></div></div>';});
+ document.getElementById('resAreas').innerHTML=ah;
+ var orden=P.map(function(p,i){return{i:i,v:r[i]}}).filter(function(o){return o.v>0}).sort(function(a,b){return b.v-a.v||a.i-b.i});
+ var acc=orden.slice(0,5).map(function(o){return '<li><strong>'+P[o.i].t+'</strong>'+P[o.i].d+'</li>'}).join('');
+ if(!acc)acc='<li><strong>¡Muy bien!</strong>Respondiste «Sí» a todo. Mantené estos hábitos y repetí el autodiagnóstico cada tanto.</li>';
+ document.getElementById('resAcc').innerHTML=acc;
+ if(!debiles.length)debiles=orden.slice(0,2).map(function(o){return AREAS[P[o.i].a]}).filter(function(v,i,s){return s.indexOf(v)===i});
+ var msg='Hola Ruben, te escribo desde informatica.uy\nHice el autodiagnóstico de ciberseguridad: riesgo '+niv+' ('+pct+'%).'+(debiles.length?'\nÁreas a mejorar: '+debiles.join(', ')+'.':'')+'\nQuiero orientación para mejorar mi seguridad.';
+ document.getElementById('waRes').href='https://wa.me/59899337346?text='+encodeURIComponent(msg);
+ var res=document.getElementById('resultado');res.classList.add('ver');res.scrollIntoView({behavior:'smooth'});
+});
+document.getElementById('reiniciar').addEventListener('click',function(){f.reset();prog();document.getElementById('resultado').classList.remove('ver');document.getElementById('aviso').textContent='';f.querySelectorAll('.falta').forEach(function(x){x.classList.remove('falta')});document.getElementById('test').scrollIntoView({behavior:'smooth'});});
+})();
+</script>
+</body>
+</html>
