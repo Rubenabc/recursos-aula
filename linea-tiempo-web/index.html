@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Introducción a HTML: línea cronológica · Ruben Leal</title>
+<meta content="Línea cronológica de la web y de HTML: de Otlet y el Mundaneum (1910) a HTML como estándar vivo (2019), con enlaces a cada hito." name="description"/>
+<meta content="website" property="og:type"/>
+<meta content="Introducción a HTML: línea cronológica" property="og:title"/>
+<meta content="Línea cronológica de la web y de HTML: de Otlet y el Mundaneum (1910) a HTML como estándar vivo (2019), con enlaces a cada hito." property="og:description"/>
+<meta content="#14304A" name="theme-color"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&amp;display=swap" rel="stylesheet"/>
+<style>
+:root{--navy:#14304A;--blue:#1F5FA8;--grey:#4A5866;--line:#C9D2DC;--soft:#E1E7ED;--bg:#F6F8FA;--text:#1B2733}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font-family:'Source Sans 3',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;font-size:17px;line-height:1.55}
+a{color:var(--blue)}a:hover{color:var(--navy)}
+.wrap{max-width:1040px;margin:0 auto;padding:0 24px}
+header{position:sticky;top:0;z-index:10;background:rgba(246,248,250,.96);backdrop-filter:blur(6px);border-bottom:1px solid var(--soft)}
+header .wrap{display:flex;flex-wrap:wrap;gap:4px 24px;justify-content:space-between;align-items:center;padding-top:12px;padding-bottom:12px}
+.brand{display:inline-block;padding:10px 0;min-height:44px;font-weight:700;letter-spacing:.16em;color:var(--navy);text-decoration:none}
+nav{display:flex;flex-wrap:wrap;gap:0 2px}
+nav a{display:inline-block;padding:10px 10px;min-height:44px;text-decoration:none;font-weight:600;font-size:15px;border-bottom:3px solid transparent}
+@media(max-width:640px){header .wrap{padding-top:4px;padding-bottom:0}nav{flex-wrap:nowrap;overflow-x:auto;width:100%;margin:0 -10px;-webkit-overflow-scrolling:touch;scrollbar-width:none}nav::-webkit-scrollbar{display:none}nav a{white-space:nowrap;flex:0 0 auto}}
+nav a[aria-current="page"]{font-weight:700;color:var(--navy);border-bottom-color:var(--blue)}
+.page[hidden]{display:none}
+h1.name{margin:0;font-size:clamp(40px,8vw,64px);line-height:1.05;letter-spacing:.04em;color:var(--navy)}
+h1.title{margin:32px 0 8px;font-size:clamp(30px,5vw,42px);line-height:1.15;color:var(--navy)}
+.kicker{margin:40px 0 0;font-size:15px;letter-spacing:.18em;color:var(--blue);font-weight:700}
+.role{margin:14px 0 0;font-size:clamp(16px,3vw,22px);letter-spacing:.08em;color:var(--grey)}
+.hero{padding-top:56px;padding-bottom:16px;display:flex;align-items:center;gap:clamp(24px,5vw,56px)}
+.hero-copy{flex:1 1 520px;min-width:0}
+.hero-photo{width:clamp(150px,24vw,240px);aspect-ratio:4/5;object-fit:cover;object-position:center 35%;height:auto;border-radius:14px;box-shadow:0 12px 30px rgba(20,48,74,.18);flex:0 0 auto}
+@media(max-width:640px){.hero{align-items:flex-start;gap:18px;padding-top:32px}.hero-photo{width:112px;border-radius:10px}.hero-copy{flex-basis:calc(100% - 130px)}.hero .lead{font-size:17px}.hero .row{gap:8px}.hero .btn{padding:10px 14px}}
+.label{margin:40px 0 16px;padding-bottom:8px;border-bottom:1px solid var(--line);font-size:15px;letter-spacing:.18em;color:var(--blue);font-weight:700}
+.label.first{margin-top:32px}
+.btn{display:inline-block;padding:12px 22px;min-height:44px;border-radius:6px;font-weight:600;text-decoration:none;border:2px solid var(--navy);color:var(--navy);background:transparent}
+.btn.solid{background:var(--navy);color:#fff}
+.btn.solid:hover{color:#fff;background:#0d2236}
+.row{display:flex;flex-wrap:wrap;gap:12px}
+.entry{display:flex;flex-wrap:wrap;gap:4px 40px;padding:22px 0;border-bottom:1px solid var(--soft)}
+.entry:last-of-type{border-bottom:0}
+.date{flex:0 0 200px;color:var(--grey);font-weight:600}
+.body{flex:1 1 440px;min-width:0}
+.body h2{margin:0;font-size:21px;color:var(--navy)}
+.org{margin:2px 0 10px;font-style:italic;color:var(--grey)}
+.body ul,.list{margin:0;padding-left:20px}
+.list li{margin-bottom:8px}
+.cards{display:flex;flex-wrap:wrap;gap:20px}
+.card{flex:1 1 300px;min-width:0;background:#fff;border:1px solid #DCE3EA;border-radius:8px;padding:22px 24px}
+.card h2,.card h3{margin:0 0 6px;font-size:20px;color:var(--navy)}
+.card p{margin:0 0 12px}
+.card p:last-child{margin-bottom:0}
+.card a.more{font-weight:600}
+.lead{margin:0;max-width:820px;font-size:19px}
+.note{margin:24px 0 0;color:var(--grey)}
+.cols{display:flex;flex-wrap:wrap;gap:24px 48px}
+.cols>div{flex:1 1 320px;min-width:0}
+.cols h2{margin:0 0 10px;font-size:19px;color:var(--navy)}
+.cols ul{margin:0;padding-left:20px}
+.cols li{margin-bottom:6px}
+.steps{list-style:none;margin:0;padding:0;counter-reset:s;display:flex;flex-wrap:wrap;gap:20px}
+.steps li{counter-increment:s;flex:1 1 220px;min-width:0;background:#fff;border:1px solid #DCE3EA;border-radius:8px;padding:20px 22px}
+.steps li::before{content:counter(s);display:inline-block;width:32px;height:32px;line-height:32px;text-align:center;border-radius:50%;background:var(--navy);color:#fff;font-weight:700;margin-bottom:10px}
+.steps strong{display:block;color:var(--navy);font-size:18px}
+details{background:#fff;border:1px solid #DCE3EA;border-radius:8px;margin:0 0 14px;padding:0}
+summary{cursor:pointer;padding:16px 22px;min-height:44px;font-weight:700;font-size:19px;color:var(--navy)}
+details .art{padding:0 22px 20px;max-width:760px}
+details .art p{margin:0 0 12px}
+details .art ul{margin:0 0 12px;padding-left:20px}
+.contact{background:var(--navy);color:#fff;border-radius:10px;padding:36px;display:flex;flex-wrap:wrap;gap:24px 40px;align-items:center;justify-content:space-between}
+.contact h2{margin:0;font-size:32px}
+.contact p{margin:8px 0 0;color:#DCE6F0}
+.contact .btn.solid{background:#fff;color:var(--navy)}
+.cta{margin-top:32px}
+.pager{display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;padding:40px 0 56px}
+.pager.end{justify-content:flex-end}
+
+html{scroll-behavior:smooth} .page{scroll-margin-top:100vh;padding-bottom:56px} .contact a.btn{white-space:normal}
+
+/* Navegación por secciones: una vista a la vez, sin JavaScript. */
+main > .page {display:none}
+main > #inicio {display:block}
+main:has(> .page:target:not(#inicio)) > #inicio {display:none}
+main > .page:target {display:block}
+/* Contraste legible de ambos botones en el panel oscuro. */
+.contact .btn, .contact .btn.solid {background:#fff;color:#14304A;border-color:#fff}
+.contact .btn:hover, .contact .btn.solid:hover {background:#e1e7ed;color:#14304A}
+.contact .address {color:#fff;overflow-wrap:anywhere}
+
+.project-image{display:block;width:100%;aspect-ratio:16/10;object-fit:cover;object-position:top center;border:1px solid #dce3ea;border-radius:6px;margin:0 0 18px;background:#edf2f5}.featured .card{display:flex;flex-direction:column}.featured .card .more{margin-top:auto}.featured .card p{flex-grow:1}
+.quotes{display:flex;flex-wrap:wrap;gap:20px}
+.quote{flex:1 1 400px;min-width:0;margin:0;background:#fff;border:1px solid #DCE3EA;border-left:4px solid var(--blue);border-radius:8px;padding:20px 22px}
+.quote blockquote{margin:0 0 10px;font-size:19px;color:var(--navy);font-weight:600}
+.quote figcaption{color:var(--grey);font-size:15px}
+.tarjeta .foto{flex:0 0 170px;width:170px;height:136px;object-fit:cover;border-radius:12px;background:#fff;order:2;margin-left:auto}
+.tarjeta .txt{flex:1 1 auto;min-width:0}
+@media(max-width:640px){.tarjeta .foto{order:0;width:100%;height:auto;aspect-ratio:5/4;flex-basis:auto;margin:0}}
+</style>
+<style>
+.tl-wrap{max-width:900px;padding-top:8px;padding-bottom:24px}
+.tl-wrap h1.title{margin-top:24px}
+.tl{position:relative;margin:36px 0 0;padding:0;list-style:none}
+.tl::before{content:"";position:absolute;left:62px;top:8px;bottom:8px;width:4px;border-radius:2px;background:linear-gradient(#9F9BFF,#7ED3DA,#A6D86B,#F2C94C,#FF9F6E,#F59AC9,#C8A2FF)}
+.hito{position:relative;display:grid;grid-template-columns:110px 1fr;gap:0 18px;margin:0 0 22px}
+.anio{justify-self:start;align-self:start;margin-top:18px;padding:6px 10px;border-radius:10px;font-weight:800;font-size:20px;color:#14304A;background:var(--c);position:relative;z-index:1;min-width:64px;text-align:center}
+.hito::after{content:"";position:absolute;left:56px;top:62px;width:16px;height:16px;border-radius:50%;background:var(--c);border:3px solid #F6F8FA}
+.tarjeta{display:flex;gap:18px;align-items:flex-start;background:color-mix(in srgb,var(--c) 55%,#fff);border-radius:16px;padding:18px 20px;box-shadow:0 2px 10px rgba(20,48,74,.06)}
+.tarjeta .ico{flex:0 0 64px;height:64px;border-radius:14px;background:#fff;display:flex;align-items:center;justify-content:center;color:#14304A}
+.tarjeta .ico svg{width:44px;height:44px;fill:none;stroke:currentColor;stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
+.tarjeta h2{margin:0 0 6px;font-size:21px;color:#14304A}
+.tarjeta p{margin:0;font-size:16.5px}
+.enlaces{margin-top:10px!important;display:flex;flex-wrap:wrap;gap:8px}
+.enlaces a{display:inline-block;padding:4px 10px;border-radius:99px;background:#fff;font-weight:600;font-size:14.5px;text-decoration:none;border:1px solid rgba(20,48,74,.15)}
+.enlaces a::after{content:" ↗"}
+.fuentes{margin-top:40px;padding-top:16px;border-top:1px solid var(--line);color:var(--grey);font-size:15px}
+.migas{margin:24px 0 0;font-size:15px}
+@media(max-width:640px){.hito{grid-template-columns:1fr}.tl::before{left:20px}.hito::after{display:none}.anio{margin:0 0 8px}.tarjeta{flex-direction:column;gap:10px}.tarjeta .ico{width:52px;height:52px;flex-basis:auto}.tl{padding-left:0}}
+</style>
+<link rel="icon" href="../favicon.svg" type="image/svg+xml"/><link rel="icon" href="../favicon-32.png" sizes="32x32" type="image/png"/><link rel="apple-touch-icon" href="../apple-touch-icon.png"/>
+<meta property="og:image" content="https://informatica.uy/img/og.jpg"/><meta property="og:image:width" content="1200"/><meta property="og:image:height" content="630"/><meta property="og:site_name" content="Ruben Leal"/><meta property="og:locale" content="es_UY"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:image" content="https://informatica.uy/img/og.jpg"/>
+<meta property="og:url" content="https://informatica.uy/linea-tiempo-web/"/><link rel="canonical" href="https://informatica.uy/linea-tiempo-web/"/>
+</head>
+<body>
+<header>
+<div class="wrap">
+<a class="brand" href="../index.html#inicio">RUBEN LEAL</a>
+<nav aria-label="Páginas">
+<a href="../index.html#inicio">Inicio</a>
+<a href="../index.html#servicios">Servicios</a>
+<a href="../index.html#proyectos">Proyectos</a>
+<a href="../index.html#recursos" aria-current="page">Recursos</a>
+<a href="../index.html#blog">Artículos</a>
+<a href="../index.html#como-trabajo">Cómo trabajo</a>
+<a href="../index.html#sobre-mi">Sobre mí</a>
+<a href="../index.html#escritos">Escritos</a>
+<a href="../index.html#contacto">Contacto</a>
+</nav>
+</div>
+</header>
+<main>
+<article class="wrap tl-wrap">
+<p class="migas"><a href="../index.html#recursos">← Recursos</a></p>
+<p class="kicker">RECURSOS · INTRODUCCIÓN A HTML</p>
+<h1 class="title">Línea cronológica: de las fichas a la web</h1>
+<p class="lead">Mucho antes de la primera página web hubo personas que imaginaron reunir y enlazar todo el conocimiento. Este recorrido va del Mundaneum de 1910 al HTML que usamos hoy.</p>
+<ol class="tl">
+<li class="hito" style="--c:#C9C6FF"><div class="anio">1910</div><div class="tarjeta"><img class="foto" src="img/1910.webp" alt="Portada de un libro sobre Paul Otlet" width="340" height="272" loading="lazy"/><div class="txt"><h2>Comienzo</h2><p><strong>Paul Otlet</strong> (bibliógrafo belga) y <strong>Henri La Fontaine</strong> (jurista belga, Nobel de la Paz en 1913) proyectan una «ciudad del conocimiento» para reunir todo el saber del mundo en millones de fichas clasificadas: el <strong>Mundaneum</strong>.</p><p class="enlaces"><a href="http://www.mundaneum.org/" target="_blank" rel="noopener noreferrer">Mundaneum</a></p></div></div></li>
+<li class="hito" style="--c:#B8E3E6"><div class="anio">1934</div><div class="tarjeta"><img class="foto" src="img/1934.webp" alt="Ilustración de la tapa del Traité de documentation" width="340" height="272" loading="lazy"/><div class="txt"><h2>La red imaginada</h2><p>En el <em>Traité de documentation</em>, Otlet imagina consultar documentos a distancia desde pantallas conectadas a un gran centro de información. Ese mismo año cierra el Mundaneum.</p><p class="enlaces"><a href="https://www.mundaneum.org/en/history" target="_blank" rel="noopener noreferrer">Historia del Mundaneum</a></p></div></div></li>
+<li class="hito" style="--c:#CDE8A8"><div class="anio">1945</div><div class="tarjeta"><img class="foto" src="img/1945.webp" alt="Modelo del escritorio Memex" width="340" height="272" loading="lazy"/><div class="txt"><h2>Segundo hito histórico</h2><p><strong>Vannevar Bush</strong>, ingeniero estadounidense, director de la Oficina de Investigación Científica y Desarrollo (OSRD) durante la Segunda Guerra Mundial y principal impulsor político y organizador del Proyecto Manhattan, publica «As We May Think». Describe el <strong>Memex</strong>, un escritorio para guardar documentos y unirlos por asociación de ideas. Nunca se construyó, pero inspiró a quienes crearon el hipertexto.</p><p class="enlaces"><a href="https://www.theatlantic.com/magazine/archive/1945/07/as-we-may-think/303881/" target="_blank" rel="noopener noreferrer">«As We May Think» (The Atlantic, 1945)</a></p></div></div></li>
+<li class="hito" style="--c:#F5E3A0"><div class="anio">1963</div><div class="tarjeta"><img class="foto" src="img/1963.webp" alt="Esquema: hipertexto y multimedia forman la hipermedia" width="340" height="272" loading="lazy"/><div class="txt"><h2>Términos</h2><p><strong>Ted Nelson</strong> acuña las palabras <strong>hipertexto</strong> e <strong>hipermedia</strong> (las publica en 1965). Desde 1960 trabajaba en el <strong>Proyecto Xanadú</strong>, una red de documentos enlazados.</p><p class="enlaces"><a href="https://www.xanadu.net/HISTORY" target="_blank" rel="noopener noreferrer">Historia del Proyecto Xanadú</a></p></div></div></li>
+<li class="hito" style="--c:#FFC8A8"><div class="anio">1969</div><div class="tarjeta"><img class="foto" src="img/1969.webp" alt="Esquema de los primeros cuatro nodos de ARPANET" width="340" height="272" loading="lazy"/><div class="txt"><h2>La red de redes</h2><p>Se conectan por primera vez computadoras de universidades de Estados Unidos en <strong>ARPANET</strong>, la red que dará origen a Internet. La web llegará después, montada sobre Internet.</p></div></div></li>
+<li class="hito" style="--c:#FFCDE6"><div class="anio">1989</div><div class="tarjeta"><img class="foto" src="img/1989.webp" alt="Ilustración de la propuesta de Berners-Lee" width="340" height="272" loading="lazy"/><div class="txt"><h2>La propuesta</h2><p>En marzo, <strong>Tim Berners-Lee</strong>, que trabajaba en el CERN (Suiza), escribe «Information Management: A Proposal»: un sistema para enlazar documentos guardados en distintas computadoras.</p><p class="enlaces"><a href="https://home.cern/science/computing/birth-web" target="_blank" rel="noopener noreferrer">El nacimiento de la web (CERN)</a></p></div></div></li>
+<li class="hito" style="--c:#E9D4FF"><div class="anio">1990</div><div class="tarjeta"><img class="foto" src="img/1990.webp" alt="Pantalla con la página World Wide Web" width="340" height="272" loading="lazy"/><div class="txt"><h2>WEB</h2><p>En noviembre, Berners-Lee y <strong>Robert Cailliau</strong> presentan la propuesta formal «WorldWideWeb». Antes de fin de año ya funcionan en el CERN el primer navegador-editor, el primer servidor y el <strong>primer sitio web</strong>: info.cern.ch.</p><p class="enlaces"><a href="http://info.cern.ch/hypertext/WWW/TheProject.html" target="_blank" rel="noopener noreferrer">El primer sitio web</a></p></div></div></li>
+<li class="hito" style="--c:#C9C6FF"><div class="anio">1991</div><div class="tarjeta"><img class="foto" src="img/1991.webp" alt="Ilustración de las primeras etiquetas HTML" width="340" height="272" loading="lazy"/><div class="txt"><h2>La web sale del CERN</h2><p>En agosto, Berners-Lee anuncia el software de la web en Internet. En octubre aparece «HTML Tags», la <strong>primera descripción pública de HTML</strong>: apenas 18 etiquetas.</p><p class="enlaces"><a href="https://www.w3.org/History/19921103-hypertext/hypertext/WWW/MarkUp/Tags.html" target="_blank" rel="noopener noreferrer">«HTML Tags» (1991)</a></p></div></div></li>
+<li class="hito" style="--c:#B8E3E6"><div class="anio">1993</div><div class="tarjeta"><img class="foto" src="img/1993.webp" alt="Personas usando computadoras portátiles" width="340" height="272" loading="lazy"/><div class="txt"><h2>Libre para todos</h2><p>El 30 de abril, el CERN pone la web en el <strong>dominio público</strong>: cualquiera puede usarla sin pagar. Ese año se lanza <strong>Mosaic</strong>, el primer navegador que se hizo popular.</p></div></div></li>
+<li class="hito" style="--c:#CDE8A8"><div class="anio">1994</div><div class="tarjeta"><img class="foto" src="img/1994.webp" alt="Esquema: URI incluye URN y URL" width="340" height="272" loading="lazy"/><div class="txt"><h2>El consorcio y las URL</h2><p>En octubre, Berners-Lee funda el <strong>W3C</strong>, el consorcio que coordina los estándares de la web. En diciembre se publica el <strong>RFC 1738</strong>, que define formalmente la estructura de las <strong>URL</strong>.</p><p class="enlaces"><a href="https://www.w3.org/" target="_blank" rel="noopener noreferrer">W3C</a><a href="https://www.rfc-editor.org/rfc/rfc1738" target="_blank" rel="noopener noreferrer">RFC 1738 (URL)</a></p></div></div></li>
+<li class="hito" style="--c:#F5E3A0"><div class="anio">1995</div><div class="tarjeta"><img class="foto" src="img/1995.webp" alt="Ilustración de la primera página del RFC 1866" width="340" height="272" loading="lazy"/><div class="txt"><h2>HTML 2.0</h2><p>En noviembre se publica el <strong>RFC 1866</strong>, «HTML 2.0»: la primera especificación formal del lenguaje, pensada como norma que todos debían seguir.</p><p class="enlaces"><a href="https://www.rfc-editor.org/rfc/rfc1866" target="_blank" rel="noopener noreferrer">RFC 1866 (HTML 2.0)</a></p></div></div></li>
+<li class="hito" style="--c:#FFC8A8"><div class="anio">2012</div><div class="tarjeta"><img class="foto" src="img/2012.webp" alt="Carteles con nuevos dominios: .blog, .web, .tienda" width="340" height="272" loading="lazy"/><div class="txt"><h2>Nuevos nombres</h2><p>La ICANN recibe <strong>1.930 solicitudes</strong> para crear nuevos dominios de primer nivel, como .app, .blog o .shop. Los primeros empiezan a funcionar en octubre de 2013.</p><p class="enlaces"><a href="https://newgtlds.icann.org/" target="_blank" rel="noopener noreferrer">Programa de nuevos dominios (ICANN)</a></p></div></div></li>
+<li class="hito" style="--c:#FFCDE6"><div class="anio">2014</div><div class="tarjeta"><img class="foto" src="img/2014.webp" alt="Ejemplo de código HTML5" width="340" height="272" loading="lazy"/><div class="txt"><h2>HTML5</h2><p>El 28 de octubre, el W3C publica <strong>HTML5</strong> como recomendación oficial: audio, video y gráficos directamente en la página, sin complementos.</p><p class="enlaces"><a href="https://www.w3.org/press-releases/2014/html5-rec" target="_blank" rel="noopener noreferrer">Anuncio del W3C</a></p></div></div></li>
+<li class="hito" style="--c:#E9D4FF"><div class="anio">2019</div><div class="tarjeta"><img class="foto" src="img/2019.webp" alt="Ilustración del HTML Living Standard en un navegador" width="340" height="272" loading="lazy"/><div class="txt"><h2>Un estándar vivo</h2><p>El W3C y el WHATWG acuerdan mantener <strong>una sola versión de HTML</strong>, que se actualiza de forma continua: el «HTML Living Standard».</p><p class="enlaces"><a href="https://html.spec.whatwg.org/multipage/" target="_blank" rel="noopener noreferrer">HTML Living Standard</a></p></div></div></li>
+</ol>
+<p class="fuentes">Basada en la infografía original de Ruben Leal para el curso de Introducción a HTML, revisada y ampliada. Las ilustraciones de 1934, 1969, 1989, 1991, 1995, 2014 y 2019 son dibujos hechos para esta página. Fuentes: CERN, W3C, ICANN, RFC Editor, Mundaneum y Encyclopaedia Britannica. Si te interesa la historia local, leé <a href="../escritos/uruguay-digital.html">La construcción del Uruguay digital</a>.</p>
+<div class="pager"><a class="btn" href="../index.html#recursos">← Volver a Recursos</a><a class="btn solid" href="../excel-paso-a-paso/">Otros recursos: Excel</a></div>
+</article>
+</main>
+</body>
+</html>
